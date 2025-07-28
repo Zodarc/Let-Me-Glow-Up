@@ -28,6 +28,34 @@
         },
       };
     </script>
+    <!-- Custom Styles for Gradient Animation -->
+    <style>
+      .animated-gradient-text {
+        background: linear-gradient(-45deg, #ff69b4, #ffd700, #a97a5a, #ff69b4);
+        background-size: 400% 400%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 3s ease-in-out infinite;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .glass-effect {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.9);
+      }
+    </style>
   </head>
   <body class="bg-cream-white">
     <!-- Content will go here -->
