@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LetMeGlowUp - Your Beauty & Fashion Destination</title>
+    <meta
+      name="description"
+      content="Discover beauty trends, fashion tips, and glow-up secrets. Shop curated products and unlock your style potential."
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "pop-pink": "#ff69b4",
+              "cream-white": "#fffefc",
+              "soft-beige": "#fdf6f0",
+              "glossy-brown": "#a97a5a",
+              "deep-black": "#1a1a1a",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-cream-white">
+    <!-- Content will go here -->
+
+    <!-- Sticky Navbar -->
+    <nav
+      class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <!-- Left Navigation -->
+          <div class="hidden md:flex space-x-6">
+            <a
+              href="#"
+              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
+              >Home</a
+            >
+            <a
+              href="fashion.html"
+              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
+              >Fashion</a
+            >
+            <a
+              href="glow.html"
+              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
+              >Glow</a
+            >
+          </div>
+
+          <!-- Centered Animated Logo -->
+          <div class="flex-1 flex justify-center">
+            <h1 class="text-2xl font-bold animated-gradient-text">
+              ✨ LetMeGlowUp
+            </h1>
+          </div>
+
+          <!-- Right Navigation -->
+          <div class="hidden md:flex space-x-6 items-center">
+            <a
+              href="shop.html"
+              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
+              >Shop</a
+            >
+            <a
+              href="courses.html"
+              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
+              >Courses</a
+            >
+            <a
+              href="contact.html"
+              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
+              >Contact</a
+            >
+            <a
+              href="ai-tools.html"
+              class="bg-pop-pink text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors font-medium"
+              >AI Tools</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-btn" class="text-deep-black">
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>
