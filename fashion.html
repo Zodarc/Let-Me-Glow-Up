@@ -30,7 +30,7 @@
     </script>
     <style>
       body {
-        background: linear-gradient(-45deg, #ff69b4, #fffefc, #fdf6f0, #ffd6ec);
+        background: linear-gradient(-45deg, #ff69b4, #667eea, #764ba2, #f093fb);
         background-size: 400% 400%;
         animation: gradientBG 15s ease infinite;
         font-family: "Poppins", sans-serif;
@@ -70,90 +70,145 @@
           background-position: 100% 50%;
         }
       }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
     </style>
   </head>
   <body class="bg-cream-white min-h-screen">
     <!-- Sticky Navbar -->
-    <nav
-      class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-pop-pink/20"
-    >
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16"
-      >
-        <div class="flex items-center space-x-3">
-          <span class="text-2xl font-bold animated-gradient-text"
-            >LetMeGlowUp</span
-          >
+    <nav class="sticky top-0 z-50 glass-effect border-b border-white/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <!-- Mobile Menu Button (Left on mobile) -->
+          <div class="md:hidden">
+            <button id="mobile-menu-btn" class="text-deep-black p-2">
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+          <!-- Left Navigation (Desktop only) -->
+          <div class="hidden md:flex space-x-6">
+            <a
+              href="index.html"
+              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
+              >Home</a
+            >
+            <a
+              href="fashion.html"
+              class="text-deep-black border-b-2 border-pop-pink font-medium"
+              >Fashion</a
+            >
+            <a
+              href="glow.html"
+              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
+              >Glow</a
+            >
+          </div>
+          <!-- Centered Logo (Always centered) -->
+          <div class="flex-1 flex justify-center md:flex-none">
+            <h1 class="text-xl md:text-2xl font-bold animated-gradient-text">
+              ✨ LetMeGlowUp
+            </h1>
+          </div>
+          <!-- Right Navigation (Desktop only) -->
+          <div class="hidden md:flex space-x-4 items-center">
+            <a
+              href="shop.html"
+              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
+              >Shop</a
+            >
+            <a
+              href="courses.html"
+              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
+              >Courses</a
+            >
+            <a
+              href="contact.html"
+              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
+              >Contact</a
+            >
+            <a
+              href="ai-tools.html"
+              class="bg-pop-pink text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors font-medium text-sm"
+              >AI Tools</a
+            >
+          </div>
+          <!-- Mobile Search Icon (Right on mobile) -->
+          <div class="md:hidden">
+            <button id="mobile-search-btn" class="text-deep-black p-2">
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-        <div class="hidden md:flex space-x-8 text-sm font-semibold">
-          <a
-            href="index.html"
-            class="text-pop-pink hover:text-deep-black transition"
-            >Home</a
-          >
-          <a
-            href="fashion.html"
-            class="text-deep-black border-b-2 border-pop-pink"
-            >Fashion</a
-          >
-          <a
-            href="glow.html"
-            class="text-pop-pink hover:text-deep-black transition"
-            >Glow</a
-          >
-          <a
-            href="shop.html"
-            class="text-pop-pink hover:text-deep-black transition"
-            >Shop</a
-          >
-          <a
-            href="contact.html"
-            class="text-pop-pink hover:text-deep-black transition"
-            >Contact</a
-          >
+        <!-- Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden pb-4 border-t border-white/20 mt-4"
+        >
+          <div class="flex flex-col space-y-3 pt-4">
+            <a
+              href="index.html"
+              class="text-deep-black hover:text-pop-pink py-2 font-medium"
+              >Home</a
+            >
+            <a
+              href="fashion.html"
+              class="text-deep-black border-b-2 border-pop-pink py-2 font-medium"
+              >Fashion</a
+            >
+            <a
+              href="glow.html"
+              class="text-deep-black hover:text-pop-pink py-2 font-medium"
+              >Glow</a
+            >
+            <a
+              href="shop.html"
+              class="text-deep-black hover:text-pop-pink py-2 font-medium"
+              >Shop</a
+            >
+            <a
+              href="courses.html"
+              class="text-deep-black hover:text-pop-pink py-2 font-medium"
+              >Courses</a
+            >
+            <a
+              href="contact.html"
+              class="text-deep-black hover:text-pop-pink py-2 font-medium"
+              >Contact</a
+            >
+            <a
+              href="ai-tools.html"
+              class="bg-pop-pink text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors font-medium w-fit"
+              >AI Tools</a
+            >
+          </div>
         </div>
-        <!-- Mobile menu button -->
-        <button
-          id="mobile-menu-btn"
-          class="md:hidden text-pop-pink focus:outline-none"
-        >
-          <svg
-            class="w-7 h-7"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-      </div>
-      <!-- Mobile Menu -->
-      <div
-        id="mobile-menu"
-        class="md:hidden hidden px-4 pb-4 bg-white border-b border-pop-pink/20"
-      >
-        <a href="index.html" class="block py-2 text-pop-pink font-semibold"
-          >Home</a
-        >
-        <a
-          href="fashion.html"
-          class="block py-2 text-deep-black font-semibold border-b-2 border-pop-pink"
-          >Fashion</a
-        >
-        <a href="glow.html" class="block py-2 text-pop-pink font-semibold"
-          >Glow</a
-        >
-        <a href="shop.html" class="block py-2 text-pop-pink font-semibold"
-          >Shop</a
-        >
-        <a href="contact.html" class="block py-2 text-pop-pink font-semibold"
-          >Contact</a
-        >
       </div>
     </nav>
 
@@ -174,7 +229,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Blog Card 1 -->
         <article
-          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:scale-105"
+          class="bg-white rounded-2xl shadow-lg hover:shadow-xl hover-grow transition-all duration-300 overflow-hidden flex flex-col"
         >
           <img
             src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80"
@@ -198,7 +253,7 @@
         </article>
         <!-- Blog Card 2 -->
         <article
-          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:scale-105"
+          class="bg-white rounded-2xl shadow-lg hover:shadow-xl hover-grow transition-all duration-300 overflow-hidden flex flex-col"
         >
           <img
             src="https://images.unsplash.com/photo-1469398715555-76331a6c7b29?auto=format&fit=crop&w=600&q=80"
@@ -222,7 +277,7 @@
         </article>
         <!-- Blog Card 3 -->
         <article
-          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:scale-105"
+          class="bg-white rounded-2xl shadow-lg hover:shadow-xl hover-grow transition-all duration-300 overflow-hidden flex flex-col"
         >
           <img
             src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80"
@@ -246,7 +301,7 @@
         </article>
         <!-- Blog Card 4 -->
         <article
-          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:scale-105"
+          class="bg-white rounded-2xl shadow-lg hover:shadow-xl hover-grow transition-all duration-300 overflow-hidden flex flex-col"
         >
           <img
             src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80"
@@ -270,7 +325,7 @@
         </article>
         <!-- Blog Card 5 -->
         <article
-          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:scale-105"
+          class="bg-white rounded-2xl shadow-lg hover:shadow-xl hover-grow transition-all duration-300 overflow-hidden flex flex-col"
         >
           <img
             src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80"
@@ -294,7 +349,7 @@
         </article>
         <!-- Blog Card 6 -->
         <article
-          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:scale-105"
+          class="bg-white rounded-2xl shadow-lg hover:shadow-xl hover-grow transition-all duration-300 overflow-hidden flex flex-col"
         >
           <img
             src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
@@ -319,19 +374,274 @@
       </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-deep-black text-white mt-16">
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center"
-      >
-        <span class="font-bold animated-gradient-text text-xl mb-4 md:mb-0"
-          >LetMeGlowUp</span
-        >
-        <span class="text-gray-400 text-sm"
-          >© 2024 LetMeGlowUp. All rights reserved.</span
-        >
+    <!-- Footer (copied from index.html, fully responsive and styled) -->
+    <footer class="bg-deep-black text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid md:grid-cols-4 gap-8">
+          <!-- Brand Section -->
+          <div class="md:col-span-1">
+            <h3 class="text-2xl font-bold animated-gradient-text mb-4">
+              ✨ LetMeGlowUp
+            </h3>
+            <p class="text-gray-400 text-sm mb-6">
+              Your ultimate destination for beauty and fashion inspiration.
+              Discover your glow, elevate your style, and embrace your
+              confidence.
+            </p>
+            <!-- Social Media Links -->
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="bg-gray-800 p-2 rounded-full hover:bg-pop-pink transition-colors"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-800 p-2 rounded-full hover:bg-pop-pink transition-colors"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-800 p-2 rounded-full hover:bg-pop-pink transition-colors"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.739.0978.118.112.222.083.343-.09.375-.293 1.199-.334 1.363-.053.225-.174.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-800 p-2 rounded-full hover:bg-pop-pink transition-colors"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4 text-pop-pink">
+              Quick Links
+            </h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="fashion.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Fashion</a
+                >
+              </li>
+              <li>
+                <a
+                  href="glow.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Glow</a
+                >
+              </li>
+              <li>
+                <a
+                  href="shop.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Shop</a
+                >
+              </li>
+              <li>
+                <a
+                  href="courses.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Courses</a
+                >
+              </li>
+              <li>
+                <a
+                  href="ai-tools.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >AI Tools</a
+                >
+              </li>
+              <li>
+                <a
+                  href="quiz.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Take the Quiz</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Support -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4 text-pop-pink">Support</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="feedback.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Feedback</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Help Center</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Size Guide</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Shipping Info</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Returns</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Legal -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4 text-pop-pink">Legal</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="privacy.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="terms.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Cookie Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Affiliate Disclosure</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >GDPR</a
+                >
+              </li>
+            </ul>
+            <!-- Newsletter Signup (Footer) -->
+            <div class="mt-6">
+              <h5 class="text-sm font-semibold mb-2 text-white">
+                Stay Updated
+              </h5>
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  class="flex-1 px-3 py-2 bg-gray-800 text-white text-sm rounded-l-lg border-0 focus:outline-none focus:ring-2 focus:ring-pop-pink"
+                />
+                <button
+                  class="bg-pop-pink px-4 py-2 text-sm rounded-r-lg hover:bg-pink-600 transition-colors"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom Bar -->
+        <div class="border-t border-gray-800 mt-12 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2024 LetMeGlowUp. All rights reserved. Made with 💖 for beauty
+              lovers worldwide.
+            </p>
+            <div class="flex items-center space-x-4 text-sm text-gray-400">
+              <span>🌍 Available in 7 languages</span>
+              <span>•</span>
+              <span>🚀 Powered by AI</span>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
+
+    <!-- Floating Feedback Widget -->
+    <div class="fixed bottom-6 right-6 z-50">
+      <button
+        id="feedback-btn"
+        class="bg-pop-pink text-white p-3 rounded-full shadow-lg hover:bg-pink-600 transition-all duration-300 hover:scale-110"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 8h10m0 0V6a2 2 0 00-2-2H9a2 2 0 00-2 2v2m10 0v10a2 2 0 01-2 2H9a2 2 0 01-2-2V8m0 0V6a2 2 0 012-2h6a2 2 0 012 2v2"
+          />
+        </svg>
+      </button>
+    </div>
 
     <!-- Mobile menu JS -->
     <script>
