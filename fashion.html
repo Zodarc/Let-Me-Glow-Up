@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fashion & Trends | LetMeGlowUp</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "pop-pink": "#ff69b4",
+              "cream-white": "#fffefc",
+              "soft-beige": "#fdf6f0",
+              "glossy-brown": "#a97a5a",
+              "deep-black": "#1a1a1a",
+            },
+            fontFamily: {
+              sans: ["Poppins", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background: linear-gradient(-45deg, #ff69b4, #fffefc, #fdf6f0, #ffd6ec);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        font-family: "Poppins", sans-serif;
+      }
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .animated-gradient-text {
+        background: linear-gradient(
+          -45deg,
+          #ff69b4,
+          #ffd700,
+          #a97a5a,
+          #ff69b4,
+          #667eea
+        );
+        background-size: 400% 400%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 3s ease-in-out infinite;
+      }
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-cream-white min-h-screen">
+    <!-- Sticky Navbar -->
+    <nav
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-pop-pink/20"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16"
+      >
+        <div class="flex items-center space-x-3">
+          <span class="text-2xl font-bold animated-gradient-text"
+            >LetMeGlowUp</span
+          >
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-semibold">
+          <a
+            href="index.html"
+            class="text-pop-pink hover:text-deep-black transition"
+            >Home</a
+          >
+          <a
+            href="fashion.html"
+            class="text-deep-black border-b-2 border-pop-pink"
+            >Fashion</a
+          >
+          <a
+            href="glow.html"
+            class="text-pop-pink hover:text-deep-black transition"
+            >Glow</a
+          >
+          <a
+            href="shop.html"
+            class="text-pop-pink hover:text-deep-black transition"
+            >Shop</a
+          >
+          <a
+            href="contact.html"
+            class="text-pop-pink hover:text-deep-black transition"
+            >Contact</a
+          >
+        </div>
+        <!-- Mobile menu button -->
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden text-pop-pink focus:outline-none"
+        >
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden px-4 pb-4 bg-white border-b border-pop-pink/20"
+      >
+        <a href="index.html" class="block py-2 text-pop-pink font-semibold"
+          >Home</a
+        >
+        <a
+          href="fashion.html"
+          class="block py-2 text-deep-black font-semibold border-b-2 border-pop-pink"
+          >Fashion</a
+        >
+        <a href="glow.html" class="block py-2 text-pop-pink font-semibold"
+          >Glow</a
+        >
+        <a href="shop.html" class="block py-2 text-pop-pink font-semibold"
+          >Shop</a
+        >
+        <a href="contact.html" class="block py-2 text-pop-pink font-semibold"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-pop-pink/10 to-soft-beige py-16 text-center"
+    >
+      <h1 class="text-4xl md:text-6xl font-bold text-deep-black mb-4">
+        Fashion & Trends
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-600 max-w-2xl mx-auto">
+        Explore the latest in beauty, style, and glam
+      </p>
+    </section>
+
+    <!-- Blog Grid -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Blog Card 1 -->
+        <article
+          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:scale-105"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80"
+            alt="Street Style"
+            class="h-56 w-full object-cover"
+          />
+          <div class="p-6 flex flex-col flex-1">
+            <h2 class="text-xl font-bold text-deep-black mb-2">
+              Street Style: Summer 2025
+            </h2>
+            <p class="text-gray-600 mb-4 flex-1">
+              Discover the hottest street style looks and how to recreate them
+              for your everyday wardrobe.
+            </p>
+            <a
+              href="#"
+              class="inline-block bg-pop-pink text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition-colors self-start"
+              >Read More</a
+            >
+          </div>
+        </article>
+        <!-- Blog Card 2 -->
+        <article
+          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:scale-105"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1469398715555-76331a6c7b29?auto=format&fit=crop&w=600&q=80"
+            alt="Sustainable Fashion"
+            class="h-56 w-full object-cover"
+          />
+          <div class="p-6 flex flex-col flex-1">
+            <h2 class="text-xl font-bold text-deep-black mb-2">
+              Sustainable Fashion: Eco Chic
+            </h2>
+            <p class="text-gray-600 mb-4 flex-1">
+              Go green with these eco-friendly brands and tips for a more
+              sustainable wardrobe.
+            </p>
+            <a
+              href="#"
+              class="inline-block bg-pop-pink text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition-colors self-start"
+              >Read More</a
+            >
+          </div>
+        </article>
+        <!-- Blog Card 3 -->
+        <article
+          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:scale-105"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80"
+            alt="Runway Trends"
+            class="h-56 w-full object-cover"
+          />
+          <div class="p-6 flex flex-col flex-1">
+            <h2 class="text-xl font-bold text-deep-black mb-2">
+              Runway to Real Life
+            </h2>
+            <p class="text-gray-600 mb-4 flex-1">
+              How to translate high-fashion runway trends into wearable,
+              everyday outfits.
+            </p>
+            <a
+              href="#"
+              class="inline-block bg-pop-pink text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition-colors self-start"
+              >Read More</a
+            >
+          </div>
+        </article>
+        <!-- Blog Card 4 -->
+        <article
+          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:scale-105"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80"
+            alt="Accessories"
+            class="h-56 w-full object-cover"
+          />
+          <div class="p-6 flex flex-col flex-1">
+            <h2 class="text-xl font-bold text-deep-black mb-2">
+              Accessorize Like a Pro
+            </h2>
+            <p class="text-gray-600 mb-4 flex-1">
+              Statement earrings, bold bags, and more: elevate your look with
+              the season’s must-have accessories.
+            </p>
+            <a
+              href="#"
+              class="inline-block bg-pop-pink text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition-colors self-start"
+              >Read More</a
+            >
+          </div>
+        </article>
+        <!-- Blog Card 5 -->
+        <article
+          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:scale-105"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80"
+            alt="Color Trends"
+            class="h-56 w-full object-cover"
+          />
+          <div class="p-6 flex flex-col flex-1">
+            <h2 class="text-xl font-bold text-deep-black mb-2">
+              Color Trends: What’s Hot
+            </h2>
+            <p class="text-gray-600 mb-4 flex-1">
+              From pastel pinks to bold neons, see which colors are dominating
+              the fashion scene this year.
+            </p>
+            <a
+              href="#"
+              class="inline-block bg-pop-pink text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition-colors self-start"
+              >Read More</a
+            >
+          </div>
+        </article>
+        <!-- Blog Card 6 -->
+        <article
+          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:scale-105"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
+            alt="Beauty & Makeup"
+            class="h-56 w-full object-cover"
+          />
+          <div class="p-6 flex flex-col flex-1">
+            <h2 class="text-xl font-bold text-deep-black mb-2">
+              Beauty & Makeup Must-Haves
+            </h2>
+            <p class="text-gray-600 mb-4 flex-1">
+              Our editors’ picks for the best beauty and makeup products to keep
+              you glowing all season.
+            </p>
+            <a
+              href="#"
+              class="inline-block bg-pop-pink text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition-colors self-start"
+              >Read More</a
+            >
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-deep-black text-white mt-16">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center"
+      >
+        <span class="font-bold animated-gradient-text text-xl mb-4 md:mb-0"
+          >LetMeGlowUp</span
+        >
+        <span class="text-gray-400 text-sm"
+          >© 2024 LetMeGlowUp. All rights reserved.</span
+        >
+      </div>
+    </footer>
+
+    <!-- Mobile menu JS -->
+    <script>
+      document
+        .getElementById("mobile-menu-btn")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+    </script>
+  </body>
+</html>
