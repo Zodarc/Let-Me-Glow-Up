@@ -9,8 +9,18 @@
       content="Discover beauty trends, fashion tips, and glow-up secrets. Shop curated products and unlock your style potential."
     />
 
+    <!-- Modern Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Custom Tailwind Config -->
     <script>
@@ -24,22 +34,25 @@
               "glossy-brown": "#a97a5a",
               "deep-black": "#1a1a1a",
             },
+            fontFamily: {
+              sans: ["Poppins", "system-ui", "sans-serif"],
+            },
           },
         },
       };
     </script>
-    <!-- Custom Styles for Gradient Animation -->
+
+    <!-- Enhanced Custom Styles -->
     <style>
-      .animated-gradient-text {
-        background: linear-gradient(-45deg, #ff69b4, #ffd700, #a97a5a, #ff69b4);
+      /* Animated Background */
+      body {
+        background: linear-gradient(-45deg, #ff69b4, #667eea, #764ba2, #f093fb);
         background-size: 400% 400%;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: gradientShift 3s ease-in-out infinite;
+        animation: gradientBG 15s ease infinite;
+        font-family: "Poppins", sans-serif;
       }
 
-      @keyframes gradientShift {
+      @keyframes gradientBG {
         0% {
           background-position: 0% 50%;
         }
@@ -51,9 +64,142 @@
         }
       }
 
+      /* Animated Gradient Text */
+      .animated-gradient-text {
+        background: linear-gradient(
+          -45deg,
+          #ff69b4,
+          #ffd700,
+          #a97a5a,
+          #ff69b4,
+          #667eea
+        );
+        background-size: 400% 400%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 3s ease-in-out infinite;
+      }
+
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      /* Glass Morphism */
       .glass-effect {
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .glass-white {
+        backdrop-filter: blur(20px);
         background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      /* Floating Animation */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .float-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      /* Pulse Glow Effect */
+      @keyframes pulseGlow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(255, 105, 180, 0.6);
+        }
+      }
+
+      .pulse-glow {
+        animation: pulseGlow 2s ease-in-out infinite;
+      }
+
+      /* Hover Grow Animation */
+      .hover-grow {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .hover-grow:hover {
+        transform: scale(1.05) translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Rotating Background Shapes */
+      .bg-shapes::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff69b4' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        animation: rotate 20s linear infinite;
+        pointer-events: none;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Modern Card Shadows */
+      .modern-shadow {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .modern-shadow:hover {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15),
+          0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Scroll Reveal Animation */
+      [data-aos] {
+        pointer-events: none;
+      }
+      [data-aos].aos-animate {
+        pointer-events: auto;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(45deg, #ff69b4, #667eea);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(45deg, #667eea, #ff69b4);
       }
     </style>
   </head>
@@ -368,7 +514,11 @@
     <!-- Hero Section -->
     <section
       class="py-16"
-      style="background: linear-gradient(135deg, #ff69b4 0%, #fdf6f0 100%)"
+      style="
+        background-image: url('assets/images/placeholders/hero4.jpg');
+        background-size: cover;
+        background-position: center;
+      "
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 gap-8">
