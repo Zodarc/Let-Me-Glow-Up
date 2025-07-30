@@ -2,667 +2,572 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fashion & Trends | LetMeGlowUp</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=yes"
     />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "pop-pink": "#ff69b4",
-              "cream-white": "#fffefc",
-              "soft-beige": "#fdf6f0",
-              "glossy-brown": "#a97a5a",
-              "deep-black": "#1a1a1a",
-            },
-            fontFamily: {
-              sans: ["Poppins", "system-ui", "sans-serif"],
-            },
-          },
-        },
-      };
+    <title>Fashion & Style Hub – LetMeGlowUp</title>
+    <meta
+      name="description"
+      content="Explore the latest in fashion, style tips, trends, and inspiration. Curated by LetMeGlowUp's experts."
+    />
+    <meta
+      name="keywords"
+      content="fashion, style, trends, outfits, beauty, blog, LetMeGlowUp"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ff69b4" />
+    <link rel="canonical" href="https://letmeglowup.com/fashion.html" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://letmeglowup.com/fashion.html" />
+    <meta property="og:title" content="Fashion & Style Hub – LetMeGlowUp" />
+    <meta
+      property="og:description"
+      content="Explore the latest in fashion, style tips, trends, and inspiration. Curated by LetMeGlowUp's experts."
+    />
+    <meta
+      property="og:image"
+      content="https://letmeglowup.com/assets/images/og-image.jpg"
+    />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fashion & Style Hub – LetMeGlowUp" />
+    <meta
+      name="twitter:description"
+      content="Explore the latest in fashion, style tips, trends, and inspiration. Curated by LetMeGlowUp's experts."
+    />
+    <meta
+      name="twitter:image"
+      content="https://letmeglowup.com/assets/images/og-image.jpg"
+    />
+    <!-- Structured Data: BlogPosting -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Fashion & Style Hub – LetMeGlowUp",
+        "url": "https://letmeglowup.com/fashion.html",
+        "description": "Explore the latest in fashion, style tips, trends, and inspiration. Curated by LetMeGlowUp's experts."
+      }
     </script>
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+      media="all"
+    />
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <style>
       body {
-        background: linear-gradient(-45deg, #ff69b4, #667eea, #764ba2, #f093fb);
-        background-size: 400% 400%;
-        animation: gradientBG 15s ease infinite;
-        font-family: "Poppins", sans-serif;
+        font-family: "Inter", sans-serif;
       }
-      @keyframes gradientBG {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
+      .hover-glow:hover {
+        box-shadow: 0 4px 24px #ff69b455, 0 1.5px 6px #b47b5b22;
       }
-      .animated-gradient-text {
-        background: linear-gradient(
-          -45deg,
-          #ff69b4,
-          #ffd700,
-          #a97a5a,
-          #ff69b4,
-          #667eea
-        );
-        background-size: 400% 400%;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: gradientShift 3s ease-in-out infinite;
+      .hover-underline:hover {
+        text-decoration: underline;
       }
-      @keyframes gradientShift {
-        0%,
-        100% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
+      .transition {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      .glass-effect {
-        backdrop-filter: blur(20px);
-        background: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+      .sidebar-section {
+        background: #fffefc;
+        border-radius: 1rem;
+        box-shadow: 0 2px 8px #b47b5b11;
+      }
+      .category-tag {
+        background: #fdf6f0;
+        color: #ff69b4;
+        font-weight: 600;
+        border-radius: 9999px;
+        padding: 2px 12px;
+        font-size: 0.85rem;
       }
     </style>
   </head>
-  <body class="bg-cream-white min-h-screen">
-    <!-- Sticky Navbar -->
-    <nav class="sticky top-0 z-50 glass-effect border-b border-white/20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center py-4">
-          <!-- Mobile Menu Button (Left on mobile) -->
-          <div class="md:hidden">
-            <button id="mobile-menu-btn" class="text-deep-black p-2">
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </div>
-          <!-- Left Navigation (Desktop only) -->
-          <div class="hidden md:flex space-x-6">
-            <a
-              href="index.html"
-              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
-              >Home</a
-            >
-            <a
-              href="fashion.html"
-              class="text-deep-black border-b-2 border-pop-pink font-medium"
-              >Fashion</a
-            >
-            <a
-              href="glow.html"
-              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
-              >Glow</a
-            >
-          </div>
-          <!-- Centered Logo (Always centered) -->
-          <div class="flex-1 flex justify-center md:flex-none">
-            <h1 class="text-xl md:text-2xl font-bold animated-gradient-text">
-              ✨ LetMeGlowUp
-            </h1>
-          </div>
-          <!-- Right Navigation (Desktop only) -->
-          <div class="hidden md:flex space-x-4 items-center">
-            <a
-              href="shop.html"
-              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
-              >Shop</a
-            >
-            <a
-              href="courses.html"
-              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
-              >Courses</a
-            >
-            <a
-              href="contact.html"
-              class="text-deep-black hover:text-pop-pink transition-colors font-medium"
-              >Contact</a
-            >
-            <a
-              href="ai-tools.html"
-              class="bg-pop-pink text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors font-medium text-sm"
-              >AI Tools</a
-            >
-          </div>
-          <!-- Mobile Search Icon (Right on mobile) -->
-          <div class="md:hidden">
-            <button id="mobile-search-btn" class="text-deep-black p-2">
-              <svg
-                class="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div
-          id="mobile-menu"
-          class="hidden md:hidden pb-4 border-t border-white/20 mt-4"
+  <body class="bg-[#fffefc] text-[#1a1a1a] font-sans">
+    <!-- Header (copied from index.html, links updated) -->
+    <header class="shadow-md bg-white sticky top-0 z-50">
+      <nav
+        class="container mx-auto flex items-center justify-between py-4 px-4 md:px-8"
+      >
+        <a
+          href="index.html"
+          class="text-2xl font-bold text-[#ff69b4] tracking-tight logo"
+          >Let Me Glow Up</a
         >
-          <div class="flex flex-col space-y-3 pt-4">
-            <a
-              href="index.html"
-              class="text-deep-black hover:text-pop-pink py-2 font-medium"
-              >Home</a
-            >
+        <button class="md:hidden block" id="nav-toggle" aria-label="Open Menu">
+          <svg class="w-6 h-6" fill="none" stroke="#a97a5a" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <ul class="hidden md:flex space-x-6 font-medium items-center">
+          <li>
             <a
               href="fashion.html"
-              class="text-deep-black border-b-2 border-pop-pink py-2 font-medium"
+              class="hover:text-[#ff69b4]"
+              data-i18n="nav.fashion"
               >Fashion</a
             >
+          </li>
+          <li>
             <a
               href="glow.html"
-              class="text-deep-black hover:text-pop-pink py-2 font-medium"
+              class="hover:text-[#ff69b4]"
+              data-i18n="nav.glow"
               >Glow</a
             >
+          </li>
+          <li>
             <a
               href="shop.html"
-              class="text-deep-black hover:text-pop-pink py-2 font-medium"
+              class="hover:text-[#ff69b4]"
+              data-i18n="nav.shop"
               >Shop</a
             >
+          </li>
+          <li>
             <a
               href="courses.html"
-              class="text-deep-black hover:text-pop-pink py-2 font-medium"
+              class="hover:text-[#ff69b4]"
+              data-i18n="nav.courses"
               >Courses</a
             >
-            <a
-              href="contact.html"
-              class="text-deep-black hover:text-pop-pink py-2 font-medium"
-              >Contact</a
-            >
+          </li>
+          <li>
             <a
               href="ai-tools.html"
-              class="bg-pop-pink text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors font-medium w-fit"
+              class="hover:text-[#ff69b4]"
+              data-i18n="nav.aitools"
               >AI Tools</a
             >
-          </div>
-        </div>
-      </div>
-    </nav>
-
+          </li>
+          <li>
+            <a
+              href="quiz.html"
+              class="hover:text-[#ff69b4]"
+              data-i18n="nav.quiz"
+              >Quiz</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="hover:text-[#ff69b4]"
+              data-i18n="nav.about"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="hover:text-[#ff69b4]"
+              data-i18n="nav.contact"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <form
+          action="search-results.html"
+          method="get"
+          class="hidden md:block ml-6"
+        >
+          <input
+            type="text"
+            name="q"
+            placeholder="Search..."
+            class="rounded-full px-3 py-1 border border-[#fdf6f0] focus:outline-none focus:ring-2 focus:ring-[#ff69b4]"
+          />
+          <button type="submit" class="ml-2 text-[#ff69b4]">🔍</button>
+        </form>
+      </nav>
+    </header>
     <!-- Hero Section -->
     <section
-      class="bg-gradient-to-r from-pop-pink/10 to-soft-beige py-16 text-center relative overflow-hidden"
+      class="relative min-h-[320px] flex items-center justify-center overflow-hidden px-4 bg-gradient-to-br from-pop-pink to-glossy-brown"
+      style="background: linear-gradient(120deg, #ff69b4 0%, #b47b5b 100%)"
     >
-      <!-- Hero Image -->
-      <img
-        src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80"
-        alt="Fashion Hero"
-        class="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none select-none"
-        style="z-index: 0"
-      />
-      <div class="relative z-10 max-w-2xl mx-auto">
+      <div
+        class="container z-10 text-center text-white py-16"
+        data-aos="fade-up"
+      >
         <h1
-          class="text-4xl md:text-6xl font-bold text-deep-black mb-4 drop-shadow-lg"
+          class="text-5xl md:text-6xl font-extrabold mb-4 animate-fade-in drop-shadow-lg"
         >
-          Fashion & Trends
+          Fashion & Style Hub
         </h1>
         <p
-          class="text-lg md:text-2xl text-gray-700 max-w-2xl mx-auto drop-shadow"
+          class="text-xl md:text-2xl mb-6 opacity-90 animate-fade-in"
+          style="animation-delay: 0.2s"
         >
-          Explore the latest in beauty, style, and glam
+          Trends, tips, and inspiration for your unique style journey.
         </p>
       </div>
     </section>
-
-    <!-- Blog Grid -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Blog Card 1 -->
+    <!-- Main Content -->
+    <main class="container mx-auto flex flex-col lg:flex-row gap-10 py-12 px-4">
+      <!-- Blog Content -->
+      <section class="flex-1 min-w-0">
+        <!-- Featured Article -->
         <article
-          class="bg-white rounded-2xl shadow-lg hover:shadow-xl hover-grow transition-all duration-300 overflow-hidden flex flex-col"
+          class="mb-12 rounded-2xl overflow-hidden shadow-lg bg-white hover-glow transition"
+          data-aos="fade-up"
         >
           <img
-            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80"
-            alt="Street Style"
-            class="h-56 w-full object-cover"
+            src="assets/images/featured-fashion.jpg"
+            alt="Featured Fashion Story"
+            class="w-full h-72 object-cover"
+            loading="lazy"
           />
-          <div class="p-6 flex flex-col flex-1">
-            <h2 class="text-xl font-bold text-deep-black mb-2">
-              Street Style: Summer 2025
+          <div class="p-8">
+            <span class="category-tag mb-2 inline-block">Trends</span>
+            <h2 class="text-3xl font-bold mb-3 text-glossy-brown">
+              Summer 2025: The Hottest Looks You Need Now
             </h2>
-            <p class="text-gray-600 mb-4 flex-1">
-              Discover the hottest street style looks and how to recreate them
-              for your everyday wardrobe.
+            <p class="text-lg text-gray-700 mb-5">
+              From bold colors to breezy fabrics, discover the must-have styles
+              and how to wear them. Our editors break down the top trends and
+              how to make them your own.
             </p>
             <a
               href="#"
-              class="inline-block bg-pop-pink text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition-colors self-start"
+              class="btn bg-pop-pink text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-glossy-brown transition hover-underline"
               >Read More</a
             >
           </div>
         </article>
-        <!-- Blog Card 2 -->
-        <article
-          class="bg-white rounded-2xl shadow-lg hover:shadow-xl hover-grow transition-all duration-300 overflow-hidden flex flex-col"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1469398715555-76331a6c7b29?auto=format&fit=crop&w=600&q=80"
-            alt="Sustainable Fashion"
-            class="h-56 w-full object-cover"
-          />
-          <div class="p-6 flex flex-col flex-1">
-            <h2 class="text-xl font-bold text-deep-black mb-2">
-              Sustainable Fashion: Eco Chic
-            </h2>
-            <p class="text-gray-600 mb-4 flex-1">
-              Go green with these eco-friendly brands and tips for a more
-              sustainable wardrobe.
-            </p>
-            <a
-              href="#"
-              class="inline-block bg-pop-pink text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition-colors self-start"
-              >Read More</a
-            >
-          </div>
-        </article>
-        <!-- Blog Card 3 -->
-        <article
-          class="bg-white rounded-2xl shadow-lg hover:shadow-xl hover-grow transition-all duration-300 overflow-hidden flex flex-col"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80"
-            alt="Runway Trends"
-            class="h-56 w-full object-cover"
-          />
-          <div class="p-6 flex flex-col flex-1">
-            <h2 class="text-xl font-bold text-deep-black mb-2">
-              Runway to Real Life
-            </h2>
-            <p class="text-gray-600 mb-4 flex-1">
-              How to translate high-fashion runway trends into wearable,
-              everyday outfits.
-            </p>
-            <a
-              href="#"
-              class="inline-block bg-pop-pink text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition-colors self-start"
-              >Read More</a
-            >
-          </div>
-        </article>
-        <!-- Blog Card 4 -->
-        <article
-          class="bg-white rounded-2xl shadow-lg hover:shadow-xl hover-grow transition-all duration-300 overflow-hidden flex flex-col"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80"
-            alt="Accessories"
-            class="h-56 w-full object-cover"
-          />
-          <div class="p-6 flex flex-col flex-1">
-            <h2 class="text-xl font-bold text-deep-black mb-2">
-              Accessorize Like a Pro
-            </h2>
-            <p class="text-gray-600 mb-4 flex-1">
-              Statement earrings, bold bags, and more: elevate your look with
-              the season’s must-have accessories.
-            </p>
-            <a
-              href="#"
-              class="inline-block bg-pop-pink text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition-colors self-start"
-              >Read More</a
-            >
-          </div>
-        </article>
-        <!-- Blog Card 5 -->
-        <article
-          class="bg-white rounded-2xl shadow-lg hover:shadow-xl hover-grow transition-all duration-300 overflow-hidden flex flex-col"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80"
-            alt="Color Trends"
-            class="h-56 w-full object-cover"
-          />
-          <div class="p-6 flex flex-col flex-1">
-            <h2 class="text-xl font-bold text-deep-black mb-2">
-              Color Trends: What’s Hot
-            </h2>
-            <p class="text-gray-600 mb-4 flex-1">
-              From pastel pinks to bold neons, see which colors are dominating
-              the fashion scene this year.
-            </p>
-            <a
-              href="#"
-              class="inline-block bg-pop-pink text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition-colors self-start"
-              >Read More</a
-            >
-          </div>
-        </article>
-        <!-- Blog Card 6 -->
-        <article
-          class="bg-white rounded-2xl shadow-lg hover:shadow-xl hover-grow transition-all duration-300 overflow-hidden flex flex-col"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
-            alt="Beauty & Makeup"
-            class="h-56 w-full object-cover"
-          />
-          <div class="p-6 flex flex-col flex-1">
-            <h2 class="text-xl font-bold text-deep-black mb-2">
-              Beauty & Makeup Must-Haves
-            </h2>
-            <p class="text-gray-600 mb-4 flex-1">
-              Our editors’ picks for the best beauty and makeup products to keep
-              you glowing all season.
-            </p>
-            <a
-              href="#"
-              class="inline-block bg-pop-pink text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition-colors self-start"
-              >Read More</a
-            >
-          </div>
-        </article>
-      </div>
-    </main>
-
-    <!-- Footer (copied from index.html, fully responsive and styled) -->
-    <footer class="bg-deep-black text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid md:grid-cols-4 gap-8">
-          <!-- Brand Section -->
-          <div class="md:col-span-1">
-            <h3 class="text-2xl font-bold animated-gradient-text mb-4">
-              ✨ LetMeGlowUp
-            </h3>
-            <p class="text-gray-400 text-sm mb-6">
-              Your ultimate destination for beauty and fashion inspiration.
-              Discover your glow, elevate your style, and embrace your
-              confidence.
-            </p>
-            <!-- Social Media Links -->
-            <div class="flex space-x-4">
-              <a
-                href="#"
-                class="bg-gray-800 p-2 rounded-full hover:bg-pop-pink transition-colors"
+        <!-- Blog Posts Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Blog Post Card Example -->
+          <article
+            class="rounded-xl overflow-hidden shadow bg-white hover-glow transition flex flex-col"
+            data-aos="fade-up"
+          >
+            <img
+              src="assets/images/fashion1.jpg"
+              alt="Street Style"
+              class="w-full h-48 object-cover"
+              loading="lazy"
+            />
+            <div class="p-6 flex flex-col flex-1">
+              <span class="category-tag mb-2">Street Style</span>
+              <h3 class="font-semibold text-xl mb-1 text-deep-black">
+                <a href="#" class="hover:text-pop-pink transition"
+                  >How to Nail Effortless Street Style</a
+                >
+              </h3>
+              <p class="text-gray-600 mb-3 flex-1">
+                Master the art of looking chic and casual with these easy outfit
+                formulas and pro tips.
+              </p>
+              <div
+                class="flex items-center gap-3 text-xs text-gray-500 mt-auto"
               >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="bg-gray-800 p-2 rounded-full hover:bg-pop-pink transition-colors"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="bg-gray-800 p-2 rounded-full hover:bg-pop-pink transition-colors"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.739.0978.118.112.222.083.343-.09.375-.293 1.199-.334 1.363-.053.225-.174.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="bg-gray-800 p-2 rounded-full hover:bg-pop-pink transition-colors"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <!-- Quick Links -->
-          <div>
-            <h4 class="text-lg font-semibold mb-4 text-pop-pink">
-              Quick Links
-            </h4>
-            <ul class="space-y-2 text-sm">
-              <li>
-                <a
-                  href="index.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="fashion.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Fashion</a
-                >
-              </li>
-              <li>
-                <a
-                  href="glow.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Glow</a
-                >
-              </li>
-              <li>
-                <a
-                  href="shop.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Shop</a
-                >
-              </li>
-              <li>
-                <a
-                  href="courses.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Courses</a
-                >
-              </li>
-              <li>
-                <a
-                  href="ai-tools.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >AI Tools</a
-                >
-              </li>
-              <li>
-                <a
-                  href="quiz.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Take the Quiz</a
-                >
-              </li>
-            </ul>
-          </div>
-          <!-- Support -->
-          <div>
-            <h4 class="text-lg font-semibold mb-4 text-pop-pink">Support</h4>
-            <ul class="space-y-2 text-sm">
-              <li>
-                <a
-                  href="contact.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Contact Us</a
-                >
-              </li>
-              <li>
-                <a
-                  href="about.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a
-                  href="feedback.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Feedback</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Help Center</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Size Guide</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Shipping Info</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Returns</a
-                >
-              </li>
-            </ul>
-          </div>
-          <!-- Legal -->
-          <div>
-            <h4 class="text-lg font-semibold mb-4 text-pop-pink">Legal</h4>
-            <ul class="space-y-2 text-sm">
-              <li>
-                <a
-                  href="privacy.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Privacy Policy</a
-                >
-              </li>
-              <li>
-                <a
-                  href="terms.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Terms of Service</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Cookie Policy</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Affiliate Disclosure</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >GDPR</a
-                >
-              </li>
-            </ul>
-            <!-- Newsletter Signup (Footer) -->
-            <div class="mt-6">
-              <h5 class="text-sm font-semibold mb-2 text-white">
-                Stay Updated
-              </h5>
-              <div class="flex">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  class="flex-1 px-3 py-2 bg-gray-800 text-white text-sm rounded-l-lg border-0 focus:outline-none focus:ring-2 focus:ring-pop-pink"
+                <img
+                  src="assets/images/author1.jpg"
+                  alt="By Mia"
+                  class="w-7 h-7 rounded-full object-cover border-2 border-pop-pink"
                 />
-                <button
-                  class="bg-pop-pink px-4 py-2 text-sm rounded-r-lg hover:bg-pink-600 transition-colors"
-                >
-                  Subscribe
-                </button>
+                <span>By Mia</span> <span>•</span> <span>Jul 28, 2025</span>
+                <span>•</span> <span>4 min read</span>
               </div>
             </div>
+          </article>
+          <article
+            class="rounded-xl overflow-hidden shadow bg-white hover-glow transition flex flex-col"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="assets/images/fashion2.jpg"
+              alt="Sustainable Fashion"
+              class="w-full h-48 object-cover"
+              loading="lazy"
+            />
+            <div class="p-6 flex flex-col flex-1">
+              <span class="category-tag mb-2">Sustainability</span>
+              <h3 class="font-semibold text-xl mb-1 text-deep-black">
+                <a href="#" class="hover:text-pop-pink transition"
+                  >Sustainable Fashion: Eco-Friendly Brands to Watch</a
+                >
+              </h3>
+              <p class="text-gray-600 mb-3 flex-1">
+                Go green with your wardrobe! Meet the brands making a difference
+                and how you can shop more consciously.
+              </p>
+              <div
+                class="flex items-center gap-3 text-xs text-gray-500 mt-auto"
+              >
+                <img
+                  src="assets/images/author2.jpg"
+                  alt="By Alex"
+                  class="w-7 h-7 rounded-full object-cover border-2 border-glossy-brown"
+                />
+                <span>By Alex</span> <span>•</span> <span>Jul 25, 2025</span>
+                <span>•</span> <span>5 min read</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="rounded-xl overflow-hidden shadow bg-white hover-glow transition flex flex-col"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="assets/images/fashion3.jpg"
+              alt="Accessories"
+              class="w-full h-48 object-cover"
+              loading="lazy"
+            />
+            <div class="p-6 flex flex-col flex-1">
+              <span class="category-tag mb-2">Accessories</span>
+              <h3 class="font-semibold text-xl mb-1 text-deep-black">
+                <a href="#" class="hover:text-pop-pink transition"
+                  >Accessorize Like a Pro: Statement Pieces for 2025</a
+                >
+              </h3>
+              <p class="text-gray-600 mb-3 flex-1">
+                Level up your look with the season's boldest bags, jewelry, and
+                more. Our picks for every budget.
+              </p>
+              <div
+                class="flex items-center gap-3 text-xs text-gray-500 mt-auto"
+              >
+                <img
+                  src="assets/images/author3.jpg"
+                  alt="By Priya"
+                  class="w-7 h-7 rounded-full object-cover border-2 border-pop-pink"
+                />
+                <span>By Priya</span> <span>•</span> <span>Jul 20, 2025</span>
+                <span>•</span> <span>3 min read</span>
+              </div>
+            </div>
+          </article>
+          <!-- Add more blog post cards as needed -->
+        </div>
+        <!-- Related Content Suggestions -->
+        <div class="mt-12">
+          <h4 class="text-lg font-bold mb-4 text-glossy-brown">
+            You Might Also Like
+          </h4>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="glow.html"
+              class="px-4 py-2 bg-soft-beige rounded-full text-pop-pink font-semibold hover:bg-pop-pink hover:text-white transition"
+              >Glow Up Tips</a
+            >
+            <a
+              href="shop.html"
+              class="px-4 py-2 bg-soft-beige rounded-full text-pop-pink font-semibold hover:bg-pop-pink hover:text-white transition"
+              >Shop Beauty</a
+            >
+            <a
+              href="courses.html"
+              class="px-4 py-2 bg-soft-beige rounded-full text-pop-pink font-semibold hover:bg-pop-pink hover:text-white transition"
+              >Fashion Courses</a
+            >
+            <a
+              href="quiz.html"
+              class="px-4 py-2 bg-soft-beige rounded-full text-pop-pink font-semibold hover:bg-pop-pink hover:text-white transition"
+              >Style Quiz</a
+            >
           </div>
         </div>
-        <!-- Bottom Bar -->
-        <div class="border-t border-gray-800 mt-12 pt-8">
-          <div class="flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 LetMeGlowUp. All rights reserved. Made with 💖 for beauty
-              lovers worldwide.
-            </p>
-            <div class="flex items-center space-x-4 text-sm text-gray-400">
-              <span>🌍 Available in 7 languages</span>
-              <span>•</span>
-              <span>🚀 Powered by AI</span>
-            </div>
+      </section>
+      <!-- Sidebar -->
+      <aside class="w-full lg:w-80 flex-shrink-0 flex flex-col gap-8">
+        <!-- Search Box -->
+        <div class="sidebar-section p-6">
+          <form action="search-results.html" method="get" class="flex">
+            <input
+              type="text"
+              name="q"
+              placeholder="Search fashion..."
+              class="flex-1 rounded-l-full px-4 py-2 border border-[#fdf6f0] focus:outline-none focus:ring-2 focus:ring-[#ff69b4]"
+            />
+            <button
+              type="submit"
+              class="bg-pop-pink text-white px-4 py-2 rounded-r-full font-bold hover:bg-glossy-brown transition"
+            >
+              🔍
+            </button>
+          </form>
+        </div>
+        <!-- Popular Posts -->
+        <div class="sidebar-section p-6">
+          <h5 class="font-bold text-glossy-brown mb-4">Popular Posts</h5>
+          <ul class="space-y-3">
+            <li>
+              <a href="#" class="hover:text-pop-pink transition"
+                >10 Capsule Wardrobe Essentials</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-pop-pink transition"
+                >How to Style Neutrals</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-pop-pink transition"
+                >Best Shoes for Summer 2025</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-pop-pink transition"
+                >Mixing Prints Like a Pro</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Categories -->
+        <div class="sidebar-section p-6">
+          <h5 class="font-bold text-glossy-brown mb-4">Categories</h5>
+          <div class="flex flex-wrap gap-2">
+            <a
+              href="#"
+              class="category-tag hover:bg-pop-pink hover:text-white transition"
+              >Trends</a
+            >
+            <a
+              href="#"
+              class="category-tag hover:bg-pop-pink hover:text-white transition"
+              >Street Style</a
+            >
+            <a
+              href="#"
+              class="category-tag hover:bg-pop-pink hover:text-white transition"
+              >Sustainability</a
+            >
+            <a
+              href="#"
+              class="category-tag hover:bg-pop-pink hover:text-white transition"
+              >Accessories</a
+            >
+            <a
+              href="#"
+              class="category-tag hover:bg-pop-pink hover:text-white transition"
+              >How-To</a
+            >
           </div>
+        </div>
+        <!-- Instagram Feed Preview -->
+        <div class="sidebar-section p-6">
+          <h5 class="font-bold text-glossy-brown mb-4">Instagram</h5>
+          <div class="grid grid-cols-3 gap-2">
+            <img
+              src="assets/images/insta1.jpg"
+              alt="Insta 1"
+              class="rounded-lg object-cover w-full h-20"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/insta2.jpg"
+              alt="Insta 2"
+              class="rounded-lg object-cover w-full h-20"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/insta3.jpg"
+              alt="Insta 3"
+              class="rounded-lg object-cover w-full h-20"
+              loading="lazy"
+            />
+          </div>
+          <a
+            href="#"
+            class="block mt-3 text-pop-pink font-semibold hover-underline transition"
+            >@letmeglowup</a
+          >
+        </div>
+        <!-- Newsletter Signup -->
+        <div class="sidebar-section p-6">
+          <h5 class="font-bold text-glossy-brown mb-4">Newsletter</h5>
+          <form id="newsletter-form-sidebar" class="flex flex-col gap-3">
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Your email"
+              class="rounded-full px-4 py-2 border border-soft-beige focus:ring-2 focus:ring-pop-pink focus:outline-none text-deep-black"
+              autocomplete="email"
+            />
+            <button
+              type="submit"
+              class="btn bg-pop-pink text-white rounded-full font-semibold transition hover:bg-glossy-brown"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </aside>
+    </main>
+    <!-- Footer (copied from index.html, links updated) -->
+    <footer class="bg-cream-white border-t border-soft-beige py-8 mt-12">
+      <div
+        class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6 px-4"
+      >
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
+          <a href="index.html" class="font-bold text-pop-pink text-xl"
+            >Let Me Glow Up</a
+          >
+          <nav class="flex gap-4 text-sm">
+            <a href="fashion.html" class="hover:text-pop-pink transition"
+              >Fashion</a
+            >
+            <a href="glow.html" class="hover:text-pop-pink transition">Glow</a>
+            <a href="shop.html" class="hover:text-pop-pink transition">Shop</a>
+            <a href="courses.html" class="hover:text-pop-pink transition"
+              >Courses</a
+            >
+            <a href="ai-tools.html" class="hover:text-pop-pink transition"
+              >AI Tools</a
+            >
+            <a href="quiz.html" class="hover:text-pop-pink transition">Quiz</a>
+            <a href="about.html" class="hover:text-pop-pink transition"
+              >About</a
+            >
+            <a href="contact.html" class="hover:text-pop-pink transition"
+              >Contact</a
+            >
+          </nav>
+        </div>
+        <div class="text-xs text-gray-500">
+          &copy; 2025 LetMeGlowUp. All rights reserved.
         </div>
       </div>
     </footer>
-
-    <!-- Floating Feedback Widget -->
-    <div class="fixed bottom-6 right-6 z-50">
-      <button
-        id="feedback-btn"
-        class="bg-pop-pink text-white p-3 rounded-full shadow-lg hover:bg-pink-600 transition-all duration-300 hover:scale-110"
-      >
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M7 8h10m0 0V6a2 2 0 00-2-2H9a2 2 0 00-2 2v2m10 0v10a2 2 0 01-2 2H9a2 2 0 01-2-2V8m0 0V6a2 2 0 012-2h6a2 2 0 012 2v2"
-          />
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile menu JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-      document
-        .getElementById("mobile-menu-btn")
-        .addEventListener("click", function () {
-          document.getElementById("mobile-menu").classList.toggle("hidden");
-        });
+      AOS.init({ once: true });
+    </script>
+    <script>
+      // Responsive nav toggle (mobile)
+      document.getElementById("nav-toggle").onclick = function () {
+        const nav = document.querySelector("header nav ul");
+        nav.classList.toggle("hidden");
+      };
+      // Newsletter sidebar form (demo only)
+      document.getElementById("newsletter-form-sidebar").onsubmit = function (
+        e
+      ) {
+        e.preventDefault();
+        this.reset();
+        alert("Thank you for subscribing!");
+      };
     </script>
   </body>
 </html>
