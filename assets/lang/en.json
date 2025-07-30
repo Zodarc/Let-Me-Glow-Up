@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "fashion": "Fashion",
+    "glow": "Glow",
+    "shop": "Shop",
+    "courses": "Courses",
+    "aitools": "AI Tools",
+    "quiz": "Quiz",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "headings": {
+    "hero": "Transform Your Beauty Journey",
+    "aiTools": "AI Tools to Glow Up Your Beauty Routine",
+    "trending": "Trending Beauty & Fashion Products",
+    "newsletter": "Get Exclusive Beauty Tips & Offers",
+    "quiz": "AI Skincare Routine Recommender",
+    "premium": "Unlock Premium AI Beauty Tools"
+  },
+  "descriptions": {
+    "hero": "AI-powered beauty recommendations personalized for you",
+    "aiTools": "Discover the latest AI tools for skincare, style, and more.",
+    "newsletter": "Join <span class=\"font-semibold text-pop-pink\">12,500+</span> glow-getters and receive weekly beauty secrets, trends, and special deals!",
+    "quiz": "Answer a few quick questions and get your personalized skincare routine.",
+    "premium": "Get unlimited personalized routines and premium features."
+  },
+  "buttons": {
+    "startGlow": "Start Your Glow Up",
+    "learnMore": "Learn More →",
+    "wishlist": "♡ Wishlist",
+    "viewDetails": "View Details",
+    "subscribe": "Subscribe",
+    "next": "Next",
+    "seeRoutine": "See My Routine",
+    "upgrade": "Upgrade Now",
+    "unlockPremium": "Unlock Premium",
+    "currentPlan": "Current Plan",
+    "tryNow": "Try Now"
+  },
+  "forms": {
+    "emailPlaceholder": "Enter your email",
+    "privacy": "I agree to the <a href=\"privacy.html\" class=\"text-pop-pink hover-underline\">privacy policy</a>.",
+    "searchPlaceholder": "Search..."
+  },
+  "errors": {
+    "invalidEmail": "Please enter a valid email address.",
+    "privacyRequired": "You must agree to the privacy policy."
+  },
+  "categories": {
+    "all": "All",
+    "skincare": "Skincare",
+    "makeup": "Makeup",
+    "fashion": "Fashion"
+  },
+  "faq": {
+    "q1": "How does the AI skincare tool work?",
+    "a1": "Our AI analyzes your answers and recommends a routine tailored to your skin type and concerns.",
+    "q2": "Is my data safe?",
+    "a2": "Yes, we are GDPR compliant and value your privacy.",
+    "q3": "How do I upgrade to premium?",
+    "a3": "Click 'Unlock Premium' and follow the instructions."
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "feedback": "Feedback",
+    "copyright": "© 2024 Let Me Glow Up. All rights reserved."
+  }
+}
