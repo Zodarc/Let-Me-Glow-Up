@@ -1,4 +1,4 @@
-product editing template
+#product editing template
 {
 id: "unique-id-" + Date.now(), // Auto-generate unique ID
 name: "Product Name",
