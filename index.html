@@ -123,8 +123,64 @@
     <style> @font-face { font-display: swap; } </style>
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" media="all" />
-    <!-- Tailwind CSS CDN (defer for non-blocking) -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <!-- Critical CSS for immediate rendering -->
+    <style>
+      /* Critical rendering styles - prevent loading skeleton */
+      body, html { 
+        opacity: 1 !important; 
+        visibility: visible !important; 
+        display: block !important;
+        background-color: #fffefc !important;
+        color: #1a1a1a !important;
+      }
+      main, .container, section { 
+        opacity: 1 !important; 
+        visibility: visible !important; 
+      }
+      [class*="animate-"] { 
+        opacity: 1 !important; 
+        animation-delay: 0s !important;
+      }
+      /* Basic layout styles */
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+      .bg-gradient-to-br { background: linear-gradient(to bottom right, #ff69b4, #a97a5a); }
+      .text-white { color: white; }
+      .font-bold { font-weight: bold; }
+      .text-center { text-align: center; }
+      .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+      .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    </style>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Immediate rendering script -->
+    <script>
+      // Ensure immediate rendering
+      document.addEventListener('DOMContentLoaded', function() {
+        // Force visibility of all elements
+        document.body.style.opacity = '1';
+        document.body.style.visibility = 'visible';
+        
+        // Remove any loading states
+        const loadingElements = document.querySelectorAll('[style*="opacity: 0"], [style*="visibility: hidden"]');
+        loadingElements.forEach(el => {
+          el.style.opacity = '1';
+          el.style.visibility = 'visible';
+        });
+      });
+      
+      // Also run immediately if DOM is already loaded
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          document.body.style.opacity = '1';
+          document.body.style.visibility = 'visible';
+        });
+      } else {
+        document.body.style.opacity = '1';
+        document.body.style.visibility = 'visible';
+      }
+    </script>
     <!-- Mobile-first: ensure responsive meta and CSS above -->
     <script>
     // Dynamic meta tag management
@@ -2067,8 +2123,22 @@
       .animate-sparkle { animation: sparkle 1.5s infinite; }
       @keyframes spin-slow { 100% { transform: rotate(360deg); } }
       .animate-spin-slow { animation: spin-slow 3s linear infinite; }
-      @keyframes fade-in { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:none;} }
-      .animate-fade-in { animation: fade-in 0.7s cubic-bezier(.77,0,.18,1) both; }
+      @keyframes fade-in { from { opacity:1; transform:translateY(20px);} to { opacity:1; transform:none;} }
+      .animate-fade-in { 
+        animation: fade-in 0.7s cubic-bezier(.77,0,.18,1) both; 
+        opacity: 1 !important; /* Ensure content is always visible */
+      }
+      
+      /* Prevent loading skeleton effect */
+      body, main, .container {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      
+      /* Ensure all animated elements start visible */
+      [class*="animate-"] {
+        opacity: 1 !important;
+      }
       .btn.bg-pop-pink { transition: box-shadow 0.2s, transform 0.2s; box-shadow:0 2px 8px #ffb6e633; }
       .btn.bg-pop-pink:active { transform: scale(0.97) rotate(-1deg); box-shadow:0 1px 4px #ffb6e633; }
       #newsletter-confetti { pointer-events:none; position:absolute; left:0; top:0; width:100%; height:100%; z-index:50; }
