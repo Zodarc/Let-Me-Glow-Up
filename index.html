@@ -553,25 +553,148 @@
           aria-hidden="true"
         ></span>
         <div class="container z-10">
-          <div class="text-center text-white" data-aos="fade-up">
-            <h1
-              class="text-5xl md:text-6xl font-extrabold mb-6 animate-fade-in drop-shadow-lg"
-            >
-              Transform Your Beauty Journey
-            </h1>
-            <p
-              class="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in"
-              style="animation-delay: 0.2s"
-            >
-              AI-powered beauty recommendations personalized for you
-            </p>
-            <a
-              href="shop.html"
-              class="btn bg-cream-white text-deep-black shadow-lg hover:bg-pop-pink hover:text-white transition animate-fade-in"
-              style="animation-delay: 0.4s"
-            >
-              Start Your Glow Up
-            </a>
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Content -->
+            <div class="text-white z-10" data-aos="fade-up">
+              <h1
+                class="text-4xl lg:text-6xl font-extrabold mb-6 animate-fade-in drop-shadow-lg leading-tight"
+              >
+                Transform Your
+                <span class="block text-[#fffefc]">Beauty Journey</span>
+              </h1>
+              <p
+                class="text-xl mb-8 opacity-90 animate-fade-in leading-relaxed"
+                style="animation-delay: 0.2s"
+              >
+                AI-powered beauty recommendations personalized for you. Discover your perfect products and routines.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 animate-fade-in" style="animation-delay: 0.4s">
+                <a
+                  href="shop.html"
+                  class="btn bg-cream-white text-deep-black shadow-lg hover:bg-pop-pink hover:text-white transition duration-300 transform hover:scale-105"
+                >
+                  Start Your Glow Up
+                </a>
+                <a
+                  href="quiz.html"
+                  class="btn border-2 border-white text-white hover:bg-white hover:text-[#ff69b4] transition duration-300"
+                >
+                  Take Beauty Quiz
+                </a>
+              </div>
+              
+              <!-- Stats -->
+              <div class="flex gap-8 mt-12 animate-fade-in" style="animation-delay: 0.6s">
+                <div class="text-center">
+                  <div class="text-3xl font-bold">10k+</div>
+                  <div class="text-sm opacity-80">Happy Users</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold">500+</div>
+                  <div class="text-sm opacity-80">Products</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold">95%</div>
+                  <div class="text-sm opacity-80">Success Rate</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Rotating Feature Showcase -->
+            <div class="relative" data-aos="fade-up" data-aos-delay="200">
+              <div class="hero-feature-carousel relative h-96 lg:h-[500px]">
+                <!-- Feature 1: AI Skincare Analyzer -->
+                <div class="hero-feature absolute inset-0 bg-white rounded-2xl shadow-2xl p-8 transform transition-all duration-700 opacity-100 scale-100" data-index="0">
+                  <div class="relative h-full">
+                    <div class="absolute top-0 right-0 bg-[#ff69b4] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      AI Powered
+                    </div>
+                    <div class="flex flex-col h-full justify-between">
+                      <div class="text-center">
+                        <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden hero-float">
+                          <img src="assets/images/product1.jpg" alt="AI Skincare Analyzer" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x400/ff69b4/ffffff?text=AI+Analyzer'">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">AI Skincare Analyzer</h3>
+                        <p class="text-gray-600 mb-4">Get personalized skincare recommendations based on your skin type and concerns</p>
+                        <div class="flex items-center justify-center mb-4">
+                          <div class="flex text-yellow-400">
+                            <span>★★★★★</span>
+                          </div>
+                          <span class="ml-2 text-sm text-gray-600">(4.9/5)</span>
+                        </div>
+                        <div class="text-2xl font-bold text-[#ff69b4]">Free Analysis</div>
+                      </div>
+                      <button class="w-full bg-[#ff69b4] text-white py-3 rounded-full font-semibold hover:bg-[#e55a9e] transition hero-feature-btn" data-feature="ai-analyzer">
+                        Try Now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Feature 2: Style Matcher -->
+                <div class="hero-feature absolute inset-0 bg-white rounded-2xl shadow-2xl p-8 transform transition-all duration-700 opacity-0 scale-95" data-index="1">
+                  <div class="relative h-full">
+                    <div class="absolute top-0 right-0 bg-[#a97a5a] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      Style Match
+                    </div>
+                    <div class="flex flex-col h-full justify-between">
+                      <div class="text-center">
+                        <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden hero-float hero-float-delay-1">
+                          <img src="assets/images/product2.jpg" alt="Style Matcher" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x400/a97a5a/ffffff?text=Style+Match'">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Style Matcher</h3>
+                        <p class="text-gray-600 mb-4">Upload a photo and get outfit suggestions that match your unique style</p>
+                        <div class="flex items-center justify-center mb-4">
+                          <div class="flex text-yellow-400">
+                            <span>★★★★★</span>
+                          </div>
+                          <span class="ml-2 text-sm text-gray-600">(4.8/5)</span>
+                        </div>
+                        <div class="text-2xl font-bold text-[#a97a5a]">Instant Results</div>
+                      </div>
+                      <button class="w-full bg-[#a97a5a] text-white py-3 rounded-full font-semibold hover:bg-[#8b6b4a] transition hero-feature-btn" data-feature="style-matcher">
+                        Match Style
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Feature 3: Beauty Quiz -->
+                <div class="hero-feature absolute inset-0 bg-white rounded-2xl shadow-2xl p-8 transform transition-all duration-700 opacity-0 scale-95" data-index="2">
+                  <div class="relative h-full">
+                    <div class="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      Personalized
+                    </div>
+                    <div class="flex flex-col h-full justify-between">
+                      <div class="text-center">
+                        <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden hero-float hero-float-delay-2">
+                          <img src="assets/images/product3.jpg" alt="Beauty Quiz" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x400/4ade80/ffffff?text=Beauty+Quiz'">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Beauty Quiz</h3>
+                        <p class="text-gray-600 mb-4">Take our comprehensive quiz to discover your perfect beauty routine</p>
+                        <div class="flex items-center justify-center mb-4">
+                          <div class="flex text-yellow-400">
+                            <span>★★★★★</span>
+                          </div>
+                          <span class="ml-2 text-sm text-gray-600">(4.7/5)</span>
+                        </div>
+                        <div class="text-2xl font-bold text-green-500">2 Min Quiz</div>
+                      </div>
+                      <button class="w-full bg-green-500 text-white py-3 rounded-full font-semibold hover:bg-green-600 transition hero-feature-btn" data-feature="beauty-quiz">
+                        Start Quiz
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Carousel Navigation -->
+              <div class="flex justify-center mt-6 space-x-2">
+                <button class="hero-feature-dot w-3 h-3 rounded-full bg-white opacity-50 transition-all duration-300 active" data-index="0"></button>
+                <button class="hero-feature-dot w-3 h-3 rounded-full bg-white opacity-50 transition-all duration-300" data-index="1"></button>
+                <button class="hero-feature-dot w-3 h-3 rounded-full bg-white opacity-50 transition-all duration-300" data-index="2"></button>
+              </div>
+            </div>
           </div>
         </div>
         <!-- End Floating Elements -->
@@ -2139,6 +2262,73 @@
       [class*="animate-"] {
         opacity: 1 !important;
       }
+      
+      /* Hero Feature Carousel Animations */
+      .hero-feature {
+        transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .hero-feature.active {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+      
+      .hero-feature:not(.active) {
+        transform: scale(0.95) translateY(10px);
+        opacity: 0;
+      }
+      
+      .hero-feature-dot {
+        transition: all 0.3s ease;
+      }
+      
+      .hero-feature-dot.active {
+        transform: scale(1.2);
+        background-color: white;
+        opacity: 1;
+      }
+      
+      /* Hero feature card hover effects */
+      .hero-feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+      
+      .hero-feature-btn {
+        transition: all 0.3s ease;
+      }
+      
+      .hero-feature-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(255, 105, 180, 0.3);
+      }
+      
+      /* Mobile responsiveness for hero carousel */
+      @media (max-width: 1024px) {
+        .hero-feature-carousel {
+          height: 400px !important;
+        }
+        .hero-feature .w-48 {
+          width: 8rem;
+          height: 8rem;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .hero-feature-carousel {
+          height: 350px !important;
+        }
+        .hero-feature .w-48 {
+          width: 6rem;
+          height: 6rem;
+        }
+        .hero-feature h3 {
+          font-size: 1.125rem;
+        }
+        .hero-feature p {
+          font-size: 0.875rem;
+        }
+      }
       .btn.bg-pop-pink { transition: box-shadow 0.2s, transform 0.2s; box-shadow:0 2px 8px #ffb6e633; }
       .btn.bg-pop-pink:active { transform: scale(0.97) rotate(-1deg); box-shadow:0 1px 4px #ffb6e633; }
       #newsletter-confetti { pointer-events:none; position:absolute; left:0; top:0; width:100%; height:100%; z-index:50; }
@@ -2817,6 +3007,97 @@
       };
       // Init all carousels on DOMContentLoaded
       document.addEventListener('DOMContentLoaded', function(){
+        // Hero Feature Carousel
+        function initializeHeroFeatureCarousel() {
+          const features = document.querySelectorAll('.hero-feature');
+          const dots = document.querySelectorAll('.hero-feature-dot');
+          let currentIndex = 0;
+          let interval;
+
+          function showFeature(index) {
+            features.forEach((feature, i) => {
+              if (i === index) {
+                feature.classList.remove('opacity-0', 'scale-95');
+                feature.classList.add('opacity-100', 'scale-100');
+              } else {
+                feature.classList.remove('opacity-100', 'scale-100');
+                feature.classList.add('opacity-0', 'scale-95');
+              }
+            });
+
+            dots.forEach((dot, i) => {
+              if (i === index) {
+                dot.classList.add('active', 'opacity-100');
+                dot.classList.remove('opacity-50');
+              } else {
+                dot.classList.remove('active', 'opacity-100');
+                dot.classList.add('opacity-50');
+              }
+            });
+          }
+
+          function nextFeature() {
+            currentIndex = (currentIndex + 1) % features.length;
+            showFeature(currentIndex);
+          }
+
+          function startAutoPlay() {
+            interval = setInterval(nextFeature, 4000); // Change every 4 seconds
+          }
+
+          function stopAutoPlay() {
+            if (interval) {
+              clearInterval(interval);
+            }
+          }
+
+          // Dot navigation
+          dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+              currentIndex = index;
+              showFeature(currentIndex);
+              stopAutoPlay();
+              startAutoPlay(); // Restart autoplay
+            });
+          });
+
+          // Pause on hover
+          const carousel = document.querySelector('.hero-feature-carousel');
+          if (carousel) {
+            carousel.addEventListener('mouseenter', stopAutoPlay);
+            carousel.addEventListener('mouseleave', startAutoPlay);
+          }
+
+          // Feature button handlers
+          const featureButtons = document.querySelectorAll('.hero-feature-btn');
+          featureButtons.forEach(button => {
+            button.addEventListener('click', function() {
+              const feature = this.getAttribute('data-feature');
+              // Track the click for analytics
+              if (typeof gtag !== 'undefined') {
+                gtag('event', 'hero_feature_click', {
+                  event_category: 'Features',
+                  event_label: feature
+                });
+              }
+              // Navigate to appropriate page
+              if (feature === 'ai-analyzer') {
+                window.location.href = 'ai-tools.html#skincare';
+              } else if (feature === 'style-matcher') {
+                window.location.href = 'ai-tools.html#style';
+              } else if (feature === 'beauty-quiz') {
+                window.location.href = 'quiz.html';
+              }
+            });
+          });
+
+          // Start autoplay
+          startAutoPlay();
+        }
+
+        // Initialize hero feature carousel
+        initializeHeroFeatureCarousel();
+
         // Testimonials
         const t = document.getElementById('testimonials-carousel');
         if (t) new Carousel(t, {
