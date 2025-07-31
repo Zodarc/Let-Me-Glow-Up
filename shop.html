@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- SEO & Performance Enhanced Head -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=yes">
+    <title>Shop Beauty Products - LetMeGlowUp | Premium Skincare, Makeup & Fashion</title>
+    <meta name="description" content="Discover premium beauty products, skincare essentials, and fashion items. Shop curated affiliate products with expert recommendations and exclusive deals.">
+    <meta name="keywords" content="beauty products, skincare, makeup, fashion, affiliate products, beauty deals, premium cosmetics, beauty recommendations">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ff69b4">
+    <link rel="canonical" href="https://letmeglowup.com/shop.html">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://letmeglowup.com/shop.html">
+    <meta property="og:title" content="Shop Beauty Products - LetMeGlowUp">
+    <meta property="og:description" content="Discover premium beauty products, skincare essentials, and fashion items. Shop curated affiliate products with expert recommendations.">
+    <meta property="og:image" content="https://letmeglowup.com/assets/images/shop-og.jpg">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shop Beauty Products - LetMeGlowUp">
+    <meta name="twitter:description" content="Discover premium beauty products, skincare essentials, and fashion items. Shop curated affiliate products with expert recommendations.">
+    <meta name="twitter:image" content="https://letmeglowup.com/assets/images/shop-og.jpg">
+    <!-- Structured Data: Product Collection -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "CollectionPage",
+      "name": "Beauty Products Shop",
+      "description": "Premium beauty products, skincare, and fashion items",
+      "url": "https://letmeglowup.com/shop.html",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "Product",
+            "name": "Premium Skincare Set",
+            "description": "Complete skincare routine for all skin types",
+            "brand": "Glow Essentials",
+            "category": "Skincare"
+          }
+        ]
+      }
+    }
+    </script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+    </script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'pop-pink': '#ff69b4',
+              'glossy-brown': '#a97a5a',
+              'cream-white': '#fffefc',
+              'deep-black': '#1a1a1a',
+              'soft-beige': '#fdf6f0'
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'float-slow': 'float 8s ease-in-out infinite',
+              'float-fast': 'float 4s ease-in-out infinite',
+              'fade-in': 'fadeIn 0.8s ease-out',
+              'slide-up': 'slideUp 0.6s ease-out',
+              'pulse-slow': 'pulse 3s infinite'
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-20px)' }
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --pop-pink: #ff69b4;
+        --glossy-brown: #a97a5a;
+        --cream-white: #fffefc;
+        --deep-black: #1a1a1a;
+        --soft-beige: #fdf6f0;
+      }
+      
+      .glass-card {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      .hover-glow:hover {
+        box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
+      }
+      
+      .btn {
+        @apply inline-block px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105;
+      }
+      
+      .product-card {
+        transition: all 0.3s ease;
+      }
+      
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      
+      .product-image {
+        transition: transform 0.3s ease;
+      }
+      
+      .product-card:hover .product-image {
+        transform: scale(1.05);
+      }
+      
+      .skeleton {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+      }
+      
+      @keyframes loading {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+      
+      .filter-checkbox:checked + label {
+        background-color: var(--pop-pink);
+        color: white;
+      }
+      
+      /* Hero Carousel Animations */
+      .hero-product {
+        transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .hero-product.active {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+      
+      .hero-product:not(.active) {
+        transform: scale(0.95) translateY(10px);
+        opacity: 0;
+      }
+      
+      .hero-dot {
+        transition: all 0.3s ease;
+      }
+      
+      .hero-dot.active {
+        transform: scale(1.2);
+        background-color: white;
+        opacity: 1;
+      }
+      
+      /* Floating animation for hero elements */
+      @keyframes float-hero {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        25% { transform: translateY(-10px) rotate(1deg); }
+        50% { transform: translateY(-20px) rotate(0deg); }
+        75% { transform: translateY(-10px) rotate(-1deg); }
+      }
+      
+      .hero-float {
+        animation: float-hero 6s ease-in-out infinite;
+      }
+      
+      .hero-float-delay-1 {
+        animation-delay: 1s;
+      }
+      
+      .hero-float-delay-2 {
+        animation-delay: 2s;
+      }
+      
+      /* Hero product card hover effects */
+      .hero-product {
+        transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .hero-product:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+      
+      .hero-product-btn {
+        transition: all 0.3s ease;
+      }
+      
+      .hero-product-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(255, 105, 180, 0.3);
+      }
+      
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      .price-slider {
+        -webkit-appearance: none;
+        height: 6px;
+        border-radius: 3px;
+        background: #ddd;
+        outline: none;
+      }
+      
+      .price-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--pop-pink);
+        cursor: pointer;
+      }
+      
+      .price-slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--pop-pink);
+        cursor: pointer;
+        border: none;
+      }
+      
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .recently-viewed-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 1rem;
+      }
+      
+      @media (max-width: 768px) {
+        .recently-viewed-grid {
+          grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-[#fffefc] text-[#1a1a1a] font-sans">
+    <!-- Header -->
+    <header class="shadow-md bg-white sticky top-0 z-50">
+      <nav class="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
+        <a href="index.html" class="text-2xl font-bold text-[#ff69b4] tracking-tight logo">
+          Let Me Glow Up
+        </a>
+        <button class="md:hidden block" id="nav-toggle" aria-label="Open Menu">
+          <svg class="w-6 h-6" fill="none" stroke="#a97a5a" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <ul class="hidden md:flex space-x-6 font-medium items-center">
+          <li><a href="fashion.html" class="hover:text-[#ff69b4]">Fashion</a></li>
+          <li><a href="glow.html" class="hover:text-[#ff69b4]">Glow</a></li>
+          <li><a href="shop.html" class="text-[#ff69b4] font-semibold">Shop</a></li>
+          <li><a href="courses.html" class="hover:text-[#ff69b4]">Courses</a></li>
+          <li><a href="ai-tools.html" class="hover:text-[#ff69b4]">AI Tools</a></li>
+          <li><a href="quiz.html" class="hover:text-[#ff69b4]">Quiz</a></li>
+          <li><a href="about.html" class="hover:text-[#ff69b4]">About</a></li>
+          <li><a href="contact.html" class="hover:text-[#ff69b4]">Contact</a></li>
+        </ul>
+        <form action="search-results.html" method="get" class="hidden md:block ml-6">
+          <input type="text" name="q" placeholder="Search products..." 
+                 class="rounded-full px-3 py-1 border border-[#fdf6f0] focus:outline-none focus:ring-2 focus:ring-[#ff69b4] w-64"/>
+          <button type="submit" class="ml-2 text-[#ff69b4]">🔍</button>
+        </form>
+        <div class="flex items-center gap-4 ml-4">
+          <a href="#" class="relative group" id="wishlist-header-link" aria-label="Wishlist">
+            <svg id="wishlist-header-icon" class="w-7 h-7 text-pop-pink group-hover:text-glossy-brown transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 21s-6.5-5.2-9-8.5C-1.5 7.5 2.5 3 7 5.5c2.1 1.2 3 2.5 5 5.5 2-3 2.9-4.3 5-5.5C21.5 3 25.5 7.5 21 12.5c-2.5 3.3-9 8.5-9 8.5z"/>
+            </svg>
+            <span id="wishlist-counter" class="absolute -top-2 -right-2 bg-pop-pink text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">0</span>
+          </a>
+          <a href="#" class="relative group" id="recently-viewed-header-link" aria-label="Recently Viewed">
+            <svg class="w-7 h-7 text-glossy-brown group-hover:text-pop-pink transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white px-4 pb-4">
+        <ul class="flex flex-col space-y-2">
+          <li><a href="fashion.html" class="hover:text-[#ff69b4]">Fashion</a></li>
+          <li><a href="glow.html" class="hover:text-[#ff69b4]">Glow</a></li>
+          <li><a href="shop.html" class="text-[#ff69b4] font-semibold">Shop</a></li>
+          <li><a href="courses.html" class="hover:text-[#ff69b4]">Courses</a></li>
+          <li><a href="ai-tools.html" class="hover:text-[#ff69b4]">AI Tools</a></li>
+          <li><a href="quiz.html" class="hover:text-[#ff69b4]">Quiz</a></li>
+          <li><a href="about.html" class="hover:text-[#ff69b4]">About</a></li>
+          <li><a href="contact.html" class="hover:text-[#ff69b4]">Contact</a></li>
+        </ul>
+        <form action="search-results.html" method="get" class="mt-4">
+          <input type="text" name="q" placeholder="Search products..." 
+                 class="rounded-full px-3 py-1 border border-[#fdf6f0] w-full focus:outline-none focus:ring-2 focus:ring-[#ff69b4]"/>
+          <button type="submit" class="mt-2 w-full text-[#ff69b4]">🔍</button>
+        </form>
+      </div>
+    </header>
+
+    <main class="min-h-screen">
+      <!-- Hero Section with Rotating Product Images -->
+      <section class="relative bg-gradient-to-br from-[#ff69b4] via-[#ff8fab] to-[#a97a5a] overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+          <div class="absolute top-10 left-10 w-32 h-32 rounded-full bg-white animate-pulse"></div>
+          <div class="absolute bottom-20 right-20 w-24 h-24 rounded-full bg-white animate-pulse" style="animation-delay: 1s;"></div>
+          <div class="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-white animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 py-16 lg:py-24">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Content -->
+            <div class="text-white z-10">
+              <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                Discover Your Perfect
+                <span class="block text-[#fffefc]">Beauty Products</span>
+              </h1>
+              <p class="text-xl mb-8 opacity-90 leading-relaxed">
+                Curated selection of premium beauty and skincare products, 
+                handpicked to help you achieve your glow-up goals.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#product-grid" class="bg-white text-[#ff69b4] px-8 py-4 rounded-full font-semibold hover:bg-[#fffefc] transition duration-300 transform hover:scale-105 shadow-lg">
+                  Shop Now
+                </a>
+                <a href="quiz.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#ff69b4] transition duration-300">
+                  Take Beauty Quiz
+                </a>
+              </div>
+              
+              <!-- Stats -->
+              <div class="flex gap-8 mt-12">
+                <div class="text-center">
+                  <div class="text-3xl font-bold">500+</div>
+                  <div class="text-sm opacity-80">Products</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold">50+</div>
+                  <div class="text-sm opacity-80">Brands</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold">10k+</div>
+                  <div class="text-sm opacity-80">Happy Customers</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Rotating Product Showcase -->
+            <div class="relative">
+              <div class="hero-product-carousel relative h-96 lg:h-[500px]">
+                <!-- Featured Product 1 -->
+                <div class="hero-product absolute inset-0 bg-white rounded-2xl shadow-2xl p-8 transform transition-all duration-700 opacity-100 scale-100" data-index="0">
+                  <div class="relative h-full">
+                    <div class="absolute top-0 right-0 bg-[#ff69b4] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      Featured
+                    </div>
+                    <div class="flex flex-col h-full justify-between">
+                      <div class="text-center">
+                        <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden hero-float">
+                          <img src="assets/images/product1.jpg" alt="Glow Essentials Serum" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x400/ff69b4/ffffff?text=Product+1'">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Glow Essentials Serum</h3>
+                        <p class="text-gray-600 mb-4">Revolutionary formula for radiant skin</p>
+                        <div class="flex items-center justify-center mb-4">
+                          <div class="flex text-yellow-400">
+                            <span>★★★★★</span>
+                          </div>
+                          <span class="ml-2 text-sm text-gray-600">(4.9/5)</span>
+                        </div>
+                        <div class="text-2xl font-bold text-[#ff69b4]">$49.99</div>
+                      </div>
+                      <button class="w-full bg-[#ff69b4] text-white py-3 rounded-full font-semibold hover:bg-[#e55a9e] transition hero-product-btn" data-product="glow-essentials-serum">
+                        View Deal
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Featured Product 2 -->
+                <div class="hero-product absolute inset-0 bg-white rounded-2xl shadow-2xl p-8 transform transition-all duration-700 opacity-0 scale-95" data-index="1">
+                  <div class="relative h-full">
+                    <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      Sale -20%
+                    </div>
+                    <div class="flex flex-col h-full justify-between">
+                      <div class="text-center">
+                        <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden hero-float hero-float-delay-1">
+                          <img src="assets/images/product2.jpg" alt="Luxe Beauty Foundation" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x400/a97a5a/ffffff?text=Product+2'">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Luxe Beauty Foundation</h3>
+                        <p class="text-gray-600 mb-4">24-hour flawless coverage</p>
+                        <div class="flex items-center justify-center mb-4">
+                          <div class="flex text-yellow-400">
+                            <span>★★★★★</span>
+                          </div>
+                          <span class="ml-2 text-sm text-gray-600">(4.8/5)</span>
+                        </div>
+                        <div class="flex items-center justify-center gap-2">
+                          <span class="text-lg text-gray-400 line-through">$65.00</span>
+                          <span class="text-2xl font-bold text-[#ff69b4]">$52.00</span>
+                        </div>
+                      </div>
+                      <button class="w-full bg-[#ff69b4] text-white py-3 rounded-full font-semibold hover:bg-[#e55a9e] transition hero-product-btn" data-product="luxe-beauty-foundation">
+                        View Deal
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Featured Product 3 -->
+                <div class="hero-product absolute inset-0 bg-white rounded-2xl shadow-2xl p-8 transform transition-all duration-700 opacity-0 scale-95" data-index="2">
+                  <div class="relative h-full">
+                    <div class="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      New
+                    </div>
+                    <div class="flex flex-col h-full justify-between">
+                      <div class="text-center">
+                        <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden hero-float hero-float-delay-2">
+                          <img src="assets/images/product3.jpg" alt="Natural Glow Moisturizer" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x400/ff8fab/ffffff?text=Product+3'">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Natural Glow Moisturizer</h3>
+                        <p class="text-gray-600 mb-4">Hydrating formula with natural ingredients</p>
+                        <div class="flex items-center justify-center mb-4">
+                          <div class="flex text-yellow-400">
+                            <span>★★★★★</span>
+                          </div>
+                          <span class="ml-2 text-sm text-gray-600">(4.7/5)</span>
+                        </div>
+                        <div class="text-2xl font-bold text-[#ff69b4]">$34.99</div>
+                      </div>
+                      <button class="w-full bg-[#ff69b4] text-white py-3 rounded-full font-semibold hover:bg-[#e55a9e] transition hero-product-btn" data-product="natural-glow-moisturizer">
+                        View Deal
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Carousel Navigation -->
+              <div class="flex justify-center mt-6 space-x-2">
+                <button class="hero-dot w-3 h-3 rounded-full bg-white opacity-50 transition-all duration-300 active" data-index="0"></button>
+                <button class="hero-dot w-3 h-3 rounded-full bg-white opacity-50 transition-all duration-300" data-index="1"></button>
+                <button class="hero-dot w-3 h-3 rounded-full bg-white opacity-50 transition-all duration-300" data-index="2"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Breadcrumb -->
+      <div class="bg-white border-b border-gray-100">
+        <div class="container mx-auto px-4 py-3">
+          <nav class="flex text-sm text-gray-600">
+            <a href="index.html" class="hover:text-[#ff69b4]">Home</a>
+            <span class="mx-2">/</span>
+            <span class="text-[#ff69b4]">Shop</span>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Category Navigation -->
+      <div class="bg-white border-b border-gray-100">
+        <div class="container mx-auto px-4 py-4">
+          <div class="flex flex-wrap gap-4 text-sm">
+            <button class="category-btn active px-4 py-2 rounded-full bg-[#ff69b4] text-white font-medium" data-category="all">
+              All Products
+            </button>
+            <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-[#ff69b4] hover:text-white font-medium transition" data-category="skincare">
+              Skincare
+            </button>
+            <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-[#ff69b4] hover:text-white font-medium transition" data-category="makeup">
+              Makeup
+            </button>
+            <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-[#ff69b4] hover:text-white font-medium transition" data-category="haircare">
+              Haircare
+            </button>
+            <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-[#ff69b4] hover:text-white font-medium transition" data-category="fashion">
+              Fashion
+            </button>
+            <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-[#ff69b4] hover:text-white font-medium transition" data-category="fragrance">
+              Fragrance
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- Filter Sidebar -->
+          <aside class="lg:w-1/4">
+            <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+              <h3 class="text-lg font-semibold mb-6 text-[#1a1a1a]">Filters</h3>
+              
+              <!-- Price Range -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3 text-[#1a1a1a]">Price Range</h4>
+                <div class="space-y-2">
+                  <input type="range" min="0" max="200" value="100" class="price-slider w-full" id="price-slider">
+                  <div class="flex justify-between text-sm text-gray-600">
+                    <span>$0</span>
+                    <span id="price-value">$100</span>
+                    <span>$200</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Brand Filter -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3 text-[#1a1a1a]">Brand</h4>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="brand" data-value="glow-essentials">
+                    <span class="text-sm">Glow Essentials</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="brand" data-value="beauty-pro">
+                    <span class="text-sm">Beauty Pro</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="brand" data-value="natural-glow">
+                    <span class="text-sm">Natural Glow</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="brand" data-value="luxe-beauty">
+                    <span class="text-sm">Luxe Beauty</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Category Filter -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3 text-[#1a1a1a]">Category</h4>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="category" data-value="skincare">
+                    <span class="text-sm">Skincare</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="category" data-value="makeup">
+                    <span class="text-sm">Makeup</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="category" data-value="haircare">
+                    <span class="text-sm">Haircare</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="category" data-value="fashion">
+                    <span class="text-sm">Fashion</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Ratings Filter -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3 text-[#1a1a1a]">Rating</h4>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="rating" data-value="5">
+                    <span class="text-sm">⭐⭐⭐⭐⭐ 5 Stars</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="rating" data-value="4">
+                    <span class="text-sm">⭐⭐⭐⭐ 4+ Stars</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="rating" data-value="3">
+                    <span class="text-sm">⭐⭐⭐ 3+ Stars</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Skin Type Filter -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3 text-[#1a1a1a]">Skin Type</h4>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="skin-type" data-value="dry">
+                    <span class="text-sm">Dry</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="skin-type" data-value="oily">
+                    <span class="text-sm">Oily</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="skin-type" data-value="combination">
+                    <span class="text-sm">Combination</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="skin-type" data-value="sensitive">
+                    <span class="text-sm">Sensitive</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Concerns Filter -->
+              <div class="mb-6">
+                <h4 class="font-medium mb-3 text-[#1a1a1a]">Concerns</h4>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="concerns" data-value="acne">
+                    <span class="text-sm">Acne</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="concerns" data-value="aging">
+                    <span class="text-sm">Aging</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="concerns" data-value="hyperpigmentation">
+                    <span class="text-sm">Hyperpigmentation</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="filter-checkbox mr-2" data-filter="concerns" data-value="dryness">
+                    <span class="text-sm">Dryness</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Clear Filters -->
+              <button id="clear-filters" class="w-full py-2 px-4 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">
+                Clear All Filters
+              </button>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <div class="lg:w-3/4">
+            <!-- Sort and Results Header -->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+              <div class="mb-4 sm:mb-0">
+                <h1 class="text-2xl font-bold text-[#1a1a1a] mb-2">Beauty Products</h1>
+                <p class="text-gray-600" id="results-count">Showing 24 products</p>
+              </div>
+              <div class="flex items-center gap-4">
+                <label class="text-sm font-medium text-gray-700">Sort by:</label>
+                <select id="sort-select" class="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ff69b4]">
+                  <option value="featured">Featured</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Rating</option>
+                  <option value="newest">Newest</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <!-- Loading Skeletons -->
+              <div class="product-skeleton bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="skeleton h-48 w-full"></div>
+                <div class="p-4">
+                  <div class="skeleton h-4 w-3/4 mb-2"></div>
+                  <div class="skeleton h-6 w-full mb-2"></div>
+                  <div class="skeleton h-4 w-1/2 mb-3"></div>
+                  <div class="skeleton h-8 w-full"></div>
+                </div>
+              </div>
+              <div class="product-skeleton bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="skeleton h-48 w-full"></div>
+                <div class="p-4">
+                  <div class="skeleton h-4 w-3/4 mb-2"></div>
+                  <div class="skeleton h-6 w-full mb-2"></div>
+                  <div class="skeleton h-4 w-1/2 mb-3"></div>
+                  <div class="skeleton h-8 w-full"></div>
+                </div>
+              </div>
+              <div class="product-skeleton bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="skeleton h-48 w-full"></div>
+                <div class="p-4">
+                  <div class="skeleton h-4 w-3/4 mb-2"></div>
+                  <div class="skeleton h-6 w-full mb-2"></div>
+                  <div class="skeleton h-4 w-1/2 mb-3"></div>
+                  <div class="skeleton h-8 w-full"></div>
+                </div>
+              </div>
+              <div class="product-skeleton bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="skeleton h-48 w-full"></div>
+                <div class="p-4">
+                  <div class="skeleton h-4 w-3/4 mb-2"></div>
+                  <div class="skeleton h-6 w-full mb-2"></div>
+                  <div class="skeleton h-4 w-1/2 mb-3"></div>
+                  <div class="skeleton h-8 w-full"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12">
+              <nav class="flex items-center space-x-2">
+                <button class="pagination-btn px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                  Previous
+                </button>
+                <button class="pagination-btn px-3 py-2 rounded-lg bg-[#ff69b4] text-white">1</button>
+                <button class="pagination-btn px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">2</button>
+                <button class="pagination-btn px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">3</button>
+                <span class="px-3 py-2 text-gray-500">...</span>
+                <button class="pagination-btn px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">8</button>
+                <button class="pagination-btn px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">
+                  Next
+                </button>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recently Viewed Products -->
+      <section class="bg-gray-50 py-12">
+        <div class="container mx-auto px-4">
+          <h2 class="text-2xl font-bold text-[#1a1a1a] mb-8">Recently Viewed</h2>
+          <div id="recently-viewed-container" class="recently-viewed-grid">
+            <!-- Recently viewed products will be populated here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Content Suggestions -->
+      <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+          <h2 class="text-2xl font-bold text-[#1a1a1a] mb-8 text-center">Discover More</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="bg-gradient-to-br from-[#ff69b4] to-[#a97a5a] rounded-lg p-8 mb-4">
+                <svg class="w-12 h-12 text-white mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-[#1a1a1a]">AI Beauty Quiz</h3>
+              <p class="text-gray-600 mb-4">Get personalized product recommendations based on your unique beauty profile.</p>
+              <a href="quiz.html" class="text-[#ff69b4] font-semibold hover:underline">Take the Quiz →</a>
+            </div>
+            <div class="text-center">
+              <div class="bg-gradient-to-br from-[#a97a5a] to-[#ff69b4] rounded-lg p-8 mb-4">
+                <svg class="w-12 h-12 text-white mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-[#1a1a1a]">Beauty Courses</h3>
+              <p class="text-gray-600 mb-4">Learn from beauty experts with our comprehensive online courses and tutorials.</p>
+              <a href="courses.html" class="text-[#ff69b4] font-semibold hover:underline">Explore Courses →</a>
+            </div>
+            <div class="text-center">
+              <div class="bg-gradient-to-br from-[#ff69b4] to-[#a97a5a] rounded-lg p-8 mb-4">
+                <svg class="w-12 h-12 text-white mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-[#1a1a1a]">AI Tools</h3>
+              <p class="text-gray-600 mb-4">Try our AI-powered beauty tools for virtual try-ons and style recommendations.</p>
+              <a href="ai-tools.html" class="text-[#ff69b4] font-semibold hover:underline">Try AI Tools →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top bg-[#ff69b4] text-white p-3 rounded-full shadow-lg hover:bg-[#e55aa0] transition">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+      </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a1a1a] text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold text-[#ff69b4] mb-4">Let Me Glow Up</h3>
+            <p class="text-gray-300 mb-4">Transform your beauty journey with AI-powered recommendations and expert guidance.</p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-300 hover:text-[#ff69b4] transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                 <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.999 4.313-1.254 6.648-.107-.344-.216-.685-.332-1.008-2.147 1.468-4.492 2.35-7.048 2.35-.447 0-.889-.025-1.325-.075C3.906 19.254 8.322 21 13.105 21c9.053 0 14-7.503 14-14 0-.213-.004-.426-.014-.637.961-.689 1.8-1.56 2.457-2.548l-.951-.815z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-[#ff69b4] text-white p-3 rounded-full shadow-lg hover:bg-[#e55aa0] transition-all duration-300 opacity-0 invisible z-50">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+      </svg>
+    </button>
+
+    <!-- Loading Skeleton -->
+    <div id="loading-skeleton" class="hidden">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <!-- Skeleton Cards -->
+          <div class="animate-pulse">
+            <div class="bg-gray-200 h-64 rounded-lg mb-4"></div>
+            <div class="bg-gray-200 h-4 rounded mb-2"></div>
+            <div class="bg-gray-200 h-6 rounded mb-2"></div>
+            <div class="bg-gray-200 h-4 rounded mb-4"></div>
+            <div class="bg-gray-200 h-10 rounded"></div>
+          </div>
+          <div class="animate-pulse">
+            <div class="bg-gray-200 h-64 rounded-lg mb-4"></div>
+            <div class="bg-gray-200 h-4 rounded mb-2"></div>
+            <div class="bg-gray-200 h-6 rounded mb-2"></div>
+            <div class="bg-gray-200 h-4 rounded mb-4"></div>
+            <div class="bg-gray-200 h-10 rounded"></div>
+          </div>
+          <div class="animate-pulse">
+            <div class="bg-gray-200 h-64 rounded-lg mb-4"></div>
+            <div class="bg-gray-200 h-4 rounded mb-2"></div>
+            <div class="bg-gray-200 h-6 rounded mb-2"></div>
+            <div class="bg-gray-200 h-4 rounded mb-4"></div>
+            <div class="bg-gray-200 h-10 rounded"></div>
+          </div>
+          <div class="animate-pulse">
+            <div class="bg-gray-200 h-64 rounded-lg mb-4"></div>
+            <div class="bg-gray-200 h-4 rounded mb-2"></div>
+            <div class="bg-gray-200 h-6 rounded mb-2"></div>
+            <div class="bg-gray-200 h-4 rounded mb-4"></div>
+            <div class="bg-gray-200 h-10 rounded"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#1a1a1a] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-2xl font-bold text-[#ff69b4] mb-4">Let Me Glow Up</h3>
+          <p class="text-gray-300 mb-4">Transform your beauty journey with AI-powered recommendations and expert tips.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-[#ff69b4] hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.999 4.313-1.254 6.648-.107-.344-.216-.685-.332-1.008-2.147 1.468-4.492 2.35-7.048 2.35-.447 0-.889-.025-1.325-.075C3.906 19.254 8.322 21 13.105 21c9.053 0 14-7.503 14-14 0-.213-.004-.426-.014-.637.961-.689 1.8-1.56 2.457-2.548l-.951-.815z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-[#ff69b4] hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-[#ff69b4] hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-300 hover:text-[#ff69b4] transition">Home</a></li>
+            <li><a href="fashion.html" class="text-gray-300 hover:text-[#ff69b4] transition">Fashion</a></li>
+            <li><a href="glow.html" class="text-gray-300 hover:text-[#ff69b4] transition">Glow</a></li>
+            <li><a href="shop.html" class="text-gray-300 hover:text-[#ff69b4] transition">Shop</a></li>
+            <li><a href="courses.html" class="text-gray-300 hover:text-[#ff69b4] transition">Courses</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="ai-tools.html" class="text-gray-300 hover:text-[#ff69b4] transition">AI Tools</a></li>
+            <li><a href="quiz.html" class="text-gray-300 hover:text-[#ff69b4] transition">Beauty Quiz</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-[#ff69b4] transition">About Us</a></li>
+            <li><a href="contact.html" class="text-gray-300 hover:text-[#ff69b4] transition">Contact</a></li>
+            <li><a href="feedback.html" class="text-gray-300 hover:text-[#ff69b4] transition">Feedback</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Legal</h4>
+          <ul class="space-y-2">
+            <li><a href="privacy.html" class="text-gray-300 hover:text-[#ff69b4] transition">Privacy Policy</a></li>
+            <li><a href="terms.html" class="text-gray-300 hover:text-[#ff69b4] transition">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-[#ff69b4] transition">Affiliate Disclosure</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-[#ff69b4] transition">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+        <p class="text-gray-400">&copy; 2024 Let Me Glow Up. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Product Data
+    const products = [
+      {
+        id: 1,
+        name: "CeraVe Moisturizing Cream",
+        brand: "CeraVe",
+        price: 19.99,
+        originalPrice: 24.99,
+        rating: 4.8,
+        reviews: 1250,
+        image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop",
+        category: "Skincare",
+        skinType: ["Dry", "Normal"],
+        concerns: ["Hydration", "Barrier Repair"],
+        sale: true,
+        affiliate: "https://amzn.to/example1"
+      },
+      {
+        id: 2,
+        name: "The Ordinary Niacinamide 10%",
+        brand: "The Ordinary",
+        price: 12.99,
+        originalPrice: 15.99,
+        rating: 4.6,
+        reviews: 890,
+        image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop",
+        category: "Skincare",
+        skinType: ["Oily", "Combination"],
+        concerns: ["Acne", "Pores"],
+        sale: true,
+        affiliate: "https://amzn.to/example2"
+      },
+      {
+        id: 3,
+        name: "La Roche-Posay Toleriane Cleanser",
+        brand: "La Roche-Posay",
+        price: 16.99,
+        originalPrice: 16.99,
+        rating: 4.7,
+        reviews: 567,
+        image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop",
+        category: "Skincare",
+        skinType: ["Sensitive", "Normal"],
+        concerns: ["Sensitivity", "Gentle Cleansing"],
+        sale: false,
+        affiliate: "https://amzn.to/example3"
+      },
+      {
+        id: 4,
+        name: "Fenty Beauty Pro Filt'r Foundation",
+        brand: "Fenty Beauty",
+        price: 39.99,
+        originalPrice: 39.99,
+        rating: 4.5,
+        reviews: 2340,
+        image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop",
+        category: "Makeup",
+        skinType: ["All Types"],
+        concerns: ["Coverage", "Long-lasting"],
+        sale: false,
+        affiliate: "https://amzn.to/example4"
+      },
+      {
+        id: 5,
+        name: "Anastasia Beverly Hills Brow Wiz",
+        brand: "Anastasia Beverly Hills",
+        price: 23.99,
+        originalPrice: 28.99,
+        rating: 4.9,
+        reviews: 1890,
+        image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop",
+        category: "Makeup",
+        skinType: ["All Types"],
+        concerns: ["Brows", "Definition"],
+        sale: true,
+        affiliate: "https://amzn.to/example5"
+      },
+      {
+        id: 6,
+        name: "Drunk Elephant C-Firma Serum",
+        brand: "Drunk Elephant",
+        price: 78.99,
+        originalPrice: 78.99,
+        rating: 4.4,
+        reviews: 456,
+        image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop",
+        category: "Skincare",
+        skinType: ["All Types"],
+        concerns: ["Anti-aging", "Brightening"],
+        sale: false,
+        affiliate: "https://amzn.to/example6"
+      },
+      {
+        id: 7,
+        name: "Urban Decay Naked Palette",
+        brand: "Urban Decay",
+        price: 54.99,
+        originalPrice: 64.99,
+        rating: 4.7,
+        reviews: 3200,
+        image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop",
+        category: "Makeup",
+        skinType: ["All Types"],
+        concerns: ["Eyes", "Versatility"],
+        sale: true,
+        affiliate: "https://amzn.to/example7"
+      },
+      {
+        id: 8,
+        name: "Paula's Choice 2% BHA Liquid",
+        brand: "Paula's Choice",
+        price: 32.99,
+        originalPrice: 32.99,
+        rating: 4.8,
+        reviews: 2100,
+        image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop",
+        category: "Skincare",
+        skinType: ["Oily", "Combination"],
+        concerns: ["Exfoliation", "Acne"],
+        sale: false,
+        affiliate: "https://amzn.to/example8"
+      }
+    ];
+
+    // Filter and Sort State
+    let currentFilters = {
+      priceRange: [0, 100],
+      brands: [],
+      categories: [],
+      ratings: [],
+      skinTypes: [],
+      concerns: []
+    };
+    let currentSort = 'featured';
+    let currentPage = 1;
+    const productsPerPage = 12;
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeHeroCarousel();
+      initializeSmoothScroll();
+      initializeHeroProductButtons();
+      initializeFilters();
+      renderProducts();
+      initializeMobileMenu();
+      initializeBackToTop();
+      initializeRecentlyViewed();
+      attachWishlistToProducts();
+    });
+
+    // Filter Functions
+    function initializeFilters() {
+      // Price Range Slider
+      const priceSlider = document.getElementById('price-range');
+      const priceDisplay = document.getElementById('price-display');
+      
+      if (priceSlider) {
+        priceSlider.addEventListener('input', function() {
+          const value = this.value;
+          priceDisplay.textContent = `$${value}`;
+          currentFilters.priceRange[1] = parseInt(value);
+          filterAndRender();
+        });
+      }
+
+      // Filter Checkboxes
+      document.querySelectorAll('.filter-checkbox').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+          const filterType = this.getAttribute('data-filter-type');
+          const filterValue = this.value;
+          
+          if (this.checked) {
+            if (!currentFilters[filterType].includes(filterValue)) {
+              currentFilters[filterType].push(filterValue);
+            }
+          } else {
+            currentFilters[filterType] = currentFilters[filterType].filter(v => v !== filterValue);
+          }
+          
+          filterAndRender();
+        });
+      });
+
+      // Sort Dropdown
+      const sortSelect = document.getElementById('sort-select');
+      if (sortSelect) {
+        sortSelect.addEventListener('change', function() {
+          currentSort = this.value;
+          filterAndRender();
+        });
+      }
+
+      // Clear Filters
+      const clearFiltersBtn = document.getElementById('clear-filters');
+      if (clearFiltersBtn) {
+        clearFiltersBtn.addEventListener('click', function() {
+          currentFilters = {
+            priceRange: [0, 100],
+            brands: [],
+            categories: [],
+            ratings: [],
+            skinTypes: [],
+            concerns: []
+          };
+          
+          // Reset UI
+          document.querySelectorAll('.filter-checkbox').forEach(cb => cb.checked = false);
+          if (priceSlider) {
+            priceSlider.value = 100;
+            priceDisplay.textContent = '$100';
+          }
+          
+          filterAndRender();
+        });
+      }
+    }
+
+    function filterAndRender() {
+      currentPage = 1;
+      renderProducts();
+    }
+
+    function filterProducts() {
+      return products.filter(product => {
+        // Price Range
+        if (product.price < currentFilters.priceRange[0] || product.price > currentFilters.priceRange[1]) {
+          return false;
+        }
+
+        // Brands
+        if (currentFilters.brands.length > 0 && !currentFilters.brands.includes(product.brand)) {
+          return false;
+        }
+
+        // Categories
+        if (currentFilters.categories.length > 0 && !currentFilters.categories.includes(product.category)) {
+          return false;
+        }
+
+        // Ratings
+        if (currentFilters.ratings.length > 0) {
+          const ratingMatch = currentFilters.ratings.some(rating => {
+            const minRating = parseInt(rating);
+            return product.rating >= minRating;
+          });
+          if (!ratingMatch) return false;
+        }
+
+        // Skin Types
+        if (currentFilters.skinTypes.length > 0) {
+          const skinTypeMatch = currentFilters.skinTypes.some(type => 
+            product.skinType.includes(type)
+          );
+          if (!skinTypeMatch) return false;
+        }
+
+        // Concerns
+        if (currentFilters.concerns.length > 0) {
+          const concernMatch = currentFilters.concerns.some(concern => 
+            product.concerns.includes(concern)
+          );
+          if (!concernMatch) return false;
+        }
+
+        return true;
+      });
+    }
+
+    function sortProducts(filteredProducts) {
+      switch (currentSort) {
+        case 'price-low-high':
+          return filteredProducts.sort((a, b) => a.price - b.price);
+        case 'price-high-low':
+          return filteredProducts.sort((a, b) => b.price - a.price);
+        case 'rating':
+          return filteredProducts.sort((a, b) => b.rating - a.rating);
+        case 'newest':
+          return filteredProducts.sort((a, b) => b.id - a.id);
+        default:
+          return filteredProducts;
+      }
+    }
+
+    function renderProducts() {
+      const container = document.getElementById('products-grid');
+      const loadingSkeleton = document.getElementById('loading-skeleton');
+      
+      if (!container) return;
+
+      // Show loading skeleton
+      container.style.display = 'none';
+      if (loadingSkeleton) loadingSkeleton.classList.remove('hidden');
+
+      setTimeout(() => {
+        const filteredProducts = filterProducts();
+        const sortedProducts = sortProducts(filteredProducts);
+        
+        // Pagination
+        const startIndex = (currentPage - 1) * productsPerPage;
+        const endIndex = startIndex + productsPerPage;
+        const paginatedProducts = sortedProducts.slice(startIndex, endIndex);
+
+        // Render products
+        container.innerHTML = paginatedProducts.map(product => `
+          <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-id="${product.id}" data-category="${product.category}">
+            <div class="relative group">
+              <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+              ${product.sale ? '<span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-sm font-semibold">SALE</span>' : ''}
+              <div class="wishlist-heart absolute top-2 right-2 text-gray-400 hover:text-[#ff69b4] cursor-pointer transition-colors" data-id="${product.id}" data-item='${JSON.stringify(product)}'>
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 21s-6.5-5.2-9-8.5C-1.5 7.5 2.5 3 7 5.5c2.1 1.2 3 2.5 5 5.5 2-3 2.9-4.3 5-5.5C21.5 3 25.5 7.5 21 12.5c-2.5 3.3-9 8.5-9 8.5z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="p-4">
+              <p class="text-sm text-gray-500 mb-1">${product.brand}</p>
+              <h3 class="font-semibold text-lg mb-2 text-gray-800">${product.name}</h3>
+              <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                  ${generateStars(product.rating)}
+                </div>
+                <span class="text-sm text-gray-500 ml-1">(${product.reviews})</span>
+              </div>
+              <div class="flex items-center mb-4">
+                <span class="text-lg font-bold text-[#ff69b4]">$${product.price.toFixed(2)}</span>
+                ${product.sale ? `<span class="text-sm text-gray-500 line-through ml-2">$${product.originalPrice.toFixed(2)}</span>` : ''}
+              </div>
+              <a href="${product.affiliate}" target="_blank" rel="noopener noreferrer" class="block w-full bg-[#ff69b4] text-white text-center py-2 rounded-lg hover:bg-[#e55aa0] transition-colors duration-300">
+                View Deal
+              </a>
+            </div>
+          </div>
+        `).join('');
+
+        // Update pagination
+        renderPagination(sortedProducts.length);
+
+        // Update results count
+        const resultsCount = document.getElementById('results-count');
+        if (resultsCount) {
+          resultsCount.textContent = `${sortedProducts.length} products found`;
+        }
+
+        // Hide loading skeleton and show products
+        if (loadingSkeleton) loadingSkeleton.classList.add('hidden');
+        container.style.display = 'grid';
+
+        // Re-attach wishlist functionality
+        attachWishlistToProducts();
+      }, 500);
+    }
+
+    function generateStars(rating) {
+      const fullStars = Math.floor(rating);
+      const hasHalfStar = rating % 1 !== 0;
+      let stars = '';
+      
+      for (let i = 0; i < fullStars; i++) {
+        stars += '<svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
+      }
+      
+      if (hasHalfStar) {
+        stars += '<svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
+      }
+      
+      const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+      for (let i = 0; i < emptyStars; i++) {
+        stars += '<svg class="w-4 h-4 fill-current text-gray-300" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
+      }
+      
+      return stars;
+    }
+
+    function renderPagination(totalProducts) {
+      const totalPages = Math.ceil(totalProducts / productsPerPage);
+      const paginationContainer = document.getElementById('pagination');
+      
+      if (!paginationContainer || totalPages <= 1) {
+        if (paginationContainer) paginationContainer.innerHTML = '';
+        return;
+      }
+
+      let paginationHTML = '<div class="flex justify-center space-x-2">';
+      
+      // Previous button
+      if (currentPage > 1) {
+        paginationHTML += `<button onclick="changePage(${currentPage - 1})" class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50">Previous</button>`;
+      }
+
+      // Page numbers
+      const startPage = Math.max(1, currentPage - 2);
+      const endPage = Math.min(totalPages, currentPage + 2);
+
+      for (let i = startPage; i <= endPage; i++) {
+        if (i === currentPage) {
+          paginationHTML += `<button class="px-3 py-2 bg-[#ff69b4] text-white rounded">${i}</button>`;
+        } else {
+          paginationHTML += `<button onclick="changePage(${i})" class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50">${i}</button>`;
+        }
+      }
+
+      // Next button
+      if (currentPage < totalPages) {
+        paginationHTML += `<button onclick="changePage(${currentPage + 1})" class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50">Next</button>`;
+      }
+
+      paginationHTML += '</div>';
+      paginationContainer.innerHTML = paginationHTML;
+    }
+
+    function changePage(page) {
+      currentPage = page;
+      renderProducts();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Mobile Menu
+    function initializeMobileMenu() {
+      const navToggle = document.getElementById('nav-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const filterToggle = document.getElementById('filter-toggle');
+      const filterSidebar = document.getElementById('filter-sidebar');
+
+      if (navToggle && mobileMenu) {
+        navToggle.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      if (filterToggle && filterSidebar) {
+        filterToggle.addEventListener('click', function() {
+          filterSidebar.classList.toggle('hidden');
+        });
+      }
+    }
+
+    // Hero Carousel
+    function initializeHeroCarousel() {
+      const products = document.querySelectorAll('.hero-product');
+      const dots = document.querySelectorAll('.hero-dot');
+      let currentIndex = 0;
+      let interval;
+
+      function showProduct(index) {
+        products.forEach((product, i) => {
+          if (i === index) {
+            product.classList.remove('opacity-0', 'scale-95');
+            product.classList.add('opacity-100', 'scale-100');
+          } else {
+            product.classList.remove('opacity-100', 'scale-100');
+            product.classList.add('opacity-0', 'scale-95');
+          }
+        });
+
+        dots.forEach((dot, i) => {
+          if (i === index) {
+            dot.classList.add('active', 'opacity-100');
+            dot.classList.remove('opacity-50');
+          } else {
+            dot.classList.remove('active', 'opacity-100');
+            dot.classList.add('opacity-50');
+          }
+        });
+      }
+
+      function nextProduct() {
+        currentIndex = (currentIndex + 1) % products.length;
+        showProduct(currentIndex);
+      }
+
+      function startAutoPlay() {
+        interval = setInterval(nextProduct, 4000); // Change every 4 seconds
+      }
+
+      function stopAutoPlay() {
+        if (interval) {
+          clearInterval(interval);
+        }
+      }
+
+      // Dot navigation
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          showProduct(currentIndex);
+          stopAutoPlay();
+          startAutoPlay(); // Restart autoplay
+        });
+      });
+
+      // Pause on hover
+      const carousel = document.querySelector('.hero-product-carousel');
+      if (carousel) {
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+      }
+
+      // Start autoplay
+      startAutoPlay();
+    }
+
+    // Smooth scroll to products
+    function initializeSmoothScroll() {
+      const shopNowBtn = document.querySelector('a[href="#product-grid"]');
+      if (shopNowBtn) {
+        shopNowBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.getElementById('product-grid');
+          if (target) {
+            const offset = 100; // Offset for header
+            const targetPosition = target.offsetTop - offset;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      }
+    }
+
+    // Hero product button handlers
+    function initializeHeroProductButtons() {
+      const heroButtons = document.querySelectorAll('.hero-product-btn');
+      heroButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const productId = this.getAttribute('data-product');
+          // Track the click for analytics
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'hero_product_click', {
+              event_category: 'Ecommerce',
+              event_label: productId
+            });
+          }
+          // You can add affiliate link handling here
+          console.log('Hero product clicked:', productId);
+        });
+      });
+    }
+
+    // Back to Top
+    function initializeBackToTop() {
+      const backToTopBtn = document.getElementById('back-to-top');
+      
+      if (backToTopBtn) {
+        window.addEventListener('scroll', function() {
+          if (window.pageYOffset > 300) {
+            backToTopBtn.classList.remove('opacity-0', 'invisible');
+            backToTopBtn.classList.add('opacity-100', 'visible');
+          } else {
+            backToTopBtn.classList.add('opacity-0', 'invisible');
+            backToTopBtn.classList.remove('opacity-100', 'visible');
+          }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    }
+
+    // Recently Viewed Products
+    function initializeRecentlyViewed() {
+      const recentlyViewedContainer = document.getElementById('recently-viewed-products');
+      if (!recentlyViewedContainer) return;
+
+      const recentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+      const recentProducts = recentlyViewed.slice(0, 4);
+
+      if (recentProducts.length === 0) {
+        recentlyViewedContainer.style.display = 'none';
+        return;
+      }
+
+      recentlyViewedContainer.style.display = 'block';
+      const productsHTML = recentProducts.map(product => `
+        <div class="flex items-center space-x-3 p-3 bg-white rounded-lg shadow-sm">
+          <img src="${product.image}" alt="${product.name}" class="w-16 h-16 object-cover rounded">
+          <div class="flex-1">
+            <h4 class="font-semibold text-sm">${product.name}</h4>
+            <p class="text-xs text-gray-500">${product.brand}</p>
+            <p class="text-sm font-bold text-[#ff69b4]">$${product.price.toFixed(2)}</p>
+          </div>
+        </div>
+      `).join('');
+
+      recentlyViewedContainer.innerHTML = productsHTML;
+    }
+
+    // Wishlist Functionality (from index.html)
+    (function() {
+      let wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+      let recentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+
+      function saveWishlist() {
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      }
+
+      function saveRecentlyViewed() {
+        localStorage.setItem('recentlyViewed', JSON.stringify(recentlyViewed));
+      }
+
+      function isWishlisted(id) {
+        return wishlist.some(item => item.id === id);
+      }
+
+      function addToWishlist(item) {
+        if (!isWishlisted(item.id)) {
+          wishlist.push(item);
+          saveWishlist();
+          updateWishlistCounter();
+        }
+      }
+
+      function removeFromWishlist(id) {
+        wishlist = wishlist.filter(item => item.id !== id);
+        saveWishlist();
+        updateWishlistCounter();
+      }
+
+      function addRecentlyViewed(item) {
+        recentlyViewed = recentlyViewed.filter(existing => existing.id !== item.id);
+        recentlyViewed.unshift(item);
+        if (recentlyViewed.length > 10) recentlyViewed.pop();
+        saveRecentlyViewed();
+      }
+
+      function updateWishlistCounter() {
+        const counter = document.getElementById('wishlist-counter');
+        if (counter) counter.textContent = wishlist.length;
+      }
+
+      function updateAllHearts() {
+        document.querySelectorAll('.wishlist-heart').forEach(heart => {
+          const id = heart.getAttribute('data-id');
+          heart.classList.toggle('active', isWishlisted(id));
+          // Add recently viewed on click
+          card.addEventListener('click', function(){
+            addRecentlyViewed(item);
+          }, { once: true });
+        });
+      };
+      // Attach on DOMContentLoaded and after product rendering
+      document.addEventListener('DOMContentLoaded', window.attachWishlistToProducts);
+    })();
+    </script>
+    <script>
+      // Language Switcher Implementation
+      const LANGS = ['en', 'ar', 'fr'];
+      const DEFAULT_LANG = 'en';
+      const langFiles = {
+        en: 'assets/lang/en.json',
+        ar: 'assets/lang/ar.json',
+        fr: 'assets/lang/fr.json'
+      };
+      let currentLang = localStorage.getItem('lang') || DEFAULT_LANG;
+      const langSwitcher = document.getElementById('lang-switcher');
+      if (langSwitcher) langSwitcher.value = currentLang;
+
+      function setDir(lang) {
+        if (lang === 'ar') {
+          document.documentElement.dir = 'rtl';
+          document.body.classList.add('rtl');
+        } else {
+          document.documentElement.dir = 'ltr';
+          document.body.classList.remove('rtl');
+        }
+      }
+
+      function formatContent(val, type, lang) {
+        if (type === 'date') {
+          try {
+            return new Date(val).toLocaleDateString(lang, { year: 'numeric', month: 'long', day: 'numeric' });
+          } catch { return val; }
+        }
+        if (type === 'number') {
+          try {
+          return Number(val).toLocaleString(lang);
+          } catch { return val; }
+        }
+        return val;
+      }
+
+      async function loadLang(lang) {
+        let dict = {};
+        try {
+          const res = await fetch(langFiles[lang]);
+          dict = await res.json();
+        } catch { /* fallback to empty */ }
+        // Replace content
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          let val = key.split('.').reduce((o, k) => (o||{})[k], dict);
+          if (!val) {
+            // fallback to English if not found
+            if (lang !== 'en') {
+              try {
+                fetch(langFiles['en']).then(r=>r.json()).then(enDict => {
+                  let fallback = key.split('.').reduce((o, k) => (o||{})[k], enDict);
+                  if (fallback) el.innerHTML = fallback;
+                });
+              } catch {}
+            }
+            return;
+          }
+          // Formatting
+          const type = el.getAttribute('data-i18n-type');
+          el.innerHTML = type ? formatContent(val, type, lang) : val;
+        });
+        setDir(lang);
+      }
+
+      if (langSwitcher) {
+        langSwitcher.onchange = function() {
+          currentLang = this.value;
+          localStorage.setItem('lang', currentLang);
+          loadLang(currentLang);
+        };
+      }
+
+      // On load
+      loadLang(currentLang);
+    </script>
+  </body>
+</html>
