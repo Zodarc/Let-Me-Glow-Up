@@ -68,16 +68,13 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Critical CSS for immediate rendering -->
+    <!-- Fashion page specific styles -->
     <style>
-      /* Critical rendering styles - prevent loading skeleton */
+      /* Prevent loading skeleton */
       body,
       html {
         opacity: 1 !important;
         visibility: visible !important;
-        display: block !important;
-        background-color: #fffefc !important;
-        color: #1a1a1a !important;
       }
       main,
       .container,
@@ -89,37 +86,8 @@
         opacity: 1 !important;
         animation-delay: 0s !important;
       }
-      /* Basic layout styles */
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-      .bg-gradient-to-br {
-        background: linear-gradient(to bottom right, #ff69b4, #a97a5a);
-      }
-      .text-white {
-        color: white;
-      }
-      .font-bold {
-        font-weight: bold;
-      }
-      .text-center {
-        text-align: center;
-      }
-      .py-16 {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-      }
-      .px-4 {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
 
-      /* Fashion page specific styles */
-      body {
-        font-family: "Inter", sans-serif;
-      }
+      /* Fashion page custom styles */
       .hover-glow:hover {
         box-shadow: 0 4px 24px #ff69b455, 0 1.5px 6px #b47b5b22;
       }
@@ -146,32 +114,20 @@
 
     <!-- Immediate rendering script -->
     <script>
-      // Ensure immediate rendering
+      // Prevent loading skeleton
+      document.body.style.opacity = "1";
+      document.body.style.visibility = "visible";
+
       document.addEventListener("DOMContentLoaded", function () {
-        // Force visibility of all elements
-        document.body.style.opacity = "1";
-        document.body.style.visibility = "visible";
-
-        // Remove any loading states
-        const loadingElements = document.querySelectorAll(
-          '[style*="opacity: 0"], [style*="visibility: hidden"]'
-        );
-        loadingElements.forEach((el) => {
-          el.style.opacity = "1";
-          el.style.visibility = "visible";
-        });
+        document
+          .querySelectorAll(
+            '[style*="opacity: 0"], [style*="visibility: hidden"]'
+          )
+          .forEach((el) => {
+            el.style.opacity = "1";
+            el.style.visibility = "visible";
+          });
       });
-
-      // Also run immediately if DOM is already loaded
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", function () {
-          document.body.style.opacity = "1";
-          document.body.style.visibility = "visible";
-        });
-      } else {
-        document.body.style.opacity = "1";
-        document.body.style.visibility = "visible";
-      }
     </script>
   </head>
   <body class="bg-[#fffefc] text-[#1a1a1a] font-sans">
@@ -324,7 +280,7 @@
               how to make them your own.
             </p>
             <a
-              href="fashion-post.html"
+              href="fashion-post.html?id=summer-dresses-2024-06-01"
               class="btn bg-pop-pink text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-glossy-brown transition hover-underline"
               >Read More</a
             >
@@ -347,7 +303,7 @@
               <span class="category-tag mb-2">Street Style</span>
               <h3 class="font-semibold text-xl mb-1 text-deep-black">
                 <a
-                  href="fashion-post.html"
+                  href="fashion-post.html?id=street-style-2024-06-02"
                   class="hover:text-pop-pink transition"
                   >How to Nail Effortless Street Style</a
                 >
@@ -384,7 +340,7 @@
               <span class="category-tag mb-2">Sustainability</span>
               <h3 class="font-semibold text-xl mb-1 text-deep-black">
                 <a
-                  href="fashion-post.html"
+                  href="fashion-post.html?id=sustainable-fashion-2024-06-03"
                   class="hover:text-pop-pink transition"
                   >Sustainable Fashion: Eco-Friendly Brands to Watch</a
                 >
@@ -421,7 +377,7 @@
               <span class="category-tag mb-2">Accessories</span>
               <h3 class="font-semibold text-xl mb-1 text-deep-black">
                 <a
-                  href="fashion-post.html"
+                  href="fashion-post.html?id=accessories-2024-06-04"
                   class="hover:text-pop-pink transition"
                   >Accessorize Like a Pro: Statement Pieces for 2025</a
                 >
@@ -498,22 +454,30 @@
           <h5 class="font-bold text-glossy-brown mb-4">Popular Posts</h5>
           <ul class="space-y-3">
             <li>
-              <a href="fashion-post.html" class="hover:text-pop-pink transition"
+              <a
+                href="fashion-post.html?id=summer-dresses-2024-06-01"
+                class="hover:text-pop-pink transition"
                 >10 Capsule Wardrobe Essentials</a
               >
             </li>
             <li>
-              <a href="fashion-post.html" class="hover:text-pop-pink transition"
+              <a
+                href="fashion-post.html?id=street-style-2024-06-02"
+                class="hover:text-pop-pink transition"
                 >How to Style Neutrals</a
               >
             </li>
             <li>
-              <a href="fashion-post.html" class="hover:text-pop-pink transition"
+              <a
+                href="fashion-post.html?id=sustainable-fashion-2024-06-03"
+                class="hover:text-pop-pink transition"
                 >Best Shoes for Summer 2025</a
               >
             </li>
             <li>
-              <a href="fashion-post.html" class="hover:text-pop-pink transition"
+              <a
+                href="fashion-post.html?id=accessories-2024-06-04"
+                class="hover:text-pop-pink transition"
                 >Mixing Prints Like a Pro</a
               >
             </li>

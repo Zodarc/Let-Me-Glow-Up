@@ -248,7 +248,7 @@
             >
           </li>
           <li><span class="mx-2">/</span></li>
-          <li class="text-glossy-brown font-semibold">
+          <li class="text-glossy-brown font-semibold breadcrumb-post-title">
             How to Style Summer Dresses
           </li>
         </ol>
@@ -259,22 +259,25 @@
           <img
             src="assets/images/featured-summer-dress.jpg"
             alt="How to Style Summer Dresses"
-            class="w-full h-96 object-cover rounded-lg shadow-lg mb-6"
+            class="w-full h-96 object-cover rounded-lg shadow-lg mb-6 featured-image"
           />
-          <h1 class="text-4xl font-bold text-glossy-brown mb-2">
+          <h1 class="text-4xl font-bold text-glossy-brown mb-2 article-title">
             How to Style Summer Dresses
           </h1>
           <div class="flex items-center gap-4 text-sm text-gray-500 mb-2">
             <img
               src="assets/images/author-ava-lee.jpg"
               alt="Ava Lee"
-              class="w-10 h-10 rounded-full border-2 border-pop-pink"
+              class="w-10 h-10 rounded-full border-2 border-pop-pink author-avatar"
             />
             <span
-              >By <span class="font-semibold text-pop-pink">Ava Lee</span></span
+              >By
+              <span class="font-semibold text-pop-pink author-name"
+                >Ava Lee</span
+              ></span
             >
             <span>•</span>
-            <time datetime="2024-06-01">June 1, 2024</time>
+            <time datetime="2024-06-01" class="publish-date">June 1, 2024</time>
             <span>•</span>
             <div class="flex gap-2">
               <a
@@ -488,11 +491,13 @@
           <img
             src="assets/images/author-ava-lee.jpg"
             alt="Ava Lee"
-            class="w-16 h-16 rounded-full border-2 border-pop-pink"
+            class="w-16 h-16 rounded-full border-2 border-pop-pink author-bio-avatar"
           />
           <div>
-            <h5 class="font-bold text-glossy-brown mb-1">Ava Lee</h5>
-            <p class="text-sm text-gray-600">
+            <h5 class="font-bold text-glossy-brown mb-1 author-bio-name">
+              Ava Lee
+            </h5>
+            <p class="text-sm text-gray-600 author-bio-text">
               Fashion enthusiast, stylist, and content creator. Sharing style
               inspiration and tips for every season.
             </p>
@@ -555,6 +560,164 @@
         const nav = document.querySelector("header nav ul");
         nav.classList.toggle("hidden");
       };
+    </script>
+
+    <!-- Blog Post Content Loader -->
+    <script>
+      // Get post ID from URL parameter
+      function getPostId() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get("id") || "summer-dresses-2024-06-01"; // Default post
+      }
+
+      // Load blog post content
+      async function loadBlogPost() {
+        const postId = getPostId();
+
+        try {
+          const response = await fetch("assets/data/blog-posts.json");
+          const data = await response.json();
+          const post = data.posts[postId];
+
+          if (post) {
+            // Update page title and meta tags
+            document.title = `${post.title} – LetMeGlowUp Fashion Blog`;
+            updateMetaTags(post);
+
+            // Update breadcrumb
+            document.querySelector(".breadcrumb-post-title").textContent =
+              post.title;
+
+            // Update featured image
+            document.querySelector(".featured-image").src = post.featuredImage;
+            document.querySelector(".featured-image").alt = post.title;
+
+            // Update article header
+            document.querySelector(".article-title").textContent = post.title;
+            document.querySelector(".author-name").textContent =
+              post.author.name;
+            document.querySelector(".author-avatar").src = post.author.avatar;
+            document.querySelector(".author-avatar").alt = post.author.name;
+            document.querySelector(".publish-date").textContent = new Date(
+              post.publishDate
+            ).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            });
+
+            // Update article content
+            document.querySelector(".article-content").innerHTML = post.content;
+
+            // Update author bio
+            document.querySelector(".author-bio-name").textContent =
+              post.author.name;
+            document.querySelector(".author-bio-avatar").src =
+              post.author.avatar;
+            document.querySelector(".author-bio-avatar").alt = post.author.name;
+            document.querySelector(".author-bio-text").textContent =
+              post.author.bio;
+
+            // Update structured data
+            updateStructuredData(post);
+          } else {
+            // Post not found - show error or redirect
+            document.querySelector(".article-title").textContent =
+              "Post Not Found";
+            document.querySelector(".article-content").innerHTML =
+              "<p>Sorry, this blog post could not be found.</p>";
+          }
+        } catch (error) {
+          console.error("Error loading blog post:", error);
+          document.querySelector(".article-title").textContent =
+            "Error Loading Post";
+          document.querySelector(".article-content").innerHTML =
+            "<p>Sorry, there was an error loading this blog post.</p>";
+        }
+      }
+
+      // Update meta tags for SEO
+      function updateMetaTags(post) {
+        // Update meta description
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute("content", post.excerpt);
+
+        // Update Open Graph tags
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle)
+          ogTitle.setAttribute(
+            "content",
+            `${post.title} – LetMeGlowUp Fashion Blog`
+          );
+
+        const ogDesc = document.querySelector(
+          'meta[property="og:description"]'
+        );
+        if (ogDesc) ogDesc.setAttribute("content", post.excerpt);
+
+        const ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage) ogImage.setAttribute("content", post.featuredImage);
+
+        // Update Twitter tags
+        const twitterTitle = document.querySelector(
+          'meta[name="twitter:title"]'
+        );
+        if (twitterTitle)
+          twitterTitle.setAttribute(
+            "content",
+            `${post.title} – LetMeGlowUp Fashion Blog`
+          );
+
+        const twitterDesc = document.querySelector(
+          'meta[name="twitter:description"]'
+        );
+        if (twitterDesc) twitterDesc.setAttribute("content", post.excerpt);
+
+        const twitterImage = document.querySelector(
+          'meta[name="twitter:image"]'
+        );
+        if (twitterImage)
+          twitterImage.setAttribute("content", post.featuredImage);
+      }
+
+      // Update structured data
+      function updateStructuredData(post) {
+        const structuredData = {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: post.title,
+          image: post.featuredImage,
+          author: {
+            "@type": "Person",
+            name: post.author.name,
+          },
+          datePublished: post.publishDate,
+          dateModified: post.publishDate,
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `https://letmeglowup.com/fashion-post.html?id=${post.id}`,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "LetMeGlowUp",
+            logo: {
+              "@type": "ImageObject",
+              url: "assets/images/logo.png",
+            },
+          },
+          description: post.excerpt,
+        };
+
+        const script = document.querySelector(
+          'script[type="application/ld+json"]'
+        );
+        if (script) {
+          script.textContent = JSON.stringify(structuredData);
+        }
+      }
+
+      // Load content when page loads
+      document.addEventListener("DOMContentLoaded", loadBlogPost);
     </script>
   </body>
 </html>

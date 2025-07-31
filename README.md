@@ -15,3 +15,15 @@ affiliateUrl: "https://amazon.com/product?aff=YOUR-AFFILIATE-ID",
 description: "Brief product description...",
 onSale: false
 }
+
+# How to edit the blog post
+
+How It Works:
+Click any blog post in fashion.html → redirects to fashion-post.html?id=post-id
+JavaScript loads the specific post content from blog-posts.json
+Page updates with the correct title, content, author, images, etc.
+SEO maintained with dynamic meta tags and structured data
+✅ For Daily Posts:
+To add a new post, simply:
+Add a new entry to assets/data/blog-posts.json
+Update the link in fashion.html to point to fashion-post.html?id=your-new-post-id
