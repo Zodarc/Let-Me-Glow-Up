@@ -80,35 +80,50 @@
         </div>
 
         <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
+          <ul class="nav__list text-xs md:text-sm gap-1 md:gap-2">
             <li class="nav__item">
-              <a href="fashion.html" class="nav__link">Fashion</a>
+              <a href="fashion.html" class="nav__link px-1 md:px-2">Fashion</a>
             </li>
             <li class="nav__item">
-              <a href="glow.html" class="nav__link">Glow</a>
+              <a href="glow.html" class="nav__link px-1 md:px-2">Glow</a>
             </li>
             <li class="nav__item">
-              <a href="shop.html" class="nav__link">Shop</a>
+              <a href="shop.html" class="nav__link px-1 md:px-2">Shop</a>
             </li>
             <li class="nav__item">
-              <a href="courses.html" class="nav__link">Courses</a>
+              <a href="courses.html" class="nav__link px-1 md:px-2">Courses</a>
             </li>
             <li class="nav__item">
-              <a href="ai-tools.html" class="nav__link">AI Tools</a>
+              <a href="ai-tools.html" class="nav__link px-1 md:px-2"
+                >AI Tools</a
+              >
             </li>
             <li class="nav__item">
-              <a href="quiz.html" class="nav__link">Quiz</a>
+              <a href="quiz.html" class="nav__link px-1 md:px-2">Quiz</a>
             </li>
             <li class="nav__item">
-              <a href="about.html" class="nav__link">About</a>
+              <a href="about.html" class="nav__link px-1 md:px-2">About</a>
             </li>
             <li class="nav__item">
-              <a href="contact.html" class="nav__link">Contact</a>
+              <a href="contact.html" class="nav__link px-1 md:px-2">Contact</a>
             </li>
           </ul>
         </div>
 
         <div class="nav__actions">
+          <a
+            href="wishlist.html"
+            class="nav__link active flex items-center gap-1 md:gap-2 text-xs md:text-sm px-1 md:px-2"
+            title="Wishlist"
+          >
+            <i class="fa fa-heart text-pop-pink text-base md:text-lg"></i>
+            <span
+              id="wishlist-counter"
+              class="inline-flex items-center justify-center bg-pop-pink text-white text-[10px] md:text-xs rounded-full px-1 md:px-1.5"
+              style="min-width: 1.2em; height: 1.2em; position: static"
+            ></span>
+            <span>Wishlist</span>
+          </a>
           <button class="nav__search" id="search-toggle">
             <i class="icon-search"></i>
           </button>

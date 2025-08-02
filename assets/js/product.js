@@ -197,6 +197,15 @@ async function initProduct() {
     {date:'2025-07-01',price:product.oldPrice||product.price},
     {date:'2025-07-15',price:product.price}
   ]);
+
+  // --- Wishlist Counter Integration ---
+  if (typeof updateWishlistCounter === 'function') {
+    updateWishlistCounter();
+  }
+  // --- Recently Viewed Integration ---
+  if (typeof addRecentlyViewed === 'function') {
+    addRecentlyViewed(product);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', initProduct);
