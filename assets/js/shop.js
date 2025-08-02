@@ -82,7 +82,7 @@ function renderStars(rating) {
 
 // Utility: Wishlist check
 function isInWishlist(id) {
-  const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+  const wishlist = JSON.parse(localStorage.getItem('letmeglowup_wishlist') || '[]');
   return wishlist.some(item => item.id === id);
 }
 
@@ -250,13 +250,13 @@ function setupEventListeners() {
 
 // Wishlist toggle logic
 function toggleWishlist(id) {
-  let wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+  let wishlist = JSON.parse(localStorage.getItem('letmeglowup_wishlist') || '[]');
   const product = allProducts.find(p => p.id == id);
   if (!product) return;
   const idx = wishlist.findIndex(item => item.id == id);
   if (idx > -1) wishlist.splice(idx, 1);
   else wishlist.push(product);
-  localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  localStorage.setItem('letmeglowup_wishlist', JSON.stringify(wishlist));
   // Update counter if available
   if (window.updateWishlistCounter) window.updateWishlistCounter();
 }

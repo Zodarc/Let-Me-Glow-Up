@@ -22,12 +22,12 @@ async function loadProducts(category = 'All') {
   }
   grid.innerHTML = filtered.map(product => {
     const discounted = product.discount && product.oldPrice > product.price;
+    // Only show wishlist button if on shop.html
+    const isShop = window.location.pathname.endsWith('shop.html');
     return `
     <div class="product-card group relative bg-white rounded-2xl shadow-lg overflow-hidden border border-soft-beige transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
       ${discounted ? `<span class=\"absolute top-4 left-4 bg-pop-pink text-white text-xs font-bold px-3 py-1 rounded-full z-10\">-${product.discount}%</span>` : ''}
-      <button class="wishlist-btn absolute top-4 right-4 bg-white/80 rounded-full p-2 shadow hover:bg-pop-pink hover:text-white transition z-10" aria-label="Add to Wishlist" data-id="${product.id}">
-        <i class="fa fa-heart"></i>
-      </button>
+      ${isShop ? `<button class=\"wishlist-btn absolute top-4 right-4 bg-white/80 rounded-full p-2 shadow hover:bg-pop-pink hover:text-white transition z-10\" aria-label=\"Add to Wishlist\" data-id=\"${product.id}\"><i class=\"fa fa-heart\"></i></button>` : ''}
       <div class="overflow-hidden">
         <img src="${product.image}" alt="${product.title}" class="product-card__image w-full h-48 object-cover object-center group-hover:scale-110 transition-transform duration-300" />
       </div>
@@ -50,8 +50,11 @@ async function loadProducts(category = 'All') {
     </div>
     `;
   }).join('');
-  setupWishlistButtons();
+  if (window.location.pathname.endsWith('shop.html')) {
+    setupWishlistButtons();
+  }
   setupAffiliateTracking();
+  if (window.updateWishlistCounter) window.updateWishlistCounter();
 }
 
 function renderStars(rating) {
@@ -67,18 +70,48 @@ function renderStars(rating) {
 // Wishlist toggle functionality
 function setupWishlistButtons() {
   const buttons = document.querySelectorAll('.wishlist-btn');
+  // On load, set button state based on wishlist
+  let wishlist = JSON.parse(localStorage.getItem('letmeglowup_wishlist') || '[]');
   buttons.forEach(btn => {
+    const id = btn.getAttribute('data-id');
+    const inWishlist = wishlist.some(item => String(item.id) === String(id));
+    if (inWishlist) {
+      btn.classList.add('active');
+      btn.querySelector('i').classList.add('text-pop-pink');
+      btn.querySelector('i').classList.remove('text-gray-400');
+    } else {
+      btn.classList.remove('active');
+      btn.querySelector('i').classList.remove('text-pop-pink');
+      btn.querySelector('i').classList.add('text-gray-400');
+    }
     btn.addEventListener('click', function(e) {
       e.preventDefault();
-      this.classList.toggle('active');
-      const icon = this.querySelector('i');
-      if (this.classList.contains('active')) {
-        icon.classList.add('text-pop-pink');
-        icon.classList.remove('text-gray-400');
+      let wishlist = JSON.parse(localStorage.getItem('letmeglowup_wishlist') || '[]');
+      const id = this.getAttribute('data-id');
+      const productCard = this.closest('.product-card');
+      const title = productCard.querySelector('.product-card__title').textContent;
+      const image = productCard.querySelector('img').getAttribute('src');
+      const price = parseFloat(productCard.querySelector('.product-card__price-current').textContent.replace('$',''));
+      const oldPriceEl = productCard.querySelector('.product-card__price-original');
+      const oldPrice = oldPriceEl ? parseFloat(oldPriceEl.textContent.replace('$','')) : null;
+      const category = productCard.querySelector('.text-glossy-brown')?.textContent || '';
+      const discountEl = productCard.querySelector('span.absolute');
+      const discount = discountEl ? parseInt(discountEl.textContent.replace(/\D/g, '')) : null;
+      const product = { id: Number(id), title, image, price, oldPrice, category, discount };
+      const idx = wishlist.findIndex(item => String(item.id) === String(id));
+      if (idx > -1) {
+        wishlist.splice(idx, 1);
+        this.classList.remove('active');
+        this.querySelector('i').classList.remove('text-pop-pink');
+        this.querySelector('i').classList.add('text-gray-400');
       } else {
-        icon.classList.remove('text-pop-pink');
-        icon.classList.add('text-gray-400');
+        wishlist.push(product);
+        this.classList.add('active');
+        this.querySelector('i').classList.add('text-pop-pink');
+        this.querySelector('i').classList.remove('text-gray-400');
       }
+      localStorage.setItem('letmeglowup_wishlist', JSON.stringify(wishlist));
+      if (window.updateWishlistCounter) window.updateWishlistCounter();
     });
   });
 }
@@ -161,6 +194,19 @@ function setupQuickView() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // On non-shop pages, clean up wishlist to only include products that exist in the shop
+  if (!window.location.pathname.endsWith('shop.html')) {
+    fetch('assets/data/products.json').then(res => res.json()).then(products => {
+      let wishlist = JSON.parse(localStorage.getItem('letmeglowup_wishlist') || '[]');
+      // Only keep wishlist items that exist in products.json
+      const validIds = new Set(products.map(p => String(p.id)));
+      const filtered = wishlist.filter(item => validIds.has(String(item.id)));
+      if (filtered.length !== wishlist.length) {
+        localStorage.setItem('letmeglowup_wishlist', JSON.stringify(filtered));
+        if (window.updateWishlistCounter) window.updateWishlistCounter();
+      }
+    });
+  }
   loadProducts();
   setupCategoryTabs();
   setTimeout(setupQuickView, 500); // Wait for products to render

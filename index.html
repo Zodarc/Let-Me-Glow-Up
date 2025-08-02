@@ -105,33 +105,95 @@
           <a href="index.html">LetMeGlowUp</a>
         </div>
 
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list text-xs md:text-sm gap-1 md:gap-2">
-            <li class="nav__item">
-              <a href="fashion.html" class="nav__link px-1 md:px-2">Fashion</a>
+        <div
+          class="nav__menu"
+          id="nav-menu"
+          role="navigation"
+          aria-label="Main Navigation"
+        >
+          <ul
+            class="nav__list text-xs md:text-sm gap-1 md:gap-2"
+            role="menubar"
+          >
+            <li class="nav__item" role="none">
+              <a
+                href="fashion.html"
+                class="nav__link px-1 md:px-2"
+                role="menuitem"
+                tabindex="0"
+                aria-label="Fashion"
+                >Fashion</a
+              >
             </li>
-            <li class="nav__item">
-              <a href="glow.html" class="nav__link px-1 md:px-2">Glow</a>
+            <li class="nav__item" role="none">
+              <a
+                href="glow.html"
+                class="nav__link px-1 md:px-2"
+                role="menuitem"
+                tabindex="0"
+                aria-label="Glow"
+                >Glow</a
+              >
             </li>
-            <li class="nav__item">
-              <a href="shop.html" class="nav__link px-1 md:px-2">Shop</a>
+            <li class="nav__item" role="none">
+              <a
+                href="shop.html"
+                class="nav__link px-1 md:px-2"
+                role="menuitem"
+                tabindex="0"
+                aria-label="Shop"
+                >Shop</a
+              >
             </li>
-            <li class="nav__item">
-              <a href="courses.html" class="nav__link px-1 md:px-2">Courses</a>
+            <li class="nav__item" role="none">
+              <a
+                href="courses.html"
+                class="nav__link px-1 md:px-2"
+                role="menuitem"
+                tabindex="0"
+                aria-label="Courses"
+                >Courses</a
+              >
             </li>
-            <li class="nav__item">
-              <a href="ai-tools.html" class="nav__link px-1 md:px-2"
+            <li class="nav__item" role="none">
+              <a
+                href="ai-tools.html"
+                class="nav__link px-1 md:px-2"
+                role="menuitem"
+                tabindex="0"
+                aria-label="AI Tools"
                 >AI Tools</a
               >
             </li>
-            <li class="nav__item">
-              <a href="quiz.html" class="nav__link px-1 md:px-2">Quiz</a>
+            <li class="nav__item" role="none">
+              <a
+                href="quiz.html"
+                class="nav__link px-1 md:px-2"
+                role="menuitem"
+                tabindex="0"
+                aria-label="Quiz"
+                >Quiz</a
+              >
             </li>
-            <li class="nav__item">
-              <a href="about.html" class="nav__link px-1 md:px-2">About</a>
+            <li class="nav__item" role="none">
+              <a
+                href="about.html"
+                class="nav__link px-1 md:px-2"
+                role="menuitem"
+                tabindex="0"
+                aria-label="About"
+                >About</a
+              >
             </li>
-            <li class="nav__item">
-              <a href="contact.html" class="nav__link px-1 md:px-2">Contact</a>
+            <li class="nav__item" role="none">
+              <a
+                href="contact.html"
+                class="nav__link px-1 md:px-2"
+                role="menuitem"
+                tabindex="0"
+                aria-label="Contact"
+                >Contact</a
+              >
             </li>
           </ul>
         </div>
@@ -153,7 +215,14 @@
           <button class="nav__search" id="search-toggle">
             <i class="icon-search"></i>
           </button>
-          <button class="nav__toggle" id="nav-toggle">
+          <button
+            class="nav__toggle"
+            id="nav-toggle"
+            aria-label="Open navigation menu"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+            tabindex="0"
+          >
             <span></span>
             <span></span>
             <span></span>
@@ -720,8 +789,23 @@
         if (typeof updateWishlistCounter === "function") {
           updateWishlistCounter();
         }
+        // Hamburger menu accessibility
+        const navToggle = document.getElementById("nav-toggle");
+        const navMenu = document.getElementById("nav-menu");
+        if (navToggle && navMenu) {
+          navToggle.addEventListener("click", function () {
+            const expanded = navToggle.getAttribute("aria-expanded") === "true";
+            navToggle.setAttribute("aria-expanded", !expanded);
+            navMenu.classList.toggle("open");
+          });
+          navToggle.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              navToggle.click();
+            }
+          });
+        }
       });
     </script>
-    <script src="assets/js/wishlist.js"></script>
   </body>
 </html>
