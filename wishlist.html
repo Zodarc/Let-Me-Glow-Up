@@ -19,8 +19,20 @@
     <header class="header">
       <nav class="nav container">
         <div class="nav__logo"><a href="index.html">LetMeGlowUp</a></div>
+        <button
+          class="nav__toggle"
+          id="nav-toggle"
+          aria-label="Open navigation menu"
+          aria-controls="nav-menu"
+          aria-expanded="false"
+          tabindex="0"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list text-xs md:text-sm gap-1 md:gap-2">
+          <ul class="nav__list">
             <li class="nav__item">
               <a href="index.html" class="nav__link px-1 md:px-2">Home</a>
             </li>
@@ -60,11 +72,7 @@
               <i class="fa fa-share mr-2"></i>Share Wishlist
             </button>
           </div>
-          <div
-            id="wishlist-grid"
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8"
-            style="align-items: stretch"
-          ></div>
+          <div id="wishlist-grid" class="wishlist-grid"></div>
         </div>
         <div
           class="bg-white/80 rounded-2xl shadow mt-10 p-6 border border-soft-beige"
@@ -74,19 +82,31 @@
           >
             <i class="fa fa-clock text-pop-pink"></i>Recently Viewed
           </h2>
-          <div
-            id="recently-viewed"
-            class="recently-viewed flex gap-4 overflow-x-auto pb-2"
-          ></div>
+          <div id="recently-viewed" class="recently-viewed"></div>
         </div>
       </section>
     </main>
     <script src="assets/js/wishlist.js"></script>
     <script>
-      // Ensure wishlist counter updates on page load
+      // Hamburger menu accessibility for wishlist page
       document.addEventListener("DOMContentLoaded", function () {
         if (typeof updateWishlistCounter === "function") {
           updateWishlistCounter();
+        }
+        const navToggle = document.getElementById("nav-toggle");
+        const navMenu = document.getElementById("nav-menu");
+        if (navToggle && navMenu) {
+          navToggle.addEventListener("click", function () {
+            const expanded = navToggle.getAttribute("aria-expanded") === "true";
+            navToggle.setAttribute("aria-expanded", !expanded);
+            navMenu.classList.toggle("open");
+          });
+          navToggle.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              navToggle.click();
+            }
+          });
         }
       });
     </script>

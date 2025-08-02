@@ -75,10 +75,10 @@ function addRecentlyViewed(product) {
 async function renderWishlistPage() {
   const grid = document.getElementById('wishlist-grid');
         // Loading skeleton
-        grid.className = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8';
+        grid.className = 'wishlist-grid';
         grid.innerHTML = Array(4).fill('').map(() => `
-            <div class="product-card animate-pulse flex flex-col items-center text-center mx-auto" style="min-height:340px;">
-                <div class="bg-gray-200 rounded mb-2" style="width:150px;height:150px;"></div>
+            <div class="product-card animate-pulse">
+                <div class="bg-gray-200 rounded mb-2" style="width:120px;height:120px;"></div>
                 <div class="h-4 w-3/4 bg-gray-200 rounded mb-1"></div>
                 <div class="h-3 w-1/2 bg-gray-100 rounded mb-1"></div>
                 <div class="h-3 w-1/3 bg-gray-100 rounded mb-2"></div>
@@ -136,9 +136,9 @@ function renderRecentlyViewed() {
     return;
   }
   container.innerHTML = viewed.map(product => `
-    <div class="product-card" style="min-width:140px;max-width:160px;padding:0.75rem 0.5rem;min-height:220px;">
-      <img src="${product.image}" alt="${product.title}" style="width:100px;height:100px;object-fit:contain;margin-bottom:0.5rem;" />
-      <div class="line-clamp-2 mb-1" style="font-size:0.95rem;font-weight:600;">${product.title}</div>
+    <div class="product-card">
+      <img src="${product.image}" alt="${product.title}" />
+      <div class="line-clamp-2 mb-1">${product.title}</div>
       <a href="product.html?id=${product.id}" class="btn btn--primary btn--sm">View</a>
     </div>
   `).join('');

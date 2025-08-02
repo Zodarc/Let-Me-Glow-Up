@@ -1,141 +1,62 @@
-﻿/* ===== WISHLIST COUNTER BADGE & MOBILE WISHLIST FIXES ===== */
+﻿/* Wishlist grid layout (pure CSS, no Tailwind) */
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+@media (min-width: 768px) {
+  .wishlist-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  .wishlist-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1280px) {
+  .wishlist-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* Ensure all buttons/touch targets are at least 44px */
+.btn, .btn--sm, .wishlist-btn {
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+}
+.wishlist-btn {
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 1.1rem;
+  padding: 0.75rem;
+}
+
+/* Recently viewed scroll and card sizing */
+.recently-viewed {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+}
+.recently-viewed .product-card {
+  min-width: 120px;
+  max-width: 140px;
+  padding: 0.5rem 0.25rem;
+  min-height: 180px;
+}
+.recently-viewed .product-card img {
+  width: 80px;
+  height: 80px;
+}
+/* ===== WISHLIST COUNTER BADGE & MOBILE WISHLIST FIXES ===== */
 .wishlist-counter {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--pop-pink);
-  color: #fff;
-  border-radius: 9999px;
-  font-size: 1.1rem;
-  min-width: 1.8em;
-  height: 1.8em;
-  padding: 0 0.6em;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(255,105,180,0.10);
-  position: static;
-  margin-right: 0.25em;
-  transition: background 0.2s, color 0.2s;
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 15px;
-  }
-  .product-card {
-    min-height: 220px;
-    padding: 0.75rem 0.5rem 1rem 0.5rem;
-    max-width: 100%;
-  }
-  .product-card img {
-    width: 120px;
-    height: 120px;
-    min-width: 120px;
-    min-height: 120px;
-  }
-  .product-card h3 {
-    font-size: 1.05rem;
-  }
-  .product-card .btn,
-  .product-card .btn--sm,
-  .product-card .wishlist-btn {
-    min-width: 44px;
-    min-height: 44px;
-    font-size: 1rem;
-    padding: 0.75rem 1rem;
-  }
-  .wishlist-btn {
-    min-width: 44px;
-    min-height: 44px;
-    font-size: 1.1rem;
-    padding: 0.75rem;
-  }
-  .wishlist-counter {
-    font-size: 1rem !important;
-    min-width: 1.7em !important;
-    height: 1.7em !important;
-    padding: 0 0.5em !important;
-  }
-  #wishlist-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.25rem !important;
-  }
-  .recently-viewed {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    gap: 1rem;
-    padding-bottom: 0.5rem;
-  }
-  .recently-viewed .product-card {
-    min-width: 120px;
-    max-width: 140px;
-    padding: 0.5rem 0.25rem;
-    min-height: 180px;
-  }
-  .recently-viewed .product-card img {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
-  .hero__title {
-    font-size: 1.25rem;
-  }
-  .section__title {
-    font-size: 1.1rem;
-  }
-  .btn {
-    padding: 0.75rem 1.25rem;
-    font-size: 1rem;
-    min-width: 44px;
-    min-height: 44px;
-  }
-  .container {
-    padding: 0 0.5rem;
-  }
-  .product-card {
-    min-height: 180px;
-    padding: 0.5rem 0.25rem 0.75rem 0.25rem;
-    max-width: 100%;
-  }
-  .product-card img {
-    width: 90px;
-    height: 90px;
-    min-width: 90px;
-    min-height: 90px;
-  }
-  .product-card h3 {
-    font-size: 1rem;
-  }
-  .product-card .btn,
-  .product-card .btn--sm,
-  .product-card .wishlist-btn {
-    min-width: 44px;
-    min-height: 44px;
-    font-size: 1rem;
-    padding: 0.75rem 1rem;
-  }
-  .wishlist-btn {
-    min-width: 44px;
-    min-height: 44px;
-    font-size: 1.1rem;
-    padding: 0.75rem;
-  }
-  .wishlist-counter {
-    font-size: 1.1rem !important;
-    min-width: 1.8em !important;
-    height: 1.8em !important;
-    padding: 0 0.6em !important;
-  }
-  #wishlist-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-  }
-  .recently-viewed {
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
