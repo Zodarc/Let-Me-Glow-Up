@@ -1,3 +1,47 @@
+/* Newsletter Section */
+.newsletter {
+  position: relative;
+  background: linear-gradient(135deg, #ffe4ef 0%, #fff7fa 60%, #ffe4ef 100%);
+  overflow: hidden;
+}
+.newsletter__form input[type="email"] {
+  border-radius: 9999px;
+  border: 1px solid var(--pop-pink);
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.newsletter__form input[type="email"]:focus {
+  border-color: var(--pop-pink);
+  box-shadow: 0 0 0 2px #ffe4ef;
+}
+.newsletter__form button {
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+}
+.newsletter__form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255,255,255,0.85);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+  margin: 0 auto;
+}
+.newsletter input[type="checkbox"] {
+  accent-color: var(--pop-pink);
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.newsletter-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
 /* ===== COMPONENTS CSS ===== */
 
 /* Card Component */
@@ -73,10 +117,48 @@
   box-shadow: var(--shadow-xl);
 }
 
+
 .product-card__image {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+.product-card:hover .product-card__image,
+.product-card__image:hover {
+  transform: scale(1.10);
+}
+/* Skeleton Loading States */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #f3f3f3;
+}
+.skeleton-box {
+  background: linear-gradient(90deg, #f3f3f3 25%, #ececec 50%, #f3f3f3 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.2s infinite linear;
+  border-radius: 0.5rem;
+  min-height: 1rem;
+}
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.wishlist-btn.active i {
+  color: var(--pop-pink);
+}
+.wishlist-btn i {
+  color: #d1d5db;
+  transition: color 0.2s;
+}
+.affiliate-btn {
+  position: relative;
+  z-index: 1;
+}
+.quick-view-btn {
+  position: relative;
+  z-index: 1;
 }
 
 .product-card__content {

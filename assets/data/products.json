@@ -8,7 +8,8 @@
     "oldPrice": 39.99,
     "discount": 25,
     "rating": 4,
-    "reviews": 124
+    "reviews": 124,
+    "affiliateLink": "https://affiliate.example.com/glow-serum"
   },
   {
     "id": "matte-lipstick",
@@ -19,7 +20,8 @@
     "oldPrice": 19.99,
     "discount": 15,
     "rating": 4.5,
-    "reviews": 89
+    "reviews": 89,
+    "affiliateLink": "https://affiliate.example.com/matte-lipstick"
   },
   {
     "id": "hydrating-shampoo",
@@ -30,7 +32,8 @@
     "oldPrice": 14.49,
     "discount": 10,
     "rating": 5,
-    "reviews": 57
+    "reviews": 57,
+    "affiliateLink": "https://affiliate.example.com/hydrating-shampoo"
   },
   {
     "id": "signature-perfume",
@@ -41,6 +44,7 @@
     "oldPrice": 62.00,
     "discount": 20,
     "rating": 4.5,
-    "reviews": 33
+    "reviews": 33,
+    "affiliateLink": "https://affiliate.example.com/signature-perfume"
   }
 ]
