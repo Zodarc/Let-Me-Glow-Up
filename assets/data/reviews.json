@@ -1,0 +1,36 @@
+{
+  "glow-serum": [
+    {
+      "name": "Jane Doe",
+      "avatar": "assets/images/user1.jpg",
+      "rating": 5,
+      "text": "Absolutely love this serum! My skin is glowing.",
+      "photos": ["assets/images/review1.jpg"]
+    },
+    {
+      "name": "Emily R.",
+      "avatar": "assets/images/user2.jpg",
+      "rating": 4,
+      "text": "Great for sensitive skin. Would buy again.",
+      "photos": []
+    }
+  ],
+  "matte-lipstick": [
+    {
+      "name": "Samantha K.",
+      "avatar": "assets/images/user3.jpg",
+      "rating": 4.5,
+      "text": "Color lasts all day and doesn't dry out my lips!",
+      "photos": ["assets/images/review2.jpg", "assets/images/review3.jpg"]
+    }
+  ],
+  "hydrating-shampoo": [
+    {
+      "name": "Olivia P.",
+      "avatar": "assets/images/user4.jpg",
+      "rating": 5,
+      "text": "My hair feels so soft and hydrated.",
+      "photos": []
+    }
+  ]
+}

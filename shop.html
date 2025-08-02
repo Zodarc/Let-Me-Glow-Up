@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop - LetMeGlowUp</title>
+    <meta
+      name="description"
+      content="Shop trending beauty and skincare products, compare deals, and discover your next favorite with LetMeGlowUp."
+    />
+    <meta
+      name="keywords"
+      content="shop, beauty, skincare, makeup, deals, affiliate, Cloud10Beauty, LetMeGlowUp"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ff69b4" />
+    <link rel="canonical" href="shop.html" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "LetMeGlowUp Shop",
+        "url": "https://letmeglowup.com/shop.html",
+        "description": "Shop trending beauty and skincare products, compare deals, and discover your next favorite with LetMeGlowUp.",
+        "image": "assets/images/og-image.jpg"
+      }
+    </script>
+    <!-- Favicons, Fonts, Tailwind, CSS, FontAwesome, AOS -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/images/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="assets/images/android-chrome-512x512.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body class="bg-cream-white min-h-screen">
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav container">
+        <div class="nav__logo">
+          <a href="index.html">LetMeGlowUp</a>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="fashion.html" class="nav__link">Fashion</a>
+            </li>
+            <li class="nav__item">
+              <a href="glow.html" class="nav__link">Glow</a>
+            </li>
+            <li class="nav__item">
+              <a href="shop.html" class="nav__link">Shop</a>
+            </li>
+            <li class="nav__item">
+              <a href="courses.html" class="nav__link">Courses</a>
+            </li>
+            <li class="nav__item">
+              <a href="ai-tools.html" class="nav__link">AI Tools</a>
+            </li>
+            <li class="nav__item">
+              <a href="quiz.html" class="nav__link">Quiz</a>
+            </li>
+            <li class="nav__item">
+              <a href="about.html" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="contact.html" class="nav__link">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav__actions">
+          <button class="nav__search" id="search-toggle">
+            <i class="icon-search"></i>
+          </button>
+          <button class="nav__toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="main mt-20">
+      <!-- Shop Hero & Category Navigation -->
+      <section
+        class="shop-hero bg-cream-white py-8 border-b border-pop-pink/10"
+      >
+        <div
+          class="container mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+        >
+          <h1 class="text-3xl md:text-4xl font-bold text-pop-pink mb-2 md:mb-0">
+            Shop Beauty Deals
+          </h1>
+          <form
+            class="flex-1 flex items-center max-w-lg mx-auto md:mx-0"
+            id="shop-search-form"
+          >
+            <input
+              type="text"
+              class="flex-1 px-4 py-2 rounded-l-full border border-pop-pink focus:outline-none"
+              placeholder="Search products, brands..."
+            />
+            <button
+              type="submit"
+              class="px-4 py-2 bg-pop-pink text-white rounded-r-full font-semibold hover:bg-pop-pink/90"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+        </div>
+        <div class="container mx-auto px-4 mt-4">
+          <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+            <a href="#" class="category-tab active">All</a>
+            <a href="#" class="category-tab">Skincare</a>
+            <a href="#" class="category-tab">Makeup</a>
+            <a href="#" class="category-tab">Hair</a>
+            <a href="#" class="category-tab">Fragrance</a>
+            <a href="#" class="category-tab">Tools</a>
+            <a href="#" class="category-tab">Sets</a>
+          </div>
+        </div>
+      </section>
+      <section
+        class="shop-content container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8"
+      >
+        <!-- Filter Sidebar -->
+        <aside class="shop-filters w-full lg:w-1/4 mb-8 lg:mb-0">
+          <div class="bg-white rounded-xl shadow p-6 sticky top-24">
+            <h2 class="text-xl font-bold mb-4 text-pop-pink">Filters</h2>
+            <form id="filter-form" class="space-y-6">
+              <div>
+                <label class="block font-semibold mb-1">Price Range</label>
+                <div class="flex items-center gap-2">
+                  <input
+                    type="number"
+                    min="0"
+                    placeholder="$ Min"
+                    class="w-1/2 px-2 py-1 border rounded"
+                    id="filter-price-min"
+                  />
+                  <span>-</span>
+                  <input
+                    type="number"
+                    min="0"
+                    placeholder="$ Max"
+                    class="w-1/2 px-2 py-1 border rounded"
+                    id="filter-price-max"
+                  />
+                </div>
+              </div>
+              <div>
+                <label class="block font-semibold mb-1">Brand</label>
+                <select
+                  class="w-full border rounded px-2 py-1"
+                  id="filter-brand"
+                >
+                  <option value="">All Brands</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold mb-1">Category</label>
+                <select
+                  class="w-full border rounded px-2 py-1"
+                  id="filter-category"
+                >
+                  <option value="">All Categories</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold mb-1">Ratings</label>
+                <select
+                  class="w-full border rounded px-2 py-1"
+                  id="filter-rating"
+                >
+                  <option value="">All Ratings</option>
+                  <option value="4">4 stars & up</option>
+                  <option value="3">3 stars & up</option>
+                  <option value="2">2 stars & up</option>
+                  <option value="1">1 star & up</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold mb-1">Skin Type</label>
+                <select
+                  class="w-full border rounded px-2 py-1"
+                  id="filter-skin-type"
+                >
+                  <option value="">All Skin Types</option>
+                  <option value="normal">Normal</option>
+                  <option value="oily">Oily</option>
+                  <option value="dry">Dry</option>
+                  <option value="combination">Combination</option>
+                  <option value="sensitive">Sensitive</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold mb-1">Concerns</label>
+                <select
+                  class="w-full border rounded px-2 py-1"
+                  id="filter-concerns"
+                  multiple
+                >
+                  <option value="acne">Acne</option>
+                  <option value="aging">Aging</option>
+                  <option value="redness">Redness</option>
+                  <option value="dullness">Dullness</option>
+                  <option value="pores">Pores</option>
+                  <option value="dark-spots">Dark Spots</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn--primary w-full mt-4">
+                Apply Filters
+              </button>
+            </form>
+          </div>
+        </aside>
+        <!-- Main Shop Content -->
+        <section class="shop-main flex-1 min-w-0">
+          <div
+            class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4"
+          >
+            <div class="text-lg font-semibold">
+              Showing <span id="product-count">0</span> products
+            </div>
+            <div class="flex items-center gap-2">
+              <label for="sort-dropdown" class="font-medium">Sort by:</label>
+              <select id="sort-dropdown" class="border rounded px-2 py-1">
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Rating</option>
+                <option value="newest">Newest</option>
+              </select>
+            </div>
+          </div>
+          <!-- Product Grid -->
+          <div
+            id="shop-products-grid"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8"
+          >
+            <!-- Product cards will be rendered here by JS, including skeletons -->
+          </div>
+          <!-- Pagination -->
+          <nav
+            class="flex justify-center items-center gap-2 mb-8"
+            id="pagination"
+          >
+            <!-- Pagination buttons will be rendered by JS -->
+          </nav>
+          <!-- Recently Viewed -->
+          <section class="recently-viewed mb-8">
+            <h2 class="text-xl font-bold mb-4 text-pop-pink">
+              Recently Viewed
+            </h2>
+            <div
+              id="recently-viewed-grid"
+              class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
+            >
+              <!-- Recently viewed products will be rendered here by JS -->
+            </div>
+          </section>
+        </section>
+      </section>
+      <!-- Back to Top Button -->
+      <button
+        id="back-to-top"
+        class="fixed bottom-6 right-6 z-50 bg-pop-pink text-white rounded-full shadow-lg w-12 h-12 flex items-center justify-center text-2xl hover:bg-pop-pink/90 transition-all"
+        title="Back to top"
+        style="display: none"
+      >
+        <i class="fa fa-arrow-up"></i>
+      </button>
+    </main>
+    <!-- Footer (copied from index.html) -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <h3 class="footer__logo">LetMeGlowUp</h3>
+            <p class="footer__description">
+              Your AI-powered beauty and fashion companion.
+            </p>
+          </div>
+          <div class="footer__links">
+            <div class="footer__column">
+              <h4 class="footer__title">Platform</h4>
+              <ul class="footer__list">
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="glow.html">Glow</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="courses.html">Courses</a></li>
+              </ul>
+            </div>
+            <div class="footer__column">
+              <h4 class="footer__title">Tools</h4>
+              <ul class="footer__list">
+                <li><a href="ai-tools.html">AI Tools</a></li>
+                <li><a href="quiz.html">Beauty Quiz</a></li>
+                <li><a href="search-results.html">Search</a></li>
+              </ul>
+            </div>
+            <div class="footer__column">
+              <h4 class="footer__title">Support</h4>
+              <ul class="footer__list">
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+              </ul>
+            </div>
+            <div class="footer__column">
+              <h4 class="footer__title">Legal</h4>
+              <ul class="footer__list">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li>
+                  <a href="#affiliate-disclosure">Affiliate Disclosure</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer__disclosure" id="affiliate-disclosure">
+          <div class="disclosure__content">
+            <h4 class="disclosure__title">Affiliate Disclosure</h4>
+            <p class="disclosure__text">
+              LetMeGlowUp is a participant in various affiliate programs,
+              including but not limited to Amazon Associates, and other beauty
+              and fashion affiliate networks. This means we may earn commissions
+              from qualifying purchases made through links on our website. These
+              commissions help support the maintenance and development of our
+              platform and allow us to continue providing free content and AI
+              tools to our community.
+            </p>
+            <p class="disclosure__text">
+              We only recommend products that we genuinely believe in and that
+              align with our mission to help women discover their best beauty
+              and fashion choices. All opinions expressed on this website are
+              our own and are not influenced by affiliate partnerships.
+            </p>
+            <p class="disclosure__text">
+              <strong>Transparency Promise:</strong> We will always clearly mark
+              affiliate links and sponsored content. Your trust is our priority,
+              and we're committed to maintaining full transparency in all our
+              recommendations.
+            </p>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; 2024 LetMeGlowUp. All rights reserved. |
+            <a href="#affiliate-disclosure" class="footer__disclosure-link"
+              >Affiliate Disclosure</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="assets/js/shop.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -13,16 +13,20 @@ async function loadProducts(category = 'All') {
       </div>
     </div>
   `).join('');
-  const res = await fetch('assets/data/products.json');
+    const res = await fetch('assets/data/products.json'); // Fetch products from JSON
   const products = await res.json();
   let filtered = category === 'All' ? products : products.filter(p => p.category === category);
+  // Only show 4 products on homepage (index.html)
+  if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+    filtered = filtered.slice().reverse().slice(0, 4); // Show 4 most recent products
+  }
   grid.innerHTML = filtered.map(product => {
     const discounted = product.discount && product.oldPrice > product.price;
     return `
     <div class="product-card group relative bg-white rounded-2xl shadow-lg overflow-hidden border border-soft-beige transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-      ${discounted ? `<span class="absolute top-4 left-4 bg-pop-pink text-white text-xs font-bold px-3 py-1 rounded-full z-10">-${product.discount}%</span>` : ''}
+      ${discounted ? `<span class=\"absolute top-4 left-4 bg-pop-pink text-white text-xs font-bold px-3 py-1 rounded-full z-10\">-${product.discount}%</span>` : ''}
       <button class="wishlist-btn absolute top-4 right-4 bg-white/80 rounded-full p-2 shadow hover:bg-pop-pink hover:text-white transition z-10" aria-label="Add to Wishlist" data-id="${product.id}">
-        <i class="icon-heart"></i>
+        <i class="fa fa-heart"></i>
       </button>
       <div class="overflow-hidden">
         <img src="${product.image}" alt="${product.title}" class="product-card__image w-full h-48 object-cover object-center group-hover:scale-110 transition-transform duration-300" />
@@ -36,11 +40,11 @@ async function loadProducts(category = 'All') {
         </div>
         <div class="product-card__price flex items-center gap-2 mb-2">
           <span class="product-card__price-current">$${product.price.toFixed(2)}</span>
-          ${discounted ? `<span class="product-card__price-original">$${product.oldPrice.toFixed(2)}</span>` : ''}
+          ${discounted ? `<span class=\"product-card__price-original\">$${product.oldPrice.toFixed(2)}</span>` : ''}
         </div>
         <div class="flex gap-2 mt-2">
-          <a href="${product.affiliateLink}?ref=letmeglowup" target="_blank" rel="noopener" class="flex-1 px-3 py-2 rounded-full bg-pop-pink text-white font-medium hover:bg-glossy-brown transition affiliate-btn" data-id="${product.id}">Buy Now</a>
-          <button class="flex-1 px-3 py-2 rounded-full bg-cream-white text-pop-pink font-medium border border-pop-pink hover:bg-pop-pink hover:text-white transition quick-view-btn" data-id="${product.id}">Quick View</button>
+          <a href="product.html?id=${product.id}" class="btn btn--primary flex-1 px-3 py-2 rounded-full font-medium affiliate-btn" data-id="${product.id}">Buy Now</a>
+          <button class="btn btn--secondary flex-1 px-3 py-2 rounded-full font-medium quick-view-btn" data-id="${product.id}">Quick View</button>
         </div>
       </div>
     </div>
@@ -107,7 +111,57 @@ function setupCategoryTabs() {
   });
 }
 
+// Quick View Modal Logic
+function setupQuickView() {
+  // Create modal if not present
+  if (!document.getElementById('quick-view-modal')) {
+    const modal = document.createElement('div');
+    modal.id = 'quick-view-modal';
+    modal.className = 'modal';
+    modal.innerHTML = `
+      <div class="modal__content" style="max-width: 420px;">
+        <button class="modal__close" aria-label="Close">&times;</button>
+        <div id="quick-view-content"></div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+  // Close modal logic
+  document.querySelector('#quick-view-modal .modal__close').onclick = function() {
+    document.getElementById('quick-view-modal').classList.remove('show');
+  };
+  document.getElementById('quick-view-modal').onclick = function(e) {
+    if (e.target === this) this.classList.remove('show');
+  };
+  // Button event
+  document.querySelectorAll('.quick-view-btn').forEach(btn => {
+    btn.onclick = async function() {
+      const id = this.getAttribute('data-id');
+      const res = await fetch('assets/data/products.json');
+      const products = await res.json();
+      const product = products.find(p => String(p.id) === String(id));
+      if (!product) return;
+      document.getElementById('quick-view-content').innerHTML = `
+        <div class="text-center mb-4">
+          <img src="${product.image}" alt="${product.title}" class="w-40 h-40 object-contain mx-auto rounded-lg mb-2" />
+          <h3 class="text-lg font-bold mb-1">${product.title}</h3>
+          <div class="text-sm text-gray-500 mb-2">${product.brand || ''}</div>
+          <div class="flex items-center justify-center gap-2 mb-2">
+            <span class="text-pop-pink font-bold text-xl">$${product.price.toFixed(2)}</span>
+            ${product.oldPrice ? `<span class='line-through text-gray-400'>$${product.oldPrice.toFixed(2)}</span>` : ''}
+            ${product.discount ? `<span class='text-green-600 font-semibold'>${product.discount}% off</span>` : ''}
+          </div>
+          <div class="mb-2">${product.description ? product.description.substring(0, 100) + '...' : ''}</div>
+          <a href="product.html?id=${product.id}" class="btn btn--primary w-full">View Full Details</a>
+        </div>
+      `;
+      document.getElementById('quick-view-modal').classList.add('show');
+    };
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   loadProducts();
   setupCategoryTabs();
+  setTimeout(setupQuickView, 500); // Wait for products to render
 });

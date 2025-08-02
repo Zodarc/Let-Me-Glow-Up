@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - LetMeGlowUp</title>
+    <meta
+      name="description"
+      content="View detailed information, reviews, and deals for your favorite beauty and skincare products on LetMeGlowUp."
+    />
+    <meta name="theme-color" content="#ff69b4" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-cream-white min-h-screen">
+    <!-- Header (reuse from index.html) -->
+    <header class="header">
+      <nav class="nav container">
+        <div class="nav__logo"><a href="index.html">LetMeGlowUp</a></div>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="fashion.html" class="nav__link">Fashion</a>
+            </li>
+            <li class="nav__item">
+              <a href="glow.html" class="nav__link">Glow</a>
+            </li>
+            <li class="nav__item">
+              <a href="shop.html" class="nav__link">Shop</a>
+            </li>
+            <li class="nav__item">
+              <a href="courses.html" class="nav__link">Courses</a>
+            </li>
+            <li class="nav__item">
+              <a href="ai-tools.html" class="nav__link">AI Tools</a>
+            </li>
+            <li class="nav__item">
+              <a href="quiz.html" class="nav__link">Quiz</a>
+            </li>
+            <li class="nav__item">
+              <a href="about.html" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="contact.html" class="nav__link">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav__actions">
+          <button class="nav__search" id="search-toggle">
+            <i class="icon-search"></i>
+          </button>
+          <button class="nav__toggle" id="nav-toggle">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="main mt-20">
+      <section
+        class="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-12"
+      >
+        <!-- Product Gallery -->
+        <aside class="w-full lg:w-2/5">
+          <div id="product-gallery" class="bg-white rounded-xl shadow p-4 mb-4">
+            <div class="main-image mb-4">
+              <img
+                id="main-product-image"
+                src=""
+                alt="Product"
+                class="w-full h-96 object-contain rounded-lg"
+              />
+            </div>
+            <div
+              class="thumbnails flex gap-2 justify-center"
+              id="product-thumbnails"
+            >
+              <!-- Thumbnails rendered by JS -->
+            </div>
+          </div>
+          <div class="share-buttons flex gap-2 justify-center mb-4">
+            <button
+              class="btn btn--icon"
+              id="share-facebook"
+              title="Share on Facebook"
+            >
+              <i class="fab fa-facebook"></i>
+            </button>
+            <button
+              class="btn btn--icon"
+              id="share-twitter"
+              title="Share on Twitter"
+            >
+              <i class="fab fa-twitter"></i>
+            </button>
+            <button
+              class="btn btn--icon"
+              id="share-pinterest"
+              title="Share on Pinterest"
+            >
+              <i class="fab fa-pinterest"></i>
+            </button>
+            <button class="btn btn--icon" id="share-link" title="Copy Link">
+              <i class="fa fa-link"></i>
+            </button>
+          </div>
+          <div class="price-history bg-white rounded-xl shadow p-4 mt-4">
+            <h3 class="font-semibold mb-2 text-pop-pink">Price History</h3>
+            <canvas
+              id="price-history-graph"
+              height="180"
+              style="height: 180px; max-height: 180px"
+            ></canvas>
+          </div>
+        </aside>
+        <!-- Product Info -->
+        <section class="flex-1 min-w-0">
+          <div class="bg-white rounded-xl shadow p-6 mb-6">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h1 id="product-title" class="text-2xl font-bold mb-2"></h1>
+                <div
+                  id="product-brand"
+                  class="text-sm text-gray-500 mb-2"
+                ></div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span
+                    id="product-price"
+                    class="text-pop-pink font-bold text-2xl"
+                  ></span>
+                  <span
+                    id="product-old-price"
+                    class="line-through text-gray-400"
+                  ></span>
+                  <span
+                    id="product-discount"
+                    class="text-green-600 font-semibold"
+                  ></span>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span id="product-rating" class="text-yellow-400"></span>
+                  <span
+                    id="product-reviews"
+                    class="text-xs text-gray-400"
+                  ></span>
+                </div>
+                <div
+                  id="product-availability"
+                  class="mb-2 text-green-600 font-semibold"
+                ></div>
+                <div
+                  id="product-shipping"
+                  class="mb-2 text-sm text-gray-500"
+                ></div>
+                <div class="flex gap-2 mb-4">
+                  <select
+                    id="product-size"
+                    class="border rounded px-2 py-1 hidden"
+                  ></select>
+                  <select
+                    id="product-shade"
+                    class="border rounded px-2 py-1 hidden"
+                  ></select>
+                </div>
+                <div class="flex gap-2 mb-4">
+                  <button
+                    id="wishlist-btn"
+                    class="btn btn--icon text-pop-pink"
+                    title="Add to Wishlist"
+                  >
+                    <i class="fa fa-heart"></i>
+                  </button>
+                  <a
+                    id="buy-now-btn"
+                    href="#"
+                    target="_blank"
+                    rel="nofollow noopener"
+                    class="btn btn--primary"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div id="product-description" class="mt-4"></div>
+            <div id="product-ingredients" class="mt-4"></div>
+          </div>
+          <!-- Customer Reviews -->
+          <div class="bg-white rounded-xl shadow p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4 text-pop-pink">
+              Customer Reviews
+            </h2>
+            <div id="customer-reviews">
+              <!-- Reviews rendered by JS -->
+            </div>
+          </div>
+          <!-- Related Products -->
+          <div class="bg-white rounded-xl shadow p-6">
+            <h2 class="text-xl font-bold mb-4 text-pop-pink">
+              Related Products
+            </h2>
+            <div
+              id="related-products-carousel"
+              class="flex gap-4 overflow-x-auto pb-2"
+            >
+              <!-- Related products rendered by JS -->
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <!-- Footer (reuse from index.html) -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <h3 class="footer__logo">LetMeGlowUp</h3>
+            <p class="footer__description">
+              Your AI-powered beauty and fashion companion.
+            </p>
+          </div>
+          <div class="footer__links">
+            <div class="footer__column">
+              <h4 class="footer__title">Platform</h4>
+              <ul class="footer__list">
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="glow.html">Glow</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="courses.html">Courses</a></li>
+              </ul>
+            </div>
+            <div class="footer__column">
+              <h4 class="footer__title">Tools</h4>
+              <ul class="footer__list">
+                <li><a href="ai-tools.html">AI Tools</a></li>
+                <li><a href="quiz.html">Beauty Quiz</a></li>
+                <li><a href="search-results.html">Search</a></li>
+              </ul>
+            </div>
+            <div class="footer__column">
+              <h4 class="footer__title">Support</h4>
+              <ul class="footer__list">
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+              </ul>
+            </div>
+            <div class="footer__column">
+              <h4 class="footer__title">Legal</h4>
+              <ul class="footer__list">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li>
+                  <a href="#affiliate-disclosure">Affiliate Disclosure</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer__disclosure" id="affiliate-disclosure">
+          <div class="disclosure__content">
+            <h4 class="disclosure__title">Affiliate Disclosure</h4>
+            <p class="disclosure__text">
+              LetMeGlowUp is a participant in various affiliate programs,
+              including but not limited to Amazon Associates, and other beauty
+              and fashion affiliate networks. This means we may earn commissions
+              from qualifying purchases made through links on our website. These
+              commissions help support the maintenance and development of our
+              platform and allow us to continue providing free content and AI
+              tools to our community.
+            </p>
+            <p class="disclosure__text">
+              We only recommend products that we genuinely believe in and that
+              align with our mission to help women discover their best beauty
+              and fashion choices. All opinions expressed on this website are
+              our own and are not influenced by affiliate partnerships.
+            </p>
+            <p class="disclosure__text">
+              <strong>Transparency Promise:</strong> We will always clearly mark
+              affiliate links and sponsored content. Your trust is our priority,
+              and we're committed to maintaining full transparency in all our
+              recommendations.
+            </p>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; 2024 LetMeGlowUp. All rights reserved. |
+            <a href="#affiliate-disclosure" class="footer__disclosure-link"
+              >Affiliate Disclosure</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/product.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
