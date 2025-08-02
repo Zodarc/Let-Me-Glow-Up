@@ -1,0 +1,65 @@
+[
+  {
+    "id": "testimonial-1",
+    "name": "Aisha B.",
+    "image": "assets/images/hero-image-1.jpg",
+    "text": "LetMeGlowUp completely changed my skincare routine! My skin has never looked better.",
+    "location": "Lagos, Nigeria"
+  },
+  {
+    "id": "testimonial-2",
+    "name": "Sophia L.",
+    "image": "assets/images/hero-image-2.jpg",
+    "text": "The AI recommendations are spot on. I love the community and the expert advice!",
+    "location": "London, UK"
+  },
+  {
+    "id": "testimonial-3",
+    "name": "Priya S.",
+    "image": "assets/images/hero-image-3.jpg",
+    "text": "The AI tools are so easy to use and actually work! My friends keep asking for my beauty secrets now.",
+    "location": "Chicago, IL"
+  },
+  {
+    "id": "testimonial-4",
+    "name": "Hannah K.",
+    "image": "assets/images/hero-image-1.jpg",
+    "text": "I love the personalized routines. My skin has never looked better and I feel so much more confident!",
+    "location": "Austin, TX"
+  },
+  {
+    "id": "testimonial-5",
+    "name": "Maya P.",
+    "image": "assets/images/hero-image-2.jpg",
+    "text": "The product reviews are honest and the recommendations are always on trend. Highly recommend!",
+    "location": "Miami, FL"
+  },
+  {
+    "id": "testimonial-6",
+    "name": "Jasmine T.",
+    "image": "assets/images/hero-image-3.jpg",
+    "text": "I discovered so many new brands and products. The AI quiz was fun and surprisingly accurate!",
+    "location": "Seattle, WA"
+  },
+  {
+    "id": "testimonial-7",
+    "name": "Olivia M.",
+    "image": "assets/images/hero-image-1.jpg",
+    "text": "LetMeGlowUp is my go-to for beauty advice. The community is so supportive and the site is gorgeous!",
+    "location": "Denver, CO"
+  },
+  {
+    "id": "testimonial-8",
+    "name": "Sara B.",
+    "image": "assets/images/hero-image-2.jpg",
+    "text": "I love the mix of expert tips and real user reviews. The trust badges make me feel safe shopping here.",
+    "location": "Boston, MA"
+  },
+  {
+    "id": "testimonial-9",
+    "name": "Lina V.",
+    "image": "assets/images/hero-image-3.jpg",
+    "text": "The carousel is so cute on mobile! I always check the testimonials before buying anything.",
+    "location": "San Francisco, CA"
+  }
+]

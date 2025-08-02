@@ -1,0 +1,22 @@
+[
+  {
+    "id": "fashion-1",
+    "title": "How to Style Neutrals Like a Pro",
+    "image": "assets/images/hero-image-2.jpg",
+    "excerpt": "Master the art of minimalist fashion with these tips.",
+    "date": "2025-07-01",
+    "author": "Style Guru",
+    "category": "Fashion",
+    "link": "fashion-post-1.html"
+  },
+  {
+    "id": "fashion-2",
+    "title": "2025 Summer Fashion Trends",
+    "image": "assets/images/hero-image-3.jpg",
+    "excerpt": "See what’s hot this season and how to wear it.",
+    "date": "2025-06-20",
+    "author": "Fashionista",
+    "category": "Fashion",
+    "link": "fashion-post-2.html"
+  }
+]

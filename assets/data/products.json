@@ -1,0 +1,46 @@
+[
+  {
+    "id": "glow-serum",
+    "title": "Glow Serum",
+    "category": "Skincare",
+    "image": "assets/images/hero-image-1.jpg",
+    "price": 29.99,
+    "oldPrice": 39.99,
+    "discount": 25,
+    "rating": 4,
+    "reviews": 124
+  },
+  {
+    "id": "matte-lipstick",
+    "title": "Matte Lipstick",
+    "category": "Makeup",
+    "image": "assets/images/hero-image-2.jpg",
+    "price": 16.99,
+    "oldPrice": 19.99,
+    "discount": 15,
+    "rating": 4.5,
+    "reviews": 89
+  },
+  {
+    "id": "hydrating-shampoo",
+    "title": "Hydrating Shampoo",
+    "category": "Hair",
+    "image": "assets/images/hero-image-3.jpg",
+    "price": 12.99,
+    "oldPrice": 14.49,
+    "discount": 10,
+    "rating": 5,
+    "reviews": 57
+  },
+  {
+    "id": "signature-perfume",
+    "title": "Signature Perfume",
+    "category": "Fragrance",
+    "image": "assets/images/hero-image-2.jpg",
+    "price": 49.99,
+    "oldPrice": 62.00,
+    "discount": 20,
+    "rating": 4.5,
+    "reviews": 33
+  }
+]

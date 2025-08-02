@@ -40,8 +40,37 @@
     />
     <meta name="twitter:image" content="assets/images/og-image.jpg" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <!-- Favicons for all devices -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/images/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="assets/images/android-chrome-512x512.png"
+    />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,6 +79,9 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -237,6 +269,289 @@
         </div>
       </section>
 
+      <!-- AI Tools Showcase Section -->
+      <section class="ai-tools-showcase py-12 md:py-20 bg-cream-white">
+        <div class="container mx-auto px-4 md:px-8">
+          <h2
+            class="text-2xl md:text-4xl font-bold text-center mb-10 text-deep-black"
+            data-aos="fade-up"
+          >
+            Explore Our AI Beauty Tools
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Skincare Analyzer -->
+            <div
+              class="glass-card group p-8 rounded-2xl shadow-lg backdrop-blur-md bg-white/60 border border-pop-pink/10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative overflow-hidden"
+              style="
+                background-image: url('assets/images/hero-image-1.jpg');
+                background-size: cover;
+                background-position: center;
+              "
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div
+                class="absolute inset-0 bg-white/70 group-hover:bg-white/60 transition duration-300 z-0"
+              ></div>
+              <div class="relative z-10 w-full flex flex-col items-center">
+                <div class="mb-4 text-pop-pink text-4xl">
+                  <i class="icon-ai"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Skincare Analyzer</h3>
+                <p class="text-gray-700 mb-4">
+                  Get instant, personalized skincare routines based on your
+                  unique skin profile.
+                </p>
+                <a
+                  href="ai-tools.html#skincare-analyzer"
+                  class="text-pop-pink font-semibold hover:underline transition"
+                  >Learn More &rarr;</a
+                >
+              </div>
+            </div>
+            <!-- Style Matcher -->
+            <div
+              class="glass-card group p-8 rounded-2xl shadow-lg backdrop-blur-md bg-white/60 border border-pop-pink/10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative overflow-hidden"
+              style="
+                background-image: url('assets/images/hero-image-2.jpg');
+                background-size: cover;
+                background-position: center;
+              "
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="absolute inset-0 bg-white/70 group-hover:bg-white/60 transition duration-300 z-0"
+              ></div>
+              <div class="relative z-10 w-full flex flex-col items-center">
+                <div class="mb-4 text-pop-pink text-4xl">
+                  <i class="icon-expert"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Style Matcher</h3>
+                <p class="text-gray-700 mb-4">
+                  Upload a photo and get outfit ideas tailored to your style and
+                  body type.
+                </p>
+                <a
+                  href="ai-tools.html#style-matcher"
+                  class="text-pop-pink font-semibold hover:underline transition"
+                  >Learn More &rarr;</a
+                >
+              </div>
+            </div>
+            <!-- Look Builder -->
+            <div
+              class="glass-card group p-8 rounded-2xl shadow-lg backdrop-blur-md bg-white/60 border border-pop-pink/10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative overflow-hidden"
+              style="
+                background-image: url('assets/images/hero-image-3.jpg');
+                background-size: cover;
+                background-position: center;
+              "
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div
+                class="absolute inset-0 bg-white/70 group-hover:bg-white/60 transition duration-300 z-0"
+              ></div>
+              <div class="relative z-10 w-full flex flex-col items-center">
+                <div class="mb-4 text-pop-pink text-4xl">
+                  <i class="icon-community"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Look Builder</h3>
+                <p class="text-gray-700 mb-4">
+                  Create complete makeup looks and get step-by-step tutorials
+                  for any occasion.
+                </p>
+                <a
+                  href="ai-tools.html#look-builder"
+                  class="text-pop-pink font-semibold hover:underline transition"
+                  >Learn More &rarr;</a
+                >
+              </div>
+            </div>
+            <!-- Trend Finder -->
+            <div
+              class="glass-card group p-8 rounded-2xl shadow-lg backdrop-blur-md bg-white/60 border border-pop-pink/10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative overflow-hidden"
+              style="
+                background-image: url('assets/images/hero-image-2.jpg');
+                background-size: cover;
+                background-position: center;
+              "
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div
+                class="absolute inset-0 bg-white/70 group-hover:bg-white/60 transition duration-300 z-0"
+              ></div>
+              <div class="relative z-10 w-full flex flex-col items-center">
+                <div class="mb-4 text-pop-pink text-4xl">
+                  <i class="icon-star"></i>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Trend Finder</h3>
+                <p class="text-gray-700 mb-4">
+                  Discover trending beauty and fashion products personalized for
+                  you.
+                </p>
+                <a
+                  href="ai-tools.html#trend-finder"
+                  class="text-pop-pink font-semibold hover:underline transition"
+                  >Learn More &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Trending Products Section (Cloud10Beauty Inspired) -->
+      <section class="trending-products-section py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+          <h2
+            class="text-2xl md:text-4xl font-bold text-center mb-8 text-deep-black"
+            data-aos="fade-up"
+          >
+            Trending Beauty Products
+          </h2>
+          <!-- Category Filter Tabs -->
+          <div
+            class="flex flex-wrap justify-center gap-2 mb-8"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <button
+              class="category-tab active px-4 py-2 rounded-full bg-pop-pink text-white font-medium transition hover:bg-glossy-brown focus:outline-none"
+            >
+              All
+            </button>
+            <button
+              class="category-tab px-4 py-2 rounded-full bg-cream-white text-deep-black font-medium transition hover:bg-pop-pink hover:text-white focus:outline-none"
+            >
+              Skincare
+            </button>
+            <button
+              class="category-tab px-4 py-2 rounded-full bg-cream-white text-deep-black font-medium transition hover:bg-pop-pink hover:text-white focus:outline-none"
+            >
+              Makeup
+            </button>
+            <button
+              class="category-tab px-4 py-2 rounded-full bg-cream-white text-deep-black font-medium transition hover:bg-pop-pink hover:text-white focus:outline-none"
+            >
+              Hair
+            </button>
+            <button
+              class="category-tab px-4 py-2 rounded-full bg-cream-white text-deep-black font-medium transition hover:bg-pop-pink hover:text-white focus:outline-none"
+            >
+              Fragrance
+            </button>
+          </div>
+          <!-- Products Grid -->
+          <div
+            id="products-grid"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Beauty Posts Section -->
+      <section class="beauty-posts-section py-12 md:py-20 bg-cream-white">
+        <div class="container mx-auto px-4 md:px-8">
+          <h2
+            class="text-2xl md:text-4xl font-bold text-center mb-8 text-deep-black"
+            data-aos="fade-up"
+          >
+            Latest Beauty Posts
+          </h2>
+          <div
+            id="beauty-posts-grid"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Fashion Posts Section -->
+      <section class="fashion-posts-section py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+          <h2
+            class="text-2xl md:text-4xl font-bold text-center mb-8 text-deep-black"
+            data-aos="fade-up"
+          >
+            Latest Fashion Posts
+          </h2>
+          <div
+            id="fashion-posts-grid"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+          ></div>
+        </div>
+      </section>
+      <!-- Testimonials Section -->
+      <section class="testimonials-section py-12 md:py-20 bg-cream-white">
+        <div class="container mx-auto px-4 md:px-8 relative">
+          <!-- Subtle Beauty Pattern Background -->
+          <div
+            class="absolute inset-0 pointer-events-none opacity-10 bg-[url('assets/images/beauty-pattern.png')] bg-repeat bg-center"
+          ></div>
+          <!-- Trust Badges & Review Stats -->
+          <div
+            class="flex flex-col md:flex-row items-center justify-between mb-8 z-10 relative"
+          >
+            <div class="flex items-center gap-4 mb-4 md:mb-0">
+              <img
+                src="assets/images/trust-badge-1.png"
+                alt="Trust Badge"
+                class="h-10"
+              />
+              <img
+                src="assets/images/trust-badge-2.png"
+                alt="Trust Badge"
+                class="h-10"
+              />
+              <img
+                src="assets/images/trust-badge-3.png"
+                alt="Trust Badge"
+                class="h-10"
+              />
+            </div>
+            <div class="text-center md:text-right">
+              <span class="text-2xl font-bold text-pop-pink">4.8/5</span>
+              <span class="text-gray-600 ml-2">Average Rating</span>
+              <span class="mx-2">·</span>
+              <span class="text-gray-600">1,200+ Verified Reviews</span>
+            </div>
+          </div>
+          <h2
+            class="text-2xl md:text-4xl font-bold text-center mb-8 text-deep-black z-10 relative"
+            data-aos="fade-up"
+          >
+            What Our Users Say
+          </h2>
+          <!-- Carousel for mobile, grid for desktop -->
+          <div class="relative z-10">
+            <div id="testimonials-carousel" class="block relative">
+              <!-- Carousel wrapper, JS will render slides here -->
+              <button
+                id="testimonials-prev"
+                aria-label="Previous testimonials"
+                class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-pop-pink hover:text-white text-pop-pink rounded-full shadow-lg w-10 h-10 items-center justify-center transition-all border border-pop-pink"
+              >
+                <i class="icon-arrow-left"></i>
+              </button>
+              <div
+                class="overflow-x-auto flex gap-4 snap-x snap-mandatory pb-4 testimonials-scroll"
+                style="scrollbar-width: none"
+              >
+                <div id="testimonials-grid" class="flex gap-4"></div>
+              </div>
+              <button
+                id="testimonials-next"
+                aria-label="Next testimonials"
+                class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-pop-pink hover:text-white text-pop-pink rounded-full shadow-lg w-10 h-10 items-center justify-center transition-all border border-pop-pink"
+              >
+                <i class="icon-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Shop Disclosure Section -->
       <section class="shop-disclosure">
         <div class="container">
@@ -372,6 +687,9 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="assets/js/products.js"></script>
+    <script src="assets/js/posts.js"></script>
+    <script src="assets/js/testimonials.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

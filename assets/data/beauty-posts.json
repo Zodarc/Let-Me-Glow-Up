@@ -1,0 +1,22 @@
+[
+  {
+    "id": "post-1",
+    "title": "5 Steps to Glowing Skin",
+    "image": "assets/images/hero-image-1.jpg",
+    "excerpt": "Discover the essential steps for a radiant complexion.",
+    "date": "2025-07-15",
+    "author": "Dr. Glow",
+    "category": "Beauty",
+    "link": "beauty-post-1.html"
+  },
+  {
+    "id": "post-2",
+    "title": "Top 10 Summer Skincare Tips",
+    "image": "assets/images/hero-image-2.jpg",
+    "excerpt": "Keep your skin fresh and protected all summer long.",
+    "date": "2025-06-10",
+    "author": "Glow Team",
+    "category": "Beauty",
+    "link": "beauty-post-2.html"
+  }
+]
