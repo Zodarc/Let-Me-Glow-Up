@@ -96,6 +96,7 @@
 
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <script src="assets/js/ai-tools-enhancements.js" defer></script>
   </head>
   <body>
     <!-- Header -->
@@ -362,137 +363,320 @@
 
       <!-- AI Tools Showcase Section -->
       <section class="ai-tools-showcase py-12 md:py-20 bg-cream-white">
-        <div class="container mx-auto px-4 md:px-8">
+        <div class="container mx-auto px-4 md:px-8 relative">
+          <!-- Subtle Animated Pattern Background -->
+          <div class="absolute inset-0 pointer-events-none opacity-5 bg-[url('assets/images/beauty-pattern.png')] bg-repeat bg-center animate-fadeInSlow z-0"></div>
           <h2
-            class="text-2xl md:text-4xl font-bold text-center mb-10 text-deep-black"
+            class="text-2xl md:text-4xl font-bold text-center mb-2 text-deep-black relative z-10"
             data-aos="fade-up"
           >
-            Explore Our AI Beauty Tools
+            <span class="inline-block align-middle">Explore Our AI Beauty Tools</span>
+            <span class="block mx-auto w-24 h-1 mt-3 rounded-full bg-gradient-to-r from-pop-pink via-glossy-brown to-pop-pink animate-gradientMove"></span>
           </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <p class="text-center text-base md:text-lg text-gray-600 mb-10 relative z-10" data-aos="fade-up" data-aos-delay="50">
+            Discover the latest in beauty tech. Try our smart, personalized tools for your unique style.
+          </p>
+          <!-- Stats Box: AI Tools Showcase Metrics -->
+          <div class="bg-white/50 backdrop-blur-sm rounded-xl p-6 mb-8 border border-pop-pink/20" data-aos="fade-up" data-aos-delay="75">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+              <div class="group hover:scale-105 transition-transform duration-300">
+                <div class="text-2xl md:text-3xl font-bold text-pop-pink mb-1">50K+</div>
+                <div class="text-xs md:text-sm text-gray-600">Analyses Complete</div>
+              </div>
+              <div class="group hover:scale-105 transition-transform duration-300">
+                <div class="text-2xl md:text-3xl font-bold text-glossy-brown mb-1">98%</div>
+                <div class="text-xs md:text-sm text-gray-600">Accuracy Rate</div>
+              </div>
+              <div class="group hover:scale-105 transition-transform duration-300">
+                <div class="text-2xl md:text-3xl font-bold text-pop-pink mb-1">4.8★</div>
+                <div class="text-xs md:text-sm text-gray-600">User Rating</div>
+              </div>
+              <div class="group hover:scale-105 transition-transform duration-300">
+                <div class="text-2xl md:text-3xl font-bold text-glossy-brown mb-1">24/7</div>
+                <div class="text-xs md:text-sm text-gray-600">Available</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             <!-- Skincare Analyzer -->
             <div
-              class="glass-card group p-8 rounded-2xl shadow-lg backdrop-blur-md bg-white/60 border border-pop-pink/10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative overflow-hidden"
-              style="
-                background-image: url('assets/images/hero-image-1.jpg');
-                background-size: cover;
-                background-position: center;
-              "
+              class="glass-card group p-8 rounded-2xl shadow-xl backdrop-blur-md bg-white/70 border border-pop-pink/20 flex flex-col items-center text-center transition-all duration-500 hover:scale-[1.07] hover:shadow-3xl hover:border-pop-pink/40 relative overflow-hidden animate-floatUp"
               data-aos="fade-up"
               data-aos-delay="100"
+              tabindex="0"
+              role="button"
+              aria-describedby="tool-description-1"
+              onkeydown="if(event.key==='Enter'||event.key===' '){this.click()}"
             >
-              <div
-                class="absolute inset-0 bg-white/70 group-hover:bg-white/60 transition duration-300 z-0"
-              ></div>
+              <div class="absolute inset-0 bg-white/90 group-hover:bg-white/70 transition duration-300 z-0"></div>
+              <span class="absolute top-4 left-4 bg-pop-pink/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-20 animate-badgePop">Popular</span>
+              <div class="absolute top-4 right-4 flex flex-col gap-1 z-20">
+                <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse" title="Online"></span>
+                <span class="text-xs text-white bg-black/50 px-2 py-1 rounded">Beta</span>
+              </div>
               <div class="relative z-10 w-full flex flex-col items-center">
-                <div class="mb-4 text-pop-pink text-4xl">
-                  <i class="icon-ai"></i>
+              <p id="tool-description-1" class="sr-only">
+                Skincare Analyzer: AI-powered tool that analyzes your skin type and provides personalized skincare recommendations
+              </p>
+              <button class="demo-btn bg-gradient-to-r from-pop-pink to-glossy-brown text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-lg transition-all duration-300 mb-2">
+                Try Demo <i class="icon-play ml-1"></i>
+              </button>
+                <div class="mb-4">
+                  <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-pop-pink via-glossy-brown to-pop-pink shadow-lg group-hover:scale-110 transition-transform duration-300 animate-iconPulse">
+                    <i class="icon-ai text-white text-4xl group-hover:text-pop-pink transition-colors duration-300"></i>
+                  </span>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">Skincare Analyzer</h3>
-                <p class="text-gray-700 mb-4">
-                  Get instant, personalized skincare routines based on your
-                  unique skin profile.
-                </p>
-                <a
-                  href="ai-tools.html#skincare-analyzer"
-                  class="text-pop-pink font-semibold hover:underline transition"
-                  >Learn More &rarr;</a
-                >
+                <h3 class="text-lg font-semibold mb-1">Skincare Analyzer</h3>
+                <div class="flex items-center justify-center gap-4 text-xs text-gray-500 mb-2">
+                  <span class="flex items-center gap-1">
+                    <i class="icon-users"></i>
+                    <span>2.3k users</span>
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <i class="icon-star-filled text-yellow-400"></i>
+                    <span>4.8</span>
+                  </span>
+                </div>
+                <span class="text-xs font-medium text-pop-pink mb-2">Personalized Routines</span>
+                <p class="text-gray-700 mb-4">Get instant, personalized skincare routines based on your unique skin profile.</p>
+                <a href="ai-tools.html#skincare-analyzer" class="text-pop-pink font-semibold hover:underline transition group inline-flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-pop-pink/60">
+                  <div class="flex flex-col gap-2 w-full">
+                    <a href="ai-tools.html#skincare-analyzer" class="bg-pop-pink text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-glossy-brown transition-colors duration-300 text-center">
+                      Try Now
+                    </a>
+                    <a href="ai-tools.html#skincare-analyzer" class="text-pop-pink font-medium hover:underline transition text-center text-sm">
+                      Learn More &rarr;
+                    </a>
+                  </div>
               </div>
             </div>
             <!-- Style Matcher -->
             <div
-              class="glass-card group p-8 rounded-2xl shadow-lg backdrop-blur-md bg-white/60 border border-pop-pink/10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative overflow-hidden"
-              style="
-                background-image: url('assets/images/hero-image-2.jpg');
-                background-size: cover;
-                background-position: center;
-              "
+              class="glass-card group p-8 rounded-2xl shadow-xl backdrop-blur-md bg-white/70 border border-pop-pink/20 flex flex-col items-center text-center transition-all duration-500 hover:scale-[1.07] hover:shadow-3xl hover:border-pop-pink/40 relative overflow-hidden animate-floatUp"
               data-aos="fade-up"
               data-aos-delay="200"
+              tabindex="0"
+              role="button"
+              aria-describedby="tool-description-2"
+              onkeydown="if(event.key==='Enter'||event.key===' '){this.click()}"
             >
-              <div
-                class="absolute inset-0 bg-white/70 group-hover:bg-white/60 transition duration-300 z-0"
-              ></div>
+              <p id="tool-description-2" class="sr-only">
+                Style Matcher: Upload a photo and get AI-generated outfit ideas tailored to your style and body type
+              </p>
+              <button class="demo-btn bg-gradient-to-r from-pop-pink to-glossy-brown text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-lg transition-all duration-300 mb-2">
+                Try Demo <i class="icon-play ml-1"></i>
+              </button>
+              <div class="absolute inset-0 bg-white/90 group-hover:bg-white/70 transition duration-300 z-0"></div>
+              <span class="absolute top-4 left-4 bg-glossy-brown/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-20 animate-badgePop">New</span>
+              <div class="absolute top-4 right-4 flex flex-col gap-1 z-20">
+                <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse" title="Online"></span>
+                <span class="text-xs text-white bg-black/50 px-2 py-1 rounded">Beta</span>
+              </div>
               <div class="relative z-10 w-full flex flex-col items-center">
-                <div class="mb-4 text-pop-pink text-4xl">
-                  <i class="icon-expert"></i>
+                <div class="mb-4">
+                  <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-glossy-brown via-pop-pink to-glossy-brown shadow-lg group-hover:scale-110 transition-transform duration-300 animate-iconPulse">
+                    <i class="icon-expert text-white text-4xl group-hover:text-glossy-brown transition-colors duration-300"></i>
+                  </span>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">Style Matcher</h3>
-                <p class="text-gray-700 mb-4">
-                  Upload a photo and get outfit ideas tailored to your style and
-                  body type.
-                </p>
-                <a
-                  href="ai-tools.html#style-matcher"
-                  class="text-pop-pink font-semibold hover:underline transition"
-                  >Learn More &rarr;</a
-                >
+                <h3 class="text-lg font-semibold mb-1">Style Matcher</h3>
+                <div class="flex items-center justify-center gap-4 text-xs text-gray-500 mb-2">
+                  <span class="flex items-center gap-1">
+                    <i class="icon-users"></i>
+                    <span>2.3k users</span>
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <i class="icon-star-filled text-yellow-400"></i>
+                    <span>4.8</span>
+                  </span>
+                </div>
+                <span class="text-xs font-medium text-glossy-brown mb-2">Outfit Generator</span>
+                <p class="text-gray-700 mb-4">Upload a photo and get outfit ideas tailored to your style and body type.</p>
+                <a href="ai-tools.html#style-matcher" class="text-pop-pink font-semibold hover:underline transition group inline-flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-pop-pink/60">
+                  <div class="flex flex-col gap-2 w-full">
+                    <a href="ai-tools.html#style-matcher" class="bg-pop-pink text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-glossy-brown transition-colors duration-300 text-center">
+                      Try Now
+                    </a>
+                    <a href="ai-tools.html#style-matcher" class="text-pop-pink font-medium hover:underline transition text-center text-sm">
+                      Learn More &rarr;
+                    </a>
+                  </div>
               </div>
             </div>
             <!-- Look Builder -->
             <div
-              class="glass-card group p-8 rounded-2xl shadow-lg backdrop-blur-md bg-white/60 border border-pop-pink/10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative overflow-hidden"
-              style="
-                background-image: url('assets/images/hero-image-3.jpg');
-                background-size: cover;
-                background-position: center;
-              "
+              class="glass-card group p-8 rounded-2xl shadow-xl backdrop-blur-md bg-white/70 border border-pop-pink/20 flex flex-col items-center text-center transition-all duration-500 hover:scale-[1.07] hover:shadow-3xl hover:border-pop-pink/40 relative overflow-hidden animate-floatUp"
               data-aos="fade-up"
               data-aos-delay="300"
+              tabindex="0"
+              role="button"
+              aria-describedby="tool-description-3"
+              onkeydown="if(event.key==='Enter'||event.key===' '){this.click()}"
             >
-              <div
-                class="absolute inset-0 bg-white/70 group-hover:bg-white/60 transition duration-300 z-0"
-              ></div>
+              <p id="tool-description-3" class="sr-only">
+                Look Builder: Create complete makeup looks and get step-by-step tutorials for any occasion
+              </p>
+              <button class="demo-btn bg-gradient-to-r from-pop-pink to-glossy-brown text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-lg transition-all duration-300 mb-2">
+                Try Demo <i class="icon-play ml-1"></i>
+              </button>
+              <div class="absolute inset-0 bg-white/90 group-hover:bg-white/70 transition duration-300 z-0"></div>
+              <span class="absolute top-4 left-4 bg-pop-pink/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-20 animate-badgePop">Trending</span>
+              <div class="absolute top-4 right-4 flex flex-col gap-1 z-20">
+                <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse" title="Online"></span>
+                <span class="text-xs text-white bg-black/50 px-2 py-1 rounded">Beta</span>
+              </div>
               <div class="relative z-10 w-full flex flex-col items-center">
-                <div class="mb-4 text-pop-pink text-4xl">
-                  <i class="icon-community"></i>
+                <div class="mb-4">
+                  <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-pop-pink via-glossy-brown to-pop-pink shadow-lg group-hover:scale-110 transition-transform duration-300 animate-iconPulse">
+                    <i class="icon-community text-white text-4xl group-hover:text-pop-pink transition-colors duration-300"></i>
+                  </span>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">Look Builder</h3>
-                <p class="text-gray-700 mb-4">
-                  Create complete makeup looks and get step-by-step tutorials
-                  for any occasion.
-                </p>
-                <a
-                  href="ai-tools.html#look-builder"
-                  class="text-pop-pink font-semibold hover:underline transition"
-                  >Learn More &rarr;</a
-                >
+                <h3 class="text-lg font-semibold mb-1">Look Builder</h3>
+                <div class="flex items-center justify-center gap-4 text-xs text-gray-500 mb-2">
+                  <span class="flex items-center gap-1">
+                    <i class="icon-users"></i>
+                    <span>2.3k users</span>
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <i class="icon-star-filled text-yellow-400"></i>
+                    <span>4.8</span>
+                  </span>
+                </div>
+                <span class="text-xs font-medium text-pop-pink mb-2">Makeup Tutorials</span>
+                <p class="text-gray-700 mb-4">Create complete makeup looks and get step-by-step tutorials for any occasion.</p>
+                <a href="ai-tools.html#look-builder" class="text-pop-pink font-semibold hover:underline transition group inline-flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-pop-pink/60">
+                  <div class="flex flex-col gap-2 w-full">
+                    <a href="ai-tools.html#look-builder" class="bg-pop-pink text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-glossy-brown transition-colors duration-300 text-center">
+                      Try Now
+                    </a>
+                    <a href="ai-tools.html#look-builder" class="text-pop-pink font-medium hover:underline transition text-center text-sm">
+                      Learn More &rarr;
+                    </a>
+                  </div>
               </div>
             </div>
             <!-- Trend Finder -->
             <div
-              class="glass-card group p-8 rounded-2xl shadow-lg backdrop-blur-md bg-white/60 border border-pop-pink/10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl relative overflow-hidden"
-              style="
-                background-image: url('assets/images/hero-image-2.jpg');
-                background-size: cover;
-                background-position: center;
-              "
+              class="glass-card group p-8 rounded-2xl shadow-xl backdrop-blur-md bg-white/70 border border-pop-pink/20 flex flex-col items-center text-center transition-all duration-500 hover:scale-[1.07] hover:shadow-3xl hover:border-pop-pink/40 relative overflow-hidden animate-floatUp"
               data-aos="fade-up"
               data-aos-delay="400"
+              tabindex="0"
+              role="button"
+              aria-describedby="tool-description-4"
+              onkeydown="if(event.key==='Enter'||event.key===' '){this.click()}"
             >
-              <div
-                class="absolute inset-0 bg-white/70 group-hover:bg-white/60 transition duration-300 z-0"
-              ></div>
+              <p id="tool-description-4" class="sr-only">
+                Trend Finder: Discover trending beauty and fashion products personalized for you
+              </p>
+              <button class="demo-btn bg-gradient-to-r from-pop-pink to-glossy-brown text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-lg transition-all duration-300 mb-2">
+                Try Demo <i class="icon-play ml-1"></i>
+              </button>
+              <div class="absolute inset-0 bg-white/90 group-hover:bg-white/70 transition duration-300 z-0"></div>
+              <span class="absolute top-4 left-4 bg-glossy-brown/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-20 animate-badgePop">AI Powered</span>
+              <div class="absolute top-4 right-4 flex flex-col gap-1 z-20">
+                <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse" title="Online"></span>
+                <span class="text-xs text-white bg-black/50 px-2 py-1 rounded">Beta</span>
+              </div>
               <div class="relative z-10 w-full flex flex-col items-center">
-                <div class="mb-4 text-pop-pink text-4xl">
-                  <i class="icon-star"></i>
+                <div class="mb-4">
+                  <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-glossy-brown via-pop-pink to-glossy-brown shadow-lg group-hover:scale-110 transition-transform duration-300 animate-iconPulse">
+                    <i class="icon-star text-white text-4xl group-hover:text-glossy-brown transition-colors duration-300"></i>
+                  </span>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">Trend Finder</h3>
-                <p class="text-gray-700 mb-4">
-                  Discover trending beauty and fashion products personalized for
-                  you.
-                </p>
-                <a
-                  href="ai-tools.html#trend-finder"
-                  class="text-pop-pink font-semibold hover:underline transition"
-                  >Learn More &rarr;</a
-                >
+                <h3 class="text-lg font-semibold mb-1">Trend Finder</h3>
+                <div class="flex items-center justify-center gap-4 text-xs text-gray-500 mb-2">
+                  <span class="flex items-center gap-1">
+                    <i class="icon-users"></i>
+                    <span>2.3k users</span>
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <i class="icon-star-filled text-yellow-400"></i>
+                    <span>4.8</span>
+                  </span>
+                </div>
+                <span class="text-xs font-medium text-glossy-brown mb-2">Trends For You</span>
+                <p class="text-gray-700 mb-4">Discover trending beauty and fashion products personalized for you.</p>
+                <a href="ai-tools.html#trend-finder" class="text-pop-pink font-semibold hover:underline transition group inline-flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-pop-pink/60">
+                  <div class="flex flex-col gap-2 w-full">
+                    <a href="ai-tools.html#trend-finder" class="bg-pop-pink text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-glossy-brown transition-colors duration-300 text-center">
+                      Try Now
+                    </a>
+                    <a href="ai-tools.html#trend-finder" class="text-pop-pink font-medium hover:underline transition text-center text-sm">
+                      Learn More &rarr;
+                    </a>
+                  </div>
               </div>
             </div>
           </div>
+          </div>
+          <!-- Mobile horizontal scroll hint -->
+          <!-- Mobile horizontal scroll hint -->
+          <div class="flex lg:hidden justify-center mt-6 gap-2 relative">
+            <div class="flex gap-2" id="mobile-indicators">
+              <div class="w-8 h-2 rounded-full bg-pop-pink transition-all duration-300"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></div>
+            </div>
+            <p class="absolute -bottom-6 text-xs text-gray-500 text-center w-full">
+              Swipe to explore tools →
+            </p>
+          </div>
         </div>
       </section>
+      <style>
+        /* Custom Animations for polish */
+        @keyframes floatUp {
+          0% { transform: translateY(20px); opacity: 0; }
+          100% { transform: translateY(0); opacity: 1; }
+        }
+        .animate-floatUp { animation: floatUp 0.8s cubic-bezier(.4,0,.2,1) both; }
+        @keyframes iconPulse {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(255,105,180,0.3); }
+          50% { box-shadow: 0 0 16px 8px rgba(255,105,180,0.15); }
+        }
+        .animate-iconPulse { animation: iconPulse 2s infinite; }
+        @keyframes badgePop {
+          0% { transform: scale(0.7); opacity: 0; }
+          60% { transform: scale(1.1); opacity: 1; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-badgePop { animation: badgePop 0.7s cubic-bezier(.4,0,.2,1) both; }
+        @keyframes fadeInSlow {
+          0% { opacity: 0; }
+          100% { opacity: 0.1; }
+        }
+        .animate-fadeInSlow { animation: fadeInSlow 2s 0.2s both; }
+        @keyframes gradientMove {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 100% 50%; }
+        }
+        .animate-gradientMove {
+          background-size: 200% 200%;
+          animation: gradientMove 3s linear infinite alternate;
+        }
+        /* Card microinteractions */
+        .glass-card:focus {
+          outline: 2px solid #ff69b4;
+          outline-offset: 2px;
+        }
+        .glass-card:active {
+          transform: scale(0.98);
+          box-shadow: 0 2px 12px 0 rgba(255,105,180,0.15);
+        }
+        /* Responsive horizontal scroll for mobile */
+        @media (max-width: 1023px) {
+          .ai-tools-showcase .grid {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+          }
+          .ai-tools-showcase .glass-card {
+            min-width: 80vw;
+            scroll-snap-align: center;
+          }
+        }
+      </style>
       <!-- Trending Products Section (Cloud10Beauty Inspired) -->
       <section class="trending-products-section py-12 md:py-20 bg-cream-white">
         <div class="container mx-auto px-4 md:px-8">
@@ -807,5 +991,93 @@
         }
       });
     </script>
+    <script>
+      // Robust Tool Preview Modal Logic
+      document.addEventListener('DOMContentLoaded', function () {
+        const modal = document.getElementById('tool-preview-modal');
+        const closeModal = document.getElementById('close-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const modalTitle = document.getElementById('modal-title');
+
+        // Event delegation for demo buttons (works for <a> and <button>)
+        document.body.addEventListener('click', function(e) {
+          let target = e.target;
+          // Traverse up to .demo-btn if icon or span is clicked
+          while (target && !target.classList?.contains('demo-btn') && target !== document.body) {
+            target = target.parentElement;
+          }
+          if (target && target.classList?.contains('demo-btn')) {
+            e.preventDefault();
+            let card = target.closest('.glass-card');
+            let title = card ? card.querySelector('h3')?.textContent?.trim() : '';
+            modalTitle.textContent = title || 'AI Tool Demo';
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+              closeModalBtn?.focus();
+            }, 100);
+          }
+        });
+
+        // Close modal on close buttons
+        [closeModal, closeModalBtn].forEach(function(btn) {
+          if (btn) {
+            btn.addEventListener('click', function() {
+              modal.classList.add('hidden');
+              modal.classList.remove('flex');
+            });
+          }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+          if (!modal.classList.contains('hidden') && e.key === 'Escape') {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+          }
+        });
+
+        // Prevent background scroll when modal is open
+        const observer = new MutationObserver(() => {
+          if (!modal.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = '';
+          }
+        });
+        observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
+      });
+    </script>
+
+    <!-- Tool Preview Modal -->
+    <div id="tool-preview-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+      <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-6 border-b border-gray-200 flex items-center justify-between">
+          <h3 id="modal-title" class="text-xl font-bold text-deep-black"></h3>
+          <button id="close-modal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+        </div>
+        <div class="p-6">
+          <div id="modal-content" class="text-center">
+            <div class="animate-pulse">
+              <div class="w-16 h-16 bg-gradient-to-br from-pop-pink to-glossy-brown rounded-full mx-auto mb-4 flex items-center justify-center">
+                <i class="icon-ai text-white text-2xl"></i>
+              </div>
+              <p class="text-gray-600 mb-4">Loading AI tool preview...</p>
+              <div class="bg-gray-100 rounded-lg p-8 mb-4">
+                <p class="text-sm text-gray-500">Interactive demo would load here</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-3 justify-center mt-6">
+            <button class="bg-pop-pink text-white px-6 py-2 rounded-lg hover:bg-glossy-brown transition-colors">
+              Try Full Version
+            </button>
+            <button id="close-modal-btn" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition-colors">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

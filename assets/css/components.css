@@ -1,3 +1,110 @@
+/* Demo button reveal and style for glass-card */
+.demo-btn {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #ff6b9d, #8b4513);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 20;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+.glass-card:hover .demo-btn {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.demo-btn:hover {
+  box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);
+  transform: translateX(-50%) translateY(-2px);
+}
+/* Status indicators for glass-card */
+.glass-card .status-indicators {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 20;
+}
+
+.status-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: #4ade80;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+/* Glassmorphism background for glass-card */
+.glass-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,182,193,0.2);
+}
+
+.glass-card:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 100%) !important;
+  border-color: rgba(255,182,193,0.4);
+}
+/* Glass Card Shimmer Effect */
+
+.glass-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s;
+  opacity: 0;
+  z-index: 1;
+}
+
+.glass-card:hover::before {
+  animation: shimmer 1.5s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Enhanced card interactions */
+.glass-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(255,105,180,0.15);
+}
+
+.demo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255,105,180,0.3);
+}
 /* Newsletter Section */
 .newsletter {
   position: relative;
@@ -1180,3 +1287,24 @@
 .shop-disclosure__link:hover {
   text-decoration: underline;
 } 
+
+
+
+/* Loading skeleton for demo buttons */
+.demo-btn.loading {
+  position: relative;
+  color: transparent;
+}
+
+.demo-btn.loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
