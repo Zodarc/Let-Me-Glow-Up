@@ -1,34 +1,8 @@
-﻿/* === Custom Animations for AI Tools Showcase === */
-@keyframes badgePop {
-  0% { transform: scale(0.8); opacity: 0; }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); opacity: 1; }
-}
+﻿
 
-@keyframes iconPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-badgePop {
-  animation: badgePop 0.6s ease-out;
-}
-
-.animate-iconPulse {
-  animation: iconPulse 2s ease-in-out infinite;
-}
-
-.animate-gradientMove {
-  background-size: 200% 200%;
-  animation: gradientMove 3s ease infinite;
-}
 /* Wishlist grid layout (pure CSS, no Tailwind) */
+
 .wishlist-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -85,25 +59,20 @@
   height: 80px;
 }
 /* ===== WISHLIST COUNTER BADGE & MOBILE WISHLIST FIXES ===== */
+/* Fix the wishlist counter - it should be for the badge, not a container */
 .wishlist-counter {
   display: inline-flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    gap: 0.75rem;
-    padding-bottom: 0.5rem;
-  }
-  .recently-viewed .product-card {
-    min-width: 100px;
-    max-width: 120px;
-    padding: 0.4rem 0.15rem;
-    min-height: 120px;
-  }
-  .recently-viewed .product-card img {
-    width: 60px;
-    height: 60px;
-  }
+  align-items: center;
+  justify-content: center;
+  min-width: 1.2em;
+  height: 1.2em;
+  background: var(--pop-pink);
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  font-weight: 600;
 }
+
 /* ===== PRODUCT CARD (WISHLIST/GRID) ===== */
 .product-card {
   display: flex;
@@ -207,6 +176,7 @@
 .product-card .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -690,19 +660,262 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
-/* ===== FEATURES SECTION ===== */
-.features {
-  background-color: var(--soft-beige);
-  padding: var(--section-padding);
-}
 
+/* Enhanced Section Titles */
 .section__title {
   font-size: var(--h1-font-size);
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
   color: var(--deep-black);
+  position: relative;
+  padding-bottom: 1rem;
 }
+
+/* Add decorative underline to all section titles */
+.section__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--pop-pink), var(--glossy-brown), var(--pop-pink));
+  border-radius: 2px;
+  animation: gradientMove 3s linear infinite alternate;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.section__title::after {
+  background-size: 200% 200%;
+}
+
+/* Enhanced title with subtitle support */
+.section__title-enhanced {
+  font-size: var(--h1-font-size);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--deep-black);
+  position: relative;
+}
+
+
+/* Enhanced Section Subtitle */
+.section__subtitle {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1.125rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  position: relative;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  padding: 0 1rem;
+}
+
+/* Add subtle background glow */
+.section__subtitle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 150%;
+  background: radial-gradient(ellipse, rgba(255, 105, 180, 0.03) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* Stylized quote marks */
+.section__subtitle-quote {
+  position: relative;
+  font-style: italic;
+  padding: 1rem 2rem;
+}
+
+.section__subtitle-quote::before,
+.section__subtitle-quote::after {
+  content: '"';
+  font-size: 2rem;
+  color: var(--pop-pink);
+  font-weight: 700;
+  position: absolute;
+  opacity: 0.6;
+}
+
+.section__subtitle-quote::before {
+  top: -0.5rem;
+  left: 0;
+}
+
+.section__subtitle-quote::after {
+  bottom: -1rem;
+  right: 0;
+}
+
+/* Highlighted version */
+.section__subtitle-highlight {
+  background: linear-gradient(135deg, rgba(255, 105, 180, 0.1) 0%, rgba(169, 122, 90, 0.1) 100%);
+  border: 1px solid rgba(255, 105, 180, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(255, 105, 180, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* With decorative elements */
+.section__subtitle-decorated {
+  position: relative;
+  padding: 1rem 3rem;
+}
+
+.section__subtitle-decorated::before,
+.section__subtitle-decorated::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--pop-pink);
+  font-size: 1.2rem;
+  opacity: 0.7;
+  animation: sparkle 2s ease-in-out infinite alternate;
+}
+
+.section__subtitle-decorated::before {
+  left: 1rem;
+}
+
+.section__subtitle-decorated::after {
+  right: 1rem;
+}
+
+@keyframes sparkle {
+  0% { opacity: 0.4; transform: translateY(-50%) scale(0.8); }
+  100% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+}
+
+/* Gradient text version */
+.section__subtitle-gradient {
+  background: linear-gradient(135deg, var(--pop-pink) 0%, var(--glossy-brown) 50%, var(--pop-pink) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientFlow 3s ease infinite;
+  font-weight: 500;
+}
+
+@keyframes gradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* With accent line */
+.section__subtitle-accent {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.section__subtitle-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--pop-pink), transparent);
+  border-radius: 1px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .section__subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+  
+  .section__subtitle-quote {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .section__subtitle-highlight {
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+  }
+  
+  .section__subtitle-decorated {
+    padding: 0.75rem 2rem;
+  }
+  
+  .section__subtitle-decorated::before,
+  .section__subtitle-decorated::after {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section__subtitle {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .section__subtitle-quote::before,
+  .section__subtitle-quote::after {
+    font-size: 1.5rem;
+  }
+}
+
+/* Icon-enhanced titles */
+.section__title-with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: var(--h1-font-size);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--deep-black);
+}
+
+.section__title-with-icon i {
+  color: var(--pop-pink);
+  font-size: 1.2em;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .section__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .section__title::after {
+    width: 60px;
+    height: 3px;
+  }
+  
+}
+
+/* ===== FEATURES SECTION ===== */
+.features {
+  background-color: var(--soft-beige);
+  padding: var(--section-padding);
+}
+
 
 .features__grid {
   display: grid;
@@ -886,54 +1099,6 @@ body {
 .footer__copyright {
   color: #9ca3af;
   font-size: 0.875rem;
-}
-
-/* ===== AFFILIATE DISCLOSURE ===== */
-.footer__disclosure {
-  border-top: 1px solid #374151;
-  padding: 2rem 0;
-  margin: 2rem 0 1rem 0;
-}
-
-.disclosure__content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.disclosure__title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--pop-pink);
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.disclosure__text {
-  color: #9ca3af;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.disclosure__text:last-child {
-  margin-bottom: 0;
-}
-
-.disclosure__text strong {
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.footer__disclosure-link {
-  color: var(--pop-pink);
-  text-decoration: none;
-  transition: var(--transition);
-  font-weight: 500;
-}
-
-.footer__disclosure-link:hover {
-  text-decoration: underline;
-  color: #e55aa0;
 }
 
 /* ===== AFFILIATE DISCLOSURE ===== */
@@ -1236,3 +1401,91 @@ body {
     padding: 0;
   }
 } 
+/* Replace the current icon classes with this: */
+
+/* If using Font Awesome (recommended since you have it loaded) */
+.icon-search:before { content: "\f002"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.icon-arrow-left:before { content: "\f060"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.icon-arrow-right:before { content: "\f061"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.icon-play:before { content: "\f04b"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.icon-users:before { content: "\f0c0"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.icon-star:before { content: "\f005"; font-family: "Font Awesome 6 Free"; font-weight: 400; }
+.icon-star:before { content: "\f005"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.icon-expert:before { content: "\f508"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.icon-community:before { content: "\f0c0"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+
+/* Base icon class */
+[class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+/* Add these new animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeInDown {
+  animation: fadeInDown 0.6s ease-out;
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Glowing effect on hover */
+.section__title:hover::after {
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Animated text gradient */
+.section__title-gradient {
+  background: linear-gradient(45deg, var(--pop-pink), var(--glossy-brown), var(--pop-pink));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientText 4s ease infinite;
+}
+
+@keyframes gradientText {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Badge-style accent */
+.section__title-badge::before {
+  content: '✨';
+  margin-right: 0.5rem;
+  font-size: 0.8em;
+}

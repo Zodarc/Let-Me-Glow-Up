@@ -1,60 +1,108 @@
-// Fetch and render products from JSON
-async function loadProducts(category = 'All') {
+let currentFilters = {
+  category: 'All',
+  sort: 'featured',
+  priceMin: 0,
+  priceMax: 200,
+  rating: 0,
+  brand: 'all'
+};
+
+let currentPage = 1;
+const PRODUCTS_PER_PAGE = 12;
+
+async function loadProducts(category = 'All', append = false) {
   const grid = document.getElementById('products-grid');
-  // Show skeletons while loading
-  grid.innerHTML = Array(4).fill('').map(() => `
-    <div class="product-card skeleton">
-      <div class="product-card__image skeleton-box"></div>
-      <div class="product-card__content">
-        <div class="skeleton-box w-2/3 h-4 mb-2"></div>
-        <div class="skeleton-box w-1/2 h-4 mb-2"></div>
-        <div class="skeleton-box w-1/3 h-4 mb-2"></div>
-        <div class="skeleton-box w-full h-8 mt-4"></div>
-      </div>
-    </div>
-  `).join('');
-    const res = await fetch('assets/data/products.json'); // Fetch products from JSON
-  const products = await res.json();
-  let filtered = category === 'All' ? products : products.filter(p => p.category === category);
-  // Only show 4 products on homepage (index.html)
-  if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
-    filtered = filtered.slice().reverse().slice(0, 4); // Show 4 most recent products
+  const loading = document.getElementById('products-loading');
+  const countElement = document.getElementById('products-count');
+  
+  // Update current filter
+  currentFilters.category = category;
+  
+  // Show loading state
+  if (!append) {
+    if (loading) {
+      loading.classList.remove('hidden');
+      showSkeletonCards();
+    }
+    grid.classList.add('opacity-50');
   }
-  grid.innerHTML = filtered.map(product => {
-    const discounted = product.discount && product.oldPrice > product.price;
-    // Only show wishlist button if on shop.html
-    const isShop = window.location.pathname.endsWith('shop.html');
-    return `
-    <div class="product-card group relative bg-white rounded-2xl shadow-lg overflow-hidden border border-soft-beige transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-      ${discounted ? `<span class=\"absolute top-4 left-4 bg-pop-pink text-white text-xs font-bold px-3 py-1 rounded-full z-10\">-${product.discount}%</span>` : ''}
-      ${isShop ? `<button class=\"wishlist-btn absolute top-4 right-4 bg-white/80 rounded-full p-2 shadow hover:bg-pop-pink hover:text-white transition z-10\" aria-label=\"Add to Wishlist\" data-id=\"${product.id}\"><i class=\"fa fa-heart\"></i></button>` : ''}
-      <div class="overflow-hidden">
-        <img src="${product.image}" alt="${product.title}" class="product-card__image w-full h-48 object-cover object-center group-hover:scale-110 transition-transform duration-300" />
+  
+  try {
+    const res = await fetch('assets/data/products.json');
+    const allProducts = await res.json();
+    
+    // Apply filters
+    let filtered = filterProducts(allProducts, currentFilters);
+    
+    // Apply sorting
+    filtered = sortProducts(filtered, currentFilters.sort);
+    
+    // Only show 4 products on homepage (keep your existing logic)
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+      filtered = filtered.slice().reverse().slice(0, 4);
+    } else {
+      // Pagination for other pages
+      const startIndex = append ? (currentPage - 1) * PRODUCTS_PER_PAGE : 0;
+      const endIndex = startIndex + PRODUCTS_PER_PAGE;
+      filtered = filtered.slice(startIndex, endIndex);
+    }
+    
+    // Update count
+    if (countElement) {
+      countElement.textContent = `Showing ${filtered.length} products`;
+    }
+    
+    // Render products (keep your existing rendering logic but enhance it)
+    grid.innerHTML = filtered.map(product => {
+      const discounted = product.discount && product.oldPrice > product.price;
+      const isShop = window.location.pathname.endsWith('shop.html');
+      
+      return `
+      <div class="product-card group relative bg-white rounded-2xl shadow-lg overflow-hidden border border-soft-beige transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-fadeInUp">
+        ${discounted ? `<span class="absolute top-4 left-4 bg-pop-pink text-white text-xs font-bold px-3 py-1 rounded-full z-10 animate-pulse">-${product.discount}%</span>` : ''}
+        ${product.trending ? `<span class="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">🔥 Trending</span>` : ''}
+        ${isShop ? `<button class="wishlist-btn absolute top-4 right-4 bg-white/80 rounded-full p-2 shadow hover:bg-pop-pink hover:text-white transition z-10" aria-label="Add to Wishlist" data-id="${product.id}"><i class="fa fa-heart"></i></button>` : ''}
+        <div class="overflow-hidden">
+          <img src="${product.image}" alt="${product.title}" class="product-card__image w-full h-48 object-cover object-center group-hover:scale-110 transition-transform duration-300" />
+        </div>
+        <div class="p-5 flex flex-col gap-2 product-card__content">
+          <span class="text-xs text-glossy-brown font-medium">${product.category}</span>
+          <h3 class="product-card__title">${product.title}</h3>
+          <div class="flex items-center gap-1 mb-1 rating__stars">
+            ${renderStars(product.rating)}
+            <span class="ml-2 text-xs text-gray-500">(${product.reviews} reviews)</span>
+          </div>
+          <div class="product-card__price flex items-center gap-2 mb-2">
+           <span class="product-card__price-current">$${product.price.toFixed(2)}</span>
+            ${discounted ? `<span class="product-card__price-original">$${product.oldPrice.toFixed(2)}</span>` : ''}
+          </div>
+          <div class="flex gap-2 mt-2">
+            <a href="product.html?id=${product.id}" class="btn btn--primary flex-1 px-3 py-2 rounded-full font-medium affiliate-btn" data-id="${product.id}">Buy Now</a>
+            <button class="btn btn--secondary flex-1 px-3 py-2 rounded-full font-medium quick-view-btn" data-id="${product.id}">Quick View</button>
+          </div>
+        </div>
       </div>
-      <div class="p-5 flex flex-col gap-2 product-card__content">
-        <span class="text-xs text-glossy-brown font-medium">${product.category}</span>
-        <h3 class="product-card__title">${product.title}</h3>
-        <div class="flex items-center gap-1 mb-1 rating__stars">
-          ${renderStars(product.rating)}
-          <span class="ml-2 text-xs text-gray-500">(${product.reviews} reviews)</span>
-        </div>
-        <div class="product-card__price flex items-center gap-2 mb-2">
-          <span class="product-card__price-current">$${product.price.toFixed(2)}</span>
-          ${discounted ? `<span class=\"product-card__price-original\">$${product.oldPrice.toFixed(2)}</span>` : ''}
-        </div>
-        <div class="flex gap-2 mt-2">
-          <a href="product.html?id=${product.id}" class="btn btn--primary flex-1 px-3 py-2 rounded-full font-medium affiliate-btn" data-id="${product.id}">Buy Now</a>
-          <button class="btn btn--secondary flex-1 px-3 py-2 rounded-full font-medium quick-view-btn" data-id="${product.id}">Quick View</button>
-        </div>
-      </div>
-    </div>
-    `;
-  }).join('');
-  if (window.location.pathname.endsWith('shop.html')) {
-    setupWishlistButtons();
+      `;
+    }).join('');
+    
+    // Hide loading, show grid
+    if (loading) loading.classList.add('hidden');
+    grid.classList.remove('opacity-50');
+    
+    // Keep your existing setup calls
+    if (window.location.pathname.endsWith('shop.html')) {
+      setupWishlistButtons();
+    }
+    setupAffiliateTracking();
+    if (window.updateWishlistCounter) window.updateWishlistCounter();
+    
+    // Setup new interactions
+    setTimeout(setupQuickView, 100);
+    
+  } catch (error) {
+    console.error('Error loading products:', error);
+    grid.innerHTML = '<div class="col-span-full text-center text-gray-500">Failed to load products</div>';
   }
-  setupAffiliateTracking();
-  if (window.updateWishlistCounter) window.updateWishlistCounter();
 }
 
 function renderStars(rating) {
@@ -67,7 +115,6 @@ function renderStars(rating) {
   return stars;
 }
 
-// Wishlist toggle functionality
 function setupWishlistButtons() {
   const buttons = document.querySelectorAll('.wishlist-btn');
   // On load, set button state based on wishlist
@@ -116,7 +163,6 @@ function setupWishlistButtons() {
   });
 }
 
-// Affiliate link tracking
 function setupAffiliateTracking() {
   const links = document.querySelectorAll('.affiliate-btn');
   links.forEach(link => {
@@ -132,19 +178,24 @@ function setupAffiliateTracking() {
   });
 }
 
-// Category tab click
 function setupCategoryTabs() {
   const tabs = document.querySelectorAll('.category-tab');
   tabs.forEach(tab => {
     tab.addEventListener('click', function() {
-      tabs.forEach(t => t.classList.remove('active', 'bg-pop-pink', 'text-white'));
+      tabs.forEach(t => {
+        t.classList.remove('active', 'bg-pop-pink', 'text-white');
+        t.classList.add('bg-cream-white', 'text-deep-black');
+      });
       this.classList.add('active', 'bg-pop-pink', 'text-white');
-      loadProducts(this.textContent.trim());
+      this.classList.remove('bg-cream-white', 'text-deep-black');
+      
+      // Get category from data attribute or text content
+      const category = this.getAttribute('data-category') || this.textContent.trim();
+      loadProducts(category);
     });
   });
 }
 
-// Quick View Modal Logic
 function setupQuickView() {
   // Create modal if not present
   if (!document.getElementById('quick-view-modal')) {
@@ -193,12 +244,95 @@ function setupQuickView() {
   });
 }
 
+function filterProducts(products, filters) {
+  return products.filter(product => {
+    // Category filter
+    if (filters.category !== 'All' && product.category !== filters.category) {
+      return false;
+    }
+    
+    // Price filter
+    if (product.price < filters.priceMin || product.price > filters.priceMax) {
+      return false;
+    }
+    
+    // Rating filter
+    if (product.rating < filters.rating) {
+      return false;
+    }
+    
+    return true;
+  });
+}
+
+function sortProducts(products, sortType) {
+  const sorted = [...products];
+  
+  switch (sortType) {
+    case 'price-low':
+      return sorted.sort((a, b) => a.price - b.price);
+    case 'price-high':
+      return sorted.sort((a, b) => b.price - a.price);
+    case 'rating':
+      return sorted.sort((a, b) => b.rating - a.rating);
+    case 'newest':
+      return sorted.sort((a, b) => new Date(b.added) - new Date(a.added));
+    default:
+      return sorted; // Featured order
+  }
+}
+
+function showSkeletonCards() {
+  const loading = document.getElementById('products-loading');
+  if (!loading) return;
+  
+  loading.innerHTML = Array(8).fill('').map(() => `
+    <div class="product-card skeleton animate-pulse">
+      <div class="bg-gray-200 h-48 rounded-t-2xl"></div>
+      <div class="p-5">
+        <div class="bg-gray-200 h-4 rounded mb-2"></div>
+        <div class="bg-gray-200 h-6 rounded mb-2"></div>
+        <div class="bg-gray-200 h-4 rounded mb-2 w-2/3"></div>
+        <div class="bg-gray-200 h-8 rounded mt-4"></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function setupEnhancedFilters() {
+  // Sort dropdown
+  const sortSelect = document.getElementById('sort-products');
+  if (sortSelect) {
+    sortSelect.addEventListener('change', function() {
+      currentFilters.sort = this.value;
+      loadProducts(currentFilters.category);
+    });
+  }
+  
+  // Filter toggle
+  const filterToggle = document.getElementById('filter-toggle');
+  const filterPanel = document.getElementById('filter-panel');
+  if (filterToggle && filterPanel) {
+    filterToggle.addEventListener('click', function() {
+      filterPanel.classList.toggle('hidden');
+    });
+  }
+  
+  // Load more button
+  const loadMoreBtn = document.getElementById('load-more-products');
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', function() {
+      currentPage++;
+      loadProducts(currentFilters.category, true);
+    });
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  // On non-shop pages, clean up wishlist to only include products that exist in the shop
+  // Keep your existing cleanup logic
   if (!window.location.pathname.endsWith('shop.html')) {
     fetch('assets/data/products.json').then(res => res.json()).then(products => {
       let wishlist = JSON.parse(localStorage.getItem('letmeglowup_wishlist') || '[]');
-      // Only keep wishlist items that exist in products.json
       const validIds = new Set(products.map(p => String(p.id)));
       const filtered = wishlist.filter(item => validIds.has(String(item.id)));
       if (filtered.length !== wishlist.length) {
@@ -207,7 +341,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  
+  // Initialize everything
   loadProducts();
   setupCategoryTabs();
-  setTimeout(setupQuickView, 500); // Wait for products to render
+  setupEnhancedFilters(); // Add this new function call
+  setTimeout(setupQuickView, 500);
 });

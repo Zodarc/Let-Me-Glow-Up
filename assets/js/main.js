@@ -556,6 +556,33 @@ function initHeroCarousel() {
             endX = e.changedTouches[0].clientX;
             handleSwipe();
         });
+        // Add this after the initHeroCarousel() function
+
+// ===== MOBILE SCROLL INDICATORS =====
+function initMobileScrollIndicators() {
+    const container = document.querySelector('.ai-tools-showcase .grid');
+    const indicators = document.querySelectorAll('#mobile-indicators div');
+    
+    if (!container || !indicators.length) return;
+    
+    container.addEventListener('scroll', () => {
+        const scrollLeft = container.scrollLeft;
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        
+        if (maxScroll === 0) return; // Prevent division by zero
+        
+        const scrollPercent = scrollLeft / maxScroll;
+        const activeIndex = Math.round(scrollPercent * (indicators.length - 1));
+        
+        indicators.forEach((indicator, index) => {
+            if (index === activeIndex) {
+                indicator.className = 'w-8 h-2 rounded-full bg-pop-pink transition-all duration-300';
+            } else {
+                indicator.className = 'w-2 h-2 rounded-full bg-gray-300 transition-all duration-300';
+            }
+        });
+    });
+}
         
         function handleSwipe() {
             const swipeThreshold = 50;
@@ -649,6 +676,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initPerformanceOptimization();
     initAccessibility();
     initHeroCarousel();
+    initMobileScrollIndicators();
     
     console.log('LetMeGlowUp - All functionality initialized!');
 });
